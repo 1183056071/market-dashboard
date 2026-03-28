@@ -1,0 +1,3412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>妫汭市集 · 营业看板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/json" id="app-data">
+{
+  "market": "妫汭市集（永城店）",
+  "period": "2026-03-21 ~ 2026-03-28",
+  "all_categories": [
+    "水果",
+    "蔬菜",
+    "肉类",
+    "干货",
+    "面点",
+    "豆制品",
+    "粮油",
+    "熟食",
+    "海鲜",
+    "酒水",
+    "冻品",
+    "餐饮",
+    "文具百货"
+  ],
+  "daily_summary": [
+    {
+      "date": "2026-03-21",
+      "total_revenue": 67853.06,
+      "categories": {
+        "肉类": {
+          "revenue": 24389.07,
+          "income": 20924.63,
+          "orders": 532,
+          "stores": [
+            "砂锅麻辣烫",
+            "2-013/牧原肉食",
+            "李记无水牛羊肉",
+            "沈阳铁板鸡架",
+            "美式烤鸡",
+            "兴源肉铺",
+            "湖南腊肉",
+            "好想吃酱汁烤鸭肠",
+            "大锅卤肉",
+            "老面千层馒头",
+            "姗姗羊肉铺",
+            "活禽现杀",
+            "中润鲜肉直营铺"
+          ]
+        },
+        "海鲜": {
+          "revenue": 17235.51,
+          "income": 16958.59,
+          "orders": 415,
+          "stores": [
+            "郑好海鲜3秤",
+            "郑好海鲜1秤",
+            "郑好海鲜2秤"
+          ]
+        },
+        "水果": {
+          "revenue": 8059.53,
+          "income": 7964.36,
+          "orders": 381,
+          "stores": [
+            "2-071/海南产地水果直营店（1店）",
+            "2-072/百果园·每日鲜果"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 4215.77,
+          "income": 4211.6,
+          "orders": 654,
+          "stores": [
+            "美玲蔬菜3",
+            "美玲蔬菜1",
+            "美玲蔬菜2"
+          ]
+        },
+        "豆制品": {
+          "revenue": 3752.96,
+          "income": 3650.59,
+          "orders": 242,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "干货": {
+          "revenue": 2947.54,
+          "income": 2893.7,
+          "orders": 100,
+          "stores": [
+            "五谷食补坊",
+            "2-106/李记南北干果",
+            "2-102/李记南北干果"
+          ]
+        },
+        "冻品": {
+          "revenue": 2826.12,
+          "income": 2772.35,
+          "orders": 96,
+          "stores": [
+            "2-062/乐味客（2号）",
+            "2-058/乐味客冻品"
+          ]
+        },
+        "熟食": {
+          "revenue": 2406.55,
+          "income": 2406.55,
+          "orders": 160,
+          "stores": [
+            "汉味面馆",
+            "2-099/老百味"
+          ]
+        },
+        "文具百货": {
+          "revenue": 982.41,
+          "income": 982.41,
+          "orders": 124,
+          "stores": [
+            "汪哥折扣仓",
+            "益思益学",
+            "雪糕梦工厂"
+          ]
+        },
+        "面点": {
+          "revenue": 532.04,
+          "income": 532.04,
+          "orders": 111,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "粮油": {
+          "revenue": 236.75,
+          "income": 236.75,
+          "orders": 17,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "酒水": {
+          "revenue": 222.0,
+          "income": 222.0,
+          "orders": 4,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "其他": {
+          "revenue": 46.81,
+          "income": 46.81,
+          "orders": 3,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 7952.92,
+          "income": 6990.21,
+          "orders": 120
+        },
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 7775.61,
+          "income": 7730.61,
+          "orders": 188
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 5473.75,
+          "income": 5385.4,
+          "orders": 238
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 4759.15,
+          "income": 4606.43,
+          "orders": 127
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 4700.75,
+          "income": 4621.55,
+          "orders": 100
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 4527.17,
+          "income": 3946.28,
+          "orders": 48
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 3826.95,
+          "income": 2908.2,
+          "orders": 46
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 3752.96,
+          "income": 3650.59,
+          "orders": 242
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 2791.47,
+          "income": 2630.51,
+          "orders": 90
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 2585.78,
+          "income": 2578.96,
+          "orders": 143
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 2502.17,
+          "income": 1710.12,
+          "orders": 46
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 2370.23,
+          "income": 2316.46,
+          "orders": 73
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 2348.76,
+          "income": 2333.2,
+          "orders": 81
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 2205.55,
+          "income": 2205.55,
+          "orders": 141
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1938.96,
+          "income": 1936.23,
+          "orders": 237
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1594.44,
+          "income": 1593.0,
+          "orders": 256
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 1127.97,
+          "income": 1080.57,
+          "orders": 43
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 682.37,
+          "income": 682.37,
+          "orders": 161
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 532.04,
+          "income": 532.04,
+          "orders": 111
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 511.51,
+          "income": 511.51,
+          "orders": 36
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 455.89,
+          "income": 455.89,
+          "orders": 23
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 385.84,
+          "income": 385.84,
+          "orders": 22
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 384.88,
+          "income": 346.6,
+          "orders": 15
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 384.0,
+          "income": 384.0,
+          "orders": 45
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 380.5,
+          "income": 380.5,
+          "orders": 83
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 311.12,
+          "income": 311.12,
+          "orders": 25
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 236.75,
+          "income": 236.75,
+          "orders": 17
+        },
+        {
+          "store": "砂锅麻辣烫",
+          "category": "肉类",
+          "revenue": 229.0,
+          "income": 229.0,
+          "orders": 3
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 222.0,
+          "income": 222.0,
+          "orders": 4
+        },
+        {
+          "store": "五谷食补坊",
+          "category": "干货",
+          "revenue": 213.9,
+          "income": 213.9,
+          "orders": 4
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 201.0,
+          "income": 201.0,
+          "orders": 19
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 148.2,
+          "income": 148.2,
+          "orders": 9
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 118.8,
+          "income": 118.8,
+          "orders": 9
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 90.4,
+          "income": 90.4,
+          "orders": 5
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 83.46,
+          "income": 81.78,
+          "orders": 26
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 46.81,
+          "income": 46.81,
+          "orders": 3
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "total_revenue": 52294.38,
+      "categories": {
+        "肉类": {
+          "revenue": 20371.98,
+          "income": 18326.03,
+          "orders": 433,
+          "stores": [
+            "姗姗羊肉铺",
+            "好想吃酱汁烤鸭肠",
+            "沈阳铁板鸡架",
+            "美式烤鸡",
+            "老面千层馒头",
+            "2-013/牧原肉食",
+            "兴源肉铺",
+            "活禽现杀",
+            "中润鲜肉直营铺",
+            "湖南腊肉",
+            "李记无水牛羊肉",
+            "大锅卤肉"
+          ]
+        },
+        "海鲜": {
+          "revenue": 8431.13,
+          "income": 8429.78,
+          "orders": 226,
+          "stores": [
+            "郑好海鲜3秤",
+            "郑好海鲜1秤",
+            "郑好海鲜2秤"
+          ]
+        },
+        "水果": {
+          "revenue": 7694.85,
+          "income": 7657.17,
+          "orders": 367,
+          "stores": [
+            "2-072/百果园·每日鲜果",
+            "2-071/海南产地水果直营店（1店）"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 3383.58,
+          "income": 3372.9,
+          "orders": 529,
+          "stores": [
+            "美玲蔬菜1",
+            "美玲蔬菜3",
+            "美玲蔬菜2"
+          ]
+        },
+        "冻品": {
+          "revenue": 2662.51,
+          "income": 2601.82,
+          "orders": 80,
+          "stores": [
+            "2-058/乐味客冻品",
+            "2-062/乐味客（2号）"
+          ]
+        },
+        "干货": {
+          "revenue": 2596.11,
+          "income": 2541.9,
+          "orders": 71,
+          "stores": [
+            "2-102/李记南北干果",
+            "2-106/李记南北干果"
+          ]
+        },
+        "熟食": {
+          "revenue": 2574.8,
+          "income": 2574.8,
+          "orders": 140,
+          "stores": [
+            "汉味面馆",
+            "2-099/老百味"
+          ]
+        },
+        "豆制品": {
+          "revenue": 2452.2,
+          "income": 2392.4,
+          "orders": 192,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "文具百货": {
+          "revenue": 932.85,
+          "income": 932.85,
+          "orders": 131,
+          "stores": [
+            "汪哥折扣仓",
+            "益思益学",
+            "雪糕梦工厂"
+          ]
+        },
+        "酒水": {
+          "revenue": 509.0,
+          "income": 509.0,
+          "orders": 6,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "面点": {
+          "revenue": 356.57,
+          "income": 356.51,
+          "orders": 93,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "粮油": {
+          "revenue": 239.0,
+          "income": 239.0,
+          "orders": 8,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "其他": {
+          "revenue": 89.8,
+          "income": 89.8,
+          "orders": 5,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 8030.11,
+          "income": 7639.81,
+          "orders": 108
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 5506.0,
+          "income": 5474.2,
+          "orders": 236
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 4208.96,
+          "income": 4208.96,
+          "orders": 119
+        },
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 4065.07,
+          "income": 4063.72,
+          "orders": 102
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 3053.49,
+          "income": 2154.09,
+          "orders": 42
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 2471.29,
+          "income": 2411.2,
+          "orders": 66
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 2452.2,
+          "income": 2392.4,
+          "orders": 192
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 2445.8,
+          "income": 2445.8,
+          "orders": 128
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 2188.85,
+          "income": 2182.97,
+          "orders": 131
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 2126.31,
+          "income": 2078.1,
+          "orders": 61
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 2096.87,
+          "income": 1942.41,
+          "orders": 76
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 2067.41,
+          "income": 1883.09,
+          "orders": 29
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 1967.67,
+          "income": 1602.04,
+          "orders": 36
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 1716.01,
+          "income": 1668.61,
+          "orders": 30
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1679.65,
+          "income": 1668.97,
+          "orders": 216
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1080.35,
+          "income": 1080.35,
+          "orders": 186
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 623.58,
+          "income": 623.58,
+          "orders": 127
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 613.41,
+          "income": 612.41,
+          "orders": 23
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 509.0,
+          "income": 509.0,
+          "orders": 6
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 469.8,
+          "income": 463.8,
+          "orders": 10
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 448.5,
+          "income": 448.5,
+          "orders": 92
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 389.81,
+          "income": 386.37,
+          "orders": 29
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 356.57,
+          "income": 356.51,
+          "orders": 93
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 325.35,
+          "income": 325.35,
+          "orders": 33
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 239.0,
+          "income": 239.0,
+          "orders": 8
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 192.0,
+          "income": 192.0,
+          "orders": 25
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 191.22,
+          "income": 190.62,
+          "orders": 14
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 159.0,
+          "income": 159.0,
+          "orders": 6
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 157.1,
+          "income": 157.1,
+          "orders": 5
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 129.0,
+          "income": 129.0,
+          "orders": 12
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 90.0,
+          "income": 90.0,
+          "orders": 6
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 89.9,
+          "income": 89.9,
+          "orders": 9
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 89.8,
+          "income": 89.8,
+          "orders": 5
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 65.3,
+          "income": 65.3,
+          "orders": 20
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "total_revenue": 30885.82,
+      "categories": {
+        "肉类": {
+          "revenue": 9252.06,
+          "income": 8757.57,
+          "orders": 210,
+          "stores": [
+            "美式烤鸡",
+            "沈阳铁板鸡架",
+            "老面千层馒头",
+            "2-013/牧原肉食",
+            "兴源肉铺",
+            "中润鲜肉直营铺",
+            "活禽现杀",
+            "大锅卤肉",
+            "姗姗羊肉铺",
+            "湖南腊肉",
+            "李记无水牛羊肉"
+          ]
+        },
+        "海鲜": {
+          "revenue": 6420.97,
+          "income": 6420.37,
+          "orders": 137,
+          "stores": [
+            "郑好海鲜2秤",
+            "郑好海鲜1秤",
+            "郑好海鲜3秤"
+          ]
+        },
+        "水果": {
+          "revenue": 4487.19,
+          "income": 4403.24,
+          "orders": 215,
+          "stores": [
+            "2-072/百果园·每日鲜果",
+            "2-071/海南产地水果直营店（1店）"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 3098.3,
+          "income": 3092.06,
+          "orders": 426,
+          "stores": [
+            "美玲蔬菜3",
+            "美玲蔬菜1",
+            "美玲蔬菜2"
+          ]
+        },
+        "干货": {
+          "revenue": 2385.3,
+          "income": 2361.2,
+          "orders": 63,
+          "stores": [
+            "五谷食补坊",
+            "2-106/李记南北干果",
+            "2-102/李记南北干果"
+          ]
+        },
+        "酒水": {
+          "revenue": 1345.0,
+          "income": 1345.0,
+          "orders": 8,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "豆制品": {
+          "revenue": 1194.39,
+          "income": 1164.13,
+          "orders": 133,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "熟食": {
+          "revenue": 719.13,
+          "income": 719.13,
+          "orders": 43,
+          "stores": [
+            "汉味面馆",
+            "2-099/老百味"
+          ]
+        },
+        "冻品": {
+          "revenue": 656.47,
+          "income": 656.15,
+          "orders": 27,
+          "stores": [
+            "2-058/乐味客冻品",
+            "2-062/乐味客（2号）"
+          ]
+        },
+        "文具百货": {
+          "revenue": 626.5,
+          "income": 626.5,
+          "orders": 40,
+          "stores": [
+            "汪哥折扣仓",
+            "益思益学",
+            "雪糕梦工厂"
+          ]
+        },
+        "面点": {
+          "revenue": 277.84,
+          "income": 277.84,
+          "orders": 68,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "其他": {
+          "revenue": 228.53,
+          "income": 228.53,
+          "orders": 6,
+          "stores": [
+            "永馨圆"
+          ]
+        },
+        "粮油": {
+          "revenue": 194.14,
+          "income": 194.14,
+          "orders": 11,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 4207.61,
+          "income": 3977.21,
+          "orders": 53
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 3448.23,
+          "income": 3364.31,
+          "orders": 141
+        },
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 2460.88,
+          "income": 2460.28,
+          "orders": 57
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 2073.38,
+          "income": 2073.38,
+          "orders": 23
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 1886.71,
+          "income": 1886.71,
+          "orders": 57
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 1817.95,
+          "income": 1794.7,
+          "orders": 48
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1456.69,
+          "income": 1450.59,
+          "orders": 164
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 1345.0,
+          "income": 1345.0,
+          "orders": 8
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1304.43,
+          "income": 1304.29,
+          "orders": 187
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 1194.39,
+          "income": 1164.13,
+          "orders": 133
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 1192.99,
+          "income": 1057.05,
+          "orders": 16
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 1038.96,
+          "income": 1038.93,
+          "orders": 74
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 828.98,
+          "income": 827.63,
+          "orders": 12
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 755.02,
+          "income": 643.59,
+          "orders": 13
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 741.01,
+          "income": 740.13,
+          "orders": 25
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 712.27,
+          "income": 701.0,
+          "orders": 29
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 683.13,
+          "income": 683.13,
+          "orders": 41
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 492.84,
+          "income": 492.52,
+          "orders": 17
+        },
+        {
+          "store": "五谷食补坊",
+          "category": "干货",
+          "revenue": 467.0,
+          "income": 467.0,
+          "orders": 7
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 387.7,
+          "income": 387.7,
+          "orders": 9
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 370.26,
+          "income": 370.26,
+          "orders": 18
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 337.18,
+          "income": 337.18,
+          "orders": 75
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 277.84,
+          "income": 277.84,
+          "orders": 68
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 228.53,
+          "income": 228.53,
+          "orders": 6
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 194.14,
+          "income": 194.14,
+          "orders": 11
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 178.06,
+          "income": 176.52,
+          "orders": 15
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 170.79,
+          "income": 170.79,
+          "orders": 9
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 163.63,
+          "income": 163.63,
+          "orders": 10
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 122.8,
+          "income": 122.8,
+          "orders": 14
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 116.0,
+          "income": 116.0,
+          "orders": 17
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 100.35,
+          "income": 99.5,
+          "orders": 8
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 51.07,
+          "income": 49.39,
+          "orders": 16
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 44.0,
+          "income": 44.0,
+          "orders": 4
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 36.0,
+          "income": 36.0,
+          "orders": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "total_revenue": 65247.73,
+      "categories": {
+        "海鲜": {
+          "revenue": 36498.49,
+          "income": 33241.33,
+          "orders": 685,
+          "stores": [
+            "郑好海鲜3秤",
+            "郑好海鲜1秤",
+            "郑好海鲜2秤"
+          ]
+        },
+        "肉类": {
+          "revenue": 11009.58,
+          "income": 10127.59,
+          "orders": 273,
+          "stores": [
+            "2-013/牧原肉食",
+            "好想吃酱汁烤鸭肠",
+            "沈阳铁板鸡架",
+            "美式烤鸡",
+            "大锅卤肉",
+            "中润鲜肉直营铺",
+            "姗姗羊肉铺",
+            "李记无水牛羊肉",
+            "兴源肉铺",
+            "湖南腊肉",
+            "老面千层馒头",
+            "活禽现杀"
+          ]
+        },
+        "水果": {
+          "revenue": 5763.04,
+          "income": 5742.35,
+          "orders": 276,
+          "stores": [
+            "2-072/百果园·每日鲜果",
+            "2-071/海南产地水果直营店（1店）"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 3789.37,
+          "income": 3775.99,
+          "orders": 550,
+          "stores": [
+            "美玲蔬菜1",
+            "美玲蔬菜2",
+            "美玲蔬菜3"
+          ]
+        },
+        "干货": {
+          "revenue": 2499.76,
+          "income": 2483.7,
+          "orders": 102,
+          "stores": [
+            "2-106/李记南北干果",
+            "五谷食补坊",
+            "2-102/李记南北干果"
+          ]
+        },
+        "豆制品": {
+          "revenue": 1973.08,
+          "income": 1882.19,
+          "orders": 189,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "熟食": {
+          "revenue": 1147.4,
+          "income": 1147.4,
+          "orders": 77,
+          "stores": [
+            "2-099/老百味"
+          ]
+        },
+        "冻品": {
+          "revenue": 851.88,
+          "income": 850.92,
+          "orders": 40,
+          "stores": [
+            "2-058/乐味客冻品",
+            "2-062/乐味客（2号）"
+          ]
+        },
+        "酒水": {
+          "revenue": 692.9,
+          "income": 692.9,
+          "orders": 5,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "文具百货": {
+          "revenue": 509.6,
+          "income": 509.6,
+          "orders": 43,
+          "stores": [
+            "汪哥折扣仓",
+            "雪糕梦工厂",
+            "益思益学"
+          ]
+        },
+        "面点": {
+          "revenue": 307.69,
+          "income": 307.69,
+          "orders": 66,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "粮油": {
+          "revenue": 153.59,
+          "income": 153.59,
+          "orders": 9,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "其他": {
+          "revenue": 51.35,
+          "income": 51.35,
+          "orders": 4,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 28197.19,
+          "income": 25153.99,
+          "orders": 499
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 4884.72,
+          "income": 4795.32,
+          "orders": 71
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 4491.38,
+          "income": 4470.82,
+          "orders": 190
+        },
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 3888.96,
+          "income": 3531.1,
+          "orders": 55
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 3416.58,
+          "income": 3292.02,
+          "orders": 115
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 2066.49,
+          "income": 1736.09,
+          "orders": 29
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 1973.08,
+          "income": 1882.19,
+          "orders": 189
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 1814.12,
+          "income": 1804.2,
+          "orders": 79
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1752.79,
+          "income": 1740.29,
+          "orders": 201
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1602.06,
+          "income": 1601.18,
+          "orders": 238
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 1271.66,
+          "income": 1271.53,
+          "orders": 86
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 1147.4,
+          "income": 1147.4,
+          "orders": 77
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 1124.01,
+          "income": 1124.01,
+          "orders": 19
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 1115.87,
+          "income": 1115.87,
+          "orders": 39
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 1031.01,
+          "income": 841.01,
+          "orders": 20
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 855.63,
+          "income": 855.63,
+          "orders": 34
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 692.9,
+          "income": 692.9,
+          "orders": 5
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 497.87,
+          "income": 495.87,
+          "orders": 23
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 469.77,
+          "income": 468.81,
+          "orders": 28
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 434.52,
+          "income": 434.52,
+          "orders": 111
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 405.84,
+          "income": 399.7,
+          "orders": 17
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 382.11,
+          "income": 382.11,
+          "orders": 12
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 307.69,
+          "income": 307.69,
+          "orders": 66
+        },
+        {
+          "store": "五谷食补坊",
+          "category": "干货",
+          "revenue": 279.8,
+          "income": 279.8,
+          "orders": 6
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 246.0,
+          "income": 246.0,
+          "orders": 9
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 245.5,
+          "income": 245.45,
+          "orders": 22
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 153.59,
+          "income": 153.59,
+          "orders": 9
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 148.6,
+          "income": 148.6,
+          "orders": 15
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 115.0,
+          "income": 115.0,
+          "orders": 19
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 65.8,
+          "income": 65.8,
+          "orders": 5
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 59.94,
+          "income": 58.26,
+          "orders": 20
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 51.35,
+          "income": 51.35,
+          "orders": 4
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 34.0,
+          "income": 34.0,
+          "orders": 3
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 24.5,
+          "income": 24.5,
+          "orders": 4
+        }
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "total_revenue": 29265.89,
+      "categories": {
+        "肉类": {
+          "revenue": 8143.37,
+          "income": 7514.88,
+          "orders": 209,
+          "stores": [
+            "好想吃酱汁烤鸭肠",
+            "沈阳铁板鸡架",
+            "姗姗羊肉铺",
+            "中润鲜肉直营铺",
+            "美式烤鸡",
+            "大锅卤肉",
+            "湖南腊肉",
+            "活禽现杀",
+            "兴源肉铺",
+            "李记无水牛羊肉",
+            "2-013/牧原肉食",
+            "老面千层馒头"
+          ]
+        },
+        "海鲜": {
+          "revenue": 7860.96,
+          "income": 7764.58,
+          "orders": 187,
+          "stores": [
+            "郑好海鲜2秤",
+            "郑好海鲜1秤",
+            "郑好海鲜3秤"
+          ]
+        },
+        "水果": {
+          "revenue": 3705.02,
+          "income": 3699.49,
+          "orders": 211,
+          "stores": [
+            "2-072/百果园·每日鲜果",
+            "2-071/海南产地水果直营店（1店）"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 2751.42,
+          "income": 2743.15,
+          "orders": 385,
+          "stores": [
+            "美玲蔬菜3",
+            "美玲蔬菜1",
+            "美玲蔬菜2"
+          ]
+        },
+        "干货": {
+          "revenue": 1831.28,
+          "income": 1803.2,
+          "orders": 53,
+          "stores": [
+            "五谷食补坊",
+            "2-106/李记南北干果",
+            "2-102/李记南北干果"
+          ]
+        },
+        "豆制品": {
+          "revenue": 1656.52,
+          "income": 1611.62,
+          "orders": 142,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "熟食": {
+          "revenue": 1214.96,
+          "income": 1214.96,
+          "orders": 68,
+          "stores": [
+            "汉味面馆",
+            "2-099/老百味"
+          ]
+        },
+        "冻品": {
+          "revenue": 532.19,
+          "income": 532.19,
+          "orders": 21,
+          "stores": [
+            "2-058/乐味客冻品",
+            "2-062/乐味客（2号）"
+          ]
+        },
+        "粮油": {
+          "revenue": 529.32,
+          "income": 529.32,
+          "orders": 19,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "酒水": {
+          "revenue": 374.0,
+          "income": 374.0,
+          "orders": 5,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "面点": {
+          "revenue": 345.2,
+          "income": 345.0,
+          "orders": 80,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "文具百货": {
+          "revenue": 237.56,
+          "income": 237.56,
+          "orders": 32,
+          "stores": [
+            "汪哥折扣仓",
+            "益思益学",
+            "雪糕梦工厂"
+          ]
+        },
+        "其他": {
+          "revenue": 84.09,
+          "income": 78.09,
+          "orders": 5,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 3273.4,
+          "income": 3272.02,
+          "orders": 86
+        },
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 2983.19,
+          "income": 2704.6,
+          "orders": 47
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 2884.55,
+          "income": 2879.03,
+          "orders": 159
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 2674.66,
+          "income": 2624.66,
+          "orders": 75
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 1912.9,
+          "income": 1867.9,
+          "orders": 26
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 1656.52,
+          "income": 1611.62,
+          "orders": 142
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 1585.25,
+          "income": 1352.45,
+          "orders": 19
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 1401.82,
+          "income": 1381.6,
+          "orders": 36
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1190.12,
+          "income": 1190.12,
+          "orders": 153
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 1177.96,
+          "income": 1177.96,
+          "orders": 65
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1028.13,
+          "income": 1020.85,
+          "orders": 137
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 942.69,
+          "income": 942.53,
+          "orders": 13
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 820.47,
+          "income": 820.46,
+          "orders": 52
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 771.1,
+          "income": 655.84,
+          "orders": 14
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 534.41,
+          "income": 534.41,
+          "orders": 23
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 533.17,
+          "income": 532.18,
+          "orders": 95
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 529.32,
+          "income": 529.32,
+          "orders": 19
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 515.58,
+          "income": 515.58,
+          "orders": 26
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 470.01,
+          "income": 470.01,
+          "orders": 23
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 399.46,
+          "income": 391.6,
+          "orders": 16
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 374.0,
+          "income": 374.0,
+          "orders": 5
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 345.2,
+          "income": 345.0,
+          "orders": 80
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 338.51,
+          "income": 338.51,
+          "orders": 11
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 193.68,
+          "income": 193.68,
+          "orders": 10
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 163.98,
+          "income": 163.98,
+          "orders": 12
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 94.0,
+          "income": 94.0,
+          "orders": 21
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 84.09,
+          "income": 78.09,
+          "orders": 5
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 74.86,
+          "income": 74.86,
+          "orders": 9
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 73.9,
+          "income": 73.9,
+          "orders": 4
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 68.7,
+          "income": 68.7,
+          "orders": 2
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 58.22,
+          "income": 56.54,
+          "orders": 21
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 37.0,
+          "income": 37.0,
+          "orders": 3
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 30.0,
+          "income": 30.0,
+          "orders": 5
+        },
+        {
+          "store": "五谷食补坊",
+          "category": "干货",
+          "revenue": 30.0,
+          "income": 30.0,
+          "orders": 1
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 15.04,
+          "income": 15.04,
+          "orders": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "total_revenue": 32431.57,
+      "categories": {
+        "肉类": {
+          "revenue": 10087.52,
+          "income": 9716.59,
+          "orders": 258,
+          "stores": [
+            "大锅卤肉",
+            "美式烤鸡",
+            "沈阳铁板鸡架",
+            "李记无水牛羊肉",
+            "好想吃酱汁烤鸭肠",
+            "老面千层馒头",
+            "中润鲜肉直营铺",
+            "2-013/牧原肉食",
+            "湖南腊肉",
+            "姗姗羊肉铺",
+            "活禽现杀",
+            "兴源肉铺"
+          ]
+        },
+        "海鲜": {
+          "revenue": 7559.61,
+          "income": 7559.31,
+          "orders": 169,
+          "stores": [
+            "郑好海鲜2秤",
+            "郑好海鲜3秤",
+            "郑好海鲜1秤"
+          ]
+        },
+        "水果": {
+          "revenue": 3435.59,
+          "income": 3417.04,
+          "orders": 190,
+          "stores": [
+            "2-072/百果园·每日鲜果",
+            "2-071/海南产地水果直营店（1店）"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 3224.22,
+          "income": 3221.67,
+          "orders": 450,
+          "stores": [
+            "美玲蔬菜1",
+            "美玲蔬菜2",
+            "美玲蔬菜3"
+          ]
+        },
+        "豆制品": {
+          "revenue": 2051.26,
+          "income": 1930.81,
+          "orders": 158,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "熟食": {
+          "revenue": 1560.28,
+          "income": 1560.28,
+          "orders": 71,
+          "stores": [
+            "汉味面馆",
+            "2-099/老百味"
+          ]
+        },
+        "干货": {
+          "revenue": 1530.17,
+          "income": 1486.1,
+          "orders": 60,
+          "stores": [
+            "2-106/李记南北干果",
+            "五谷食补坊",
+            "2-102/李记南北干果"
+          ]
+        },
+        "冻品": {
+          "revenue": 783.11,
+          "income": 782.43,
+          "orders": 28,
+          "stores": [
+            "2-062/乐味客（2号）",
+            "2-058/乐味客冻品"
+          ]
+        },
+        "文具百货": {
+          "revenue": 726.05,
+          "income": 726.05,
+          "orders": 35,
+          "stores": [
+            "汪哥折扣仓",
+            "益思益学",
+            "雪糕梦工厂"
+          ]
+        },
+        "酒水": {
+          "revenue": 705.0,
+          "income": 705.0,
+          "orders": 3,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "粮油": {
+          "revenue": 446.47,
+          "income": 446.47,
+          "orders": 17,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "面点": {
+          "revenue": 257.79,
+          "income": 257.79,
+          "orders": 74,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "其他": {
+          "revenue": 64.5,
+          "income": 64.5,
+          "orders": 6,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 3440.58,
+          "income": 3259.38,
+          "orders": 48
+        },
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 3381.05,
+          "income": 3381.05,
+          "orders": 88
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 2491.33,
+          "income": 2473.05,
+          "orders": 130
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 2344.56,
+          "income": 2344.26,
+          "orders": 63
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 2051.26,
+          "income": 1930.81,
+          "orders": 158
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 1853.58,
+          "income": 1820.78,
+          "orders": 27
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 1834.0,
+          "income": 1834.0,
+          "orders": 18
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1504.93,
+          "income": 1504.63,
+          "orders": 168
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 1481.78,
+          "income": 1481.78,
+          "orders": 65
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 1394.14,
+          "income": 1392.53,
+          "orders": 19
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1175.17,
+          "income": 1174.79,
+          "orders": 182
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 1106.21,
+          "income": 1065.2,
+          "orders": 50
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 944.26,
+          "income": 943.99,
+          "orders": 60
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 929.17,
+          "income": 776.09,
+          "orders": 18
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 742.16,
+          "income": 741.47,
+          "orders": 32
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 725.86,
+          "income": 725.31,
+          "orders": 30
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 705.0,
+          "income": 705.0,
+          "orders": 3
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 613.86,
+          "income": 612.86,
+          "orders": 19
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 544.12,
+          "income": 542.25,
+          "orders": 100
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 446.47,
+          "income": 446.47,
+          "orders": 17
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 427.82,
+          "income": 427.14,
+          "orders": 12
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 355.29,
+          "income": 355.29,
+          "orders": 16
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 322.96,
+          "income": 319.9,
+          "orders": 8
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 303.85,
+          "income": 303.85,
+          "orders": 14
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 296.2,
+          "income": 296.2,
+          "orders": 7
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 257.79,
+          "income": 257.79,
+          "orders": 74
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 192.91,
+          "income": 192.91,
+          "orders": 22
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 126.0,
+          "income": 126.0,
+          "orders": 14
+        },
+        {
+          "store": "五谷食补坊",
+          "category": "干货",
+          "revenue": 101.0,
+          "income": 101.0,
+          "orders": 2
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 78.5,
+          "income": 78.5,
+          "orders": 6
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 71.26,
+          "income": 71.26,
+          "orders": 24
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 68.0,
+          "income": 68.0,
+          "orders": 10
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 64.5,
+          "income": 64.5,
+          "orders": 6
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 38.0,
+          "income": 38.0,
+          "orders": 7
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 18.0,
+          "income": 18.0,
+          "orders": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "total_revenue": 36937.27,
+      "categories": {
+        "肉类": {
+          "revenue": 11011.95,
+          "income": 10391.99,
+          "orders": 249,
+          "stores": [
+            "李记无水牛羊肉",
+            "兴源肉铺",
+            "大锅卤肉",
+            "美式烤鸡",
+            "沈阳铁板鸡架",
+            "好想吃酱汁烤鸭肠",
+            "姗姗羊肉铺",
+            "老面千层馒头",
+            "2-013/牧原肉食",
+            "中润鲜肉直营铺",
+            "活禽现杀",
+            "湖南腊肉"
+          ]
+        },
+        "海鲜": {
+          "revenue": 7672.95,
+          "income": 7672.95,
+          "orders": 161,
+          "stores": [
+            "郑好海鲜1秤",
+            "郑好海鲜3秤",
+            "郑好海鲜2秤"
+          ]
+        },
+        "水果": {
+          "revenue": 4659.95,
+          "income": 4401.4,
+          "orders": 240,
+          "stores": [
+            "2-072/百果园·每日鲜果",
+            "2-071/海南产地水果直营店（1店）"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 2894.41,
+          "income": 2888.43,
+          "orders": 413,
+          "stores": [
+            "美玲蔬菜2",
+            "美玲蔬菜3",
+            "美玲蔬菜1"
+          ]
+        },
+        "豆制品": {
+          "revenue": 2023.35,
+          "income": 1992.25,
+          "orders": 134,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "熟食": {
+          "revenue": 2017.62,
+          "income": 2017.62,
+          "orders": 73,
+          "stores": [
+            "汉味面馆",
+            "2-099/老百味"
+          ]
+        },
+        "干货": {
+          "revenue": 1630.93,
+          "income": 1571.1,
+          "orders": 55,
+          "stores": [
+            "五谷食补坊",
+            "2-102/李记南北干果",
+            "2-106/李记南北干果"
+          ]
+        },
+        "酒水": {
+          "revenue": 1568.8,
+          "income": 1568.8,
+          "orders": 11,
+          "stores": [
+            "2-097/状元红"
+          ]
+        },
+        "冻品": {
+          "revenue": 1460.54,
+          "income": 1459.04,
+          "orders": 32,
+          "stores": [
+            "2-062/乐味客（2号）",
+            "2-058/乐味客冻品"
+          ]
+        },
+        "文具百货": {
+          "revenue": 1191.24,
+          "income": 1191.24,
+          "orders": 59,
+          "stores": [
+            "汪哥折扣仓",
+            "益思益学",
+            "雪糕梦工厂"
+          ]
+        },
+        "粮油": {
+          "revenue": 426.2,
+          "income": 426.2,
+          "orders": 19,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "面点": {
+          "revenue": 303.32,
+          "income": 303.32,
+          "orders": 74,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "其他": {
+          "revenue": 76.01,
+          "income": 76.01,
+          "orders": 3,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 4498.68,
+          "income": 4222.28,
+          "orders": 52
+        },
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 3997.88,
+          "income": 3997.88,
+          "orders": 88
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 3675.48,
+          "income": 3451.53,
+          "orders": 188
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 2083.09,
+          "income": 1895.87,
+          "orders": 32
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 2023.35,
+          "income": 1992.25,
+          "orders": 134
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 1976.62,
+          "income": 1976.62,
+          "orders": 69
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 1873.89,
+          "income": 1873.89,
+          "orders": 50
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 1801.18,
+          "income": 1801.18,
+          "orders": 23
+        },
+        {
+          "store": "2-097/状元红",
+          "category": "酒水",
+          "revenue": 1568.8,
+          "income": 1568.8,
+          "orders": 11
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 1484.46,
+          "income": 1483.47,
+          "orders": 165
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 1318.49,
+          "income": 1316.99,
+          "orders": 26
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 1195.92,
+          "income": 1141.2,
+          "orders": 41
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 1047.19,
+          "income": 1043.19,
+          "orders": 156
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 1043.17,
+          "income": 1001.83,
+          "orders": 14
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 984.47,
+          "income": 949.87,
+          "orders": 52
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 918.86,
+          "income": 804.86,
+          "orders": 16
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 705.9,
+          "income": 705.9,
+          "orders": 13
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 698.24,
+          "income": 698.24,
+          "orders": 26
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 686.18,
+          "income": 685.18,
+          "orders": 28
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 595.55,
+          "income": 595.55,
+          "orders": 23
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 426.2,
+          "income": 426.2,
+          "orders": 19
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 362.76,
+          "income": 361.77,
+          "orders": 92
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 303.32,
+          "income": 303.32,
+          "orders": 74
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 292.81,
+          "income": 287.7,
+          "orders": 11
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 263.6,
+          "income": 263.6,
+          "orders": 33
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 221.74,
+          "income": 221.74,
+          "orders": 13
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 153.71,
+          "income": 153.71,
+          "orders": 11
+        },
+        {
+          "store": "五谷食补坊",
+          "category": "干货",
+          "revenue": 142.2,
+          "income": 142.2,
+          "orders": 3
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 142.05,
+          "income": 142.05,
+          "orders": 6
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 141.5,
+          "income": 141.5,
+          "orders": 20
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 85.2,
+          "income": 85.2,
+          "orders": 9
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 76.01,
+          "income": 76.01,
+          "orders": 3
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 68.8,
+          "income": 68.8,
+          "orders": 6
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 41.0,
+          "income": 41.0,
+          "orders": 4
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 38.97,
+          "income": 38.97,
+          "orders": 12
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "total_revenue": 32822.21,
+      "categories": {
+        "肉类": {
+          "revenue": 11366.81,
+          "income": 9251.37,
+          "orders": 219,
+          "stores": [
+            "美式烤鸡",
+            "好想吃酱汁烤鸭肠",
+            "2-013/牧原肉食",
+            "沈阳铁板鸡架",
+            "湖南腊肉",
+            "姗姗羊肉铺",
+            "大锅卤肉",
+            "老面千层馒头",
+            "活禽现杀",
+            "中润鲜肉直营铺",
+            "兴源肉铺",
+            "李记无水牛羊肉"
+          ]
+        },
+        "海鲜": {
+          "revenue": 10980.27,
+          "income": 9721.53,
+          "orders": 247,
+          "stores": [
+            "郑好海鲜2秤",
+            "郑好海鲜3秤",
+            "郑好海鲜1秤"
+          ]
+        },
+        "水果": {
+          "revenue": 2956.54,
+          "income": 2782.46,
+          "orders": 162,
+          "stores": [
+            "2-071/海南产地水果直营店（1店）",
+            "2-072/百果园·每日鲜果"
+          ]
+        },
+        "蔬菜": {
+          "revenue": 1898.09,
+          "income": 1855.51,
+          "orders": 265,
+          "stores": [
+            "美玲蔬菜1",
+            "美玲蔬菜2",
+            "美玲蔬菜3"
+          ]
+        },
+        "熟食": {
+          "revenue": 1533.31,
+          "income": 1533.31,
+          "orders": 65,
+          "stores": [
+            "2-099/老百味",
+            "汉味面馆"
+          ]
+        },
+        "干货": {
+          "revenue": 1512.44,
+          "income": 1489.6,
+          "orders": 29,
+          "stores": [
+            "2-106/李记南北干果",
+            "2-102/李记南北干果"
+          ]
+        },
+        "冻品": {
+          "revenue": 1268.89,
+          "income": 1213.63,
+          "orders": 31,
+          "stores": [
+            "2-062/乐味客（2号）",
+            "2-058/乐味客冻品"
+          ]
+        },
+        "豆制品": {
+          "revenue": 868.9,
+          "income": 868.61,
+          "orders": 80,
+          "stores": [
+            "豆腐坊"
+          ]
+        },
+        "文具百货": {
+          "revenue": 229.54,
+          "income": 229.54,
+          "orders": 25,
+          "stores": [
+            "益思益学",
+            "雪糕梦工厂",
+            "汪哥折扣仓"
+          ]
+        },
+        "面点": {
+          "revenue": 134.78,
+          "income": 134.78,
+          "orders": 32,
+          "stores": [
+            "美玲面点1秤"
+          ]
+        },
+        "粮油": {
+          "revenue": 38.26,
+          "income": 38.26,
+          "orders": 4,
+          "stores": [
+            "味之源榨油坊"
+          ]
+        },
+        "其他": {
+          "revenue": 34.38,
+          "income": 34.38,
+          "orders": 2,
+          "stores": [
+            "永馨圆"
+          ]
+        }
+      },
+      "store_ranking": [
+        {
+          "store": "郑好海鲜1秤",
+          "category": "海鲜",
+          "revenue": 8698.7,
+          "income": 7503.96,
+          "orders": 182
+        },
+        {
+          "store": "李记无水牛羊肉",
+          "category": "肉类",
+          "revenue": 3551.07,
+          "income": 3094.07,
+          "orders": 49
+        },
+        {
+          "store": "姗姗羊肉铺",
+          "category": "肉类",
+          "revenue": 2099.88,
+          "income": 1215.52,
+          "orders": 20
+        },
+        {
+          "store": "2-071/海南产地水果直营店（1店）",
+          "category": "水果",
+          "revenue": 2079.32,
+          "income": 1915.16,
+          "orders": 108
+        },
+        {
+          "store": "兴源肉铺",
+          "category": "肉类",
+          "revenue": 1718.27,
+          "income": 1557.87,
+          "orders": 23
+        },
+        {
+          "store": "2-099/老百味",
+          "category": "熟食",
+          "revenue": 1530.31,
+          "income": 1530.31,
+          "orders": 64
+        },
+        {
+          "store": "活禽现杀",
+          "category": "肉类",
+          "revenue": 1502.37,
+          "income": 1074.37,
+          "orders": 24
+        },
+        {
+          "store": "郑好海鲜2秤",
+          "category": "海鲜",
+          "revenue": 1500.45,
+          "income": 1436.45,
+          "orders": 55
+        },
+        {
+          "store": "中润鲜肉直营铺",
+          "category": "肉类",
+          "revenue": 1338.73,
+          "income": 1196.41,
+          "orders": 45
+        },
+        {
+          "store": "2-102/李记南北干果",
+          "category": "干货",
+          "revenue": 1300.61,
+          "income": 1278.5,
+          "orders": 23
+        },
+        {
+          "store": "2-062/乐味客（2号）",
+          "category": "冻品",
+          "revenue": 1026.92,
+          "income": 971.92,
+          "orders": 24
+        },
+        {
+          "store": "2-072/百果园·每日鲜果",
+          "category": "水果",
+          "revenue": 877.22,
+          "income": 867.3,
+          "orders": 54
+        },
+        {
+          "store": "豆腐坊",
+          "category": "豆制品",
+          "revenue": 868.9,
+          "income": 868.61,
+          "orders": 80
+        },
+        {
+          "store": "美玲蔬菜2",
+          "category": "蔬菜",
+          "revenue": 867.54,
+          "income": 855.76,
+          "orders": 97
+        },
+        {
+          "store": "美玲蔬菜3",
+          "category": "蔬菜",
+          "revenue": 808.72,
+          "income": 777.92,
+          "orders": 120
+        },
+        {
+          "store": "郑好海鲜3秤",
+          "category": "海鲜",
+          "revenue": 781.12,
+          "income": 781.12,
+          "orders": 10
+        },
+        {
+          "store": "2-013/牧原肉食",
+          "category": "肉类",
+          "revenue": 773.24,
+          "income": 731.56,
+          "orders": 27
+        },
+        {
+          "store": "2-058/乐味客冻品",
+          "category": "冻品",
+          "revenue": 241.97,
+          "income": 241.71,
+          "orders": 7
+        },
+        {
+          "store": "美玲蔬菜1",
+          "category": "蔬菜",
+          "revenue": 221.83,
+          "income": 221.83,
+          "orders": 48
+        },
+        {
+          "store": "2-106/李记南北干果",
+          "category": "干货",
+          "revenue": 211.83,
+          "income": 211.1,
+          "orders": 6
+        },
+        {
+          "store": "大锅卤肉",
+          "category": "肉类",
+          "revenue": 161.45,
+          "income": 161.45,
+          "orders": 7
+        },
+        {
+          "store": "美玲面点1秤",
+          "category": "面点",
+          "revenue": 134.78,
+          "income": 134.78,
+          "orders": 32
+        },
+        {
+          "store": "湖南腊肉",
+          "category": "肉类",
+          "revenue": 126.48,
+          "income": 126.48,
+          "orders": 14
+        },
+        {
+          "store": "益思益学",
+          "category": "文具百货",
+          "revenue": 103.34,
+          "income": 103.34,
+          "orders": 10
+        },
+        {
+          "store": "雪糕梦工厂",
+          "category": "文具百货",
+          "revenue": 86.5,
+          "income": 86.5,
+          "orders": 13
+        },
+        {
+          "store": "美式烤鸡",
+          "category": "肉类",
+          "revenue": 62.8,
+          "income": 62.8,
+          "orders": 2
+        },
+        {
+          "store": "汪哥折扣仓",
+          "category": "文具百货",
+          "revenue": 39.7,
+          "income": 39.7,
+          "orders": 2
+        },
+        {
+          "store": "味之源榨油坊",
+          "category": "粮油",
+          "revenue": 38.26,
+          "income": 38.26,
+          "orders": 4
+        },
+        {
+          "store": "永馨圆",
+          "category": "其他",
+          "revenue": 34.38,
+          "income": 34.38,
+          "orders": 2
+        },
+        {
+          "store": "老面千层馒头",
+          "category": "肉类",
+          "revenue": 17.52,
+          "income": 15.84,
+          "orders": 6
+        },
+        {
+          "store": "沈阳铁板鸡架",
+          "category": "肉类",
+          "revenue": 10.0,
+          "income": 10.0,
+          "orders": 1
+        },
+        {
+          "store": "好想吃酱汁烤鸭肠",
+          "category": "肉类",
+          "revenue": 5.0,
+          "income": 5.0,
+          "orders": 1
+        },
+        {
+          "store": "汉味面馆",
+          "category": "熟食",
+          "revenue": 3.0,
+          "income": 3.0,
+          "orders": 1
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--card-hover:#f0f2f5;--border:#e4e8ec;--fg:#1a1a2e;--fg-dim:#7c8495;--accent:#10b981;--accent-light:#d1fae5;--accent-dark:#059669;--warn:#f59e0b;--warn-light:#fef3c7;--red:#ef4444;--red-light:#fee2e2;--blue:#3b82f6;--blue-light:#dbeafe;--purple:#8b5cf6;--orange:#f97316;--radius:14px;--radius-sm:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;background:linear-gradient(180deg,#ecfdf5 0%,#f0fdf4 40%,var(--bg) 100%);pointer-events:none;z-index:0}
+.app{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 40px}
+.header{padding:16px 0 8px;position:sticky;top:0;z-index:100;background:rgba(245,246,248,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.header-top{display:flex;justify-content:space-between;align-items:center}
+.market-name{font-size:20px;font-weight:900;letter-spacing:-.5px;color:#065f46}
+.market-sub{font-size:11px;color:var(--fg-dim);margin-top:2px;font-weight:300}
+.date-selector{display:flex;gap:6px;overflow-x:auto;padding:10px 0 6px;-ms-overflow-style:none;scrollbar-width:none}
+.date-selector::-webkit-scrollbar{display:none}
+.date-chip{flex-shrink:0;padding:7px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--card);color:var(--fg-dim);font-size:12px;cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap}
+.date-chip.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700;box-shadow:0 2px 8px rgba(16,185,129,.3)}
+.date-chip:hover:not(.active){background:var(--card-hover);border-color:#cbd5e1}
+.date-chip .wd{display:block;font-size:10px;font-weight:400;opacity:.7;margin-top:1px}
+.revenue-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;margin:10px 0 16px;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.revenue-hero::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(16,185,129,.08) 0%,transparent 70%)}
+.revenue-label{font-size:12px;color:var(--fg-dim);font-weight:400;letter-spacing:1px}
+.revenue-amount{font-family:'DM Mono',monospace;font-size:42px;font-weight:500;color:var(--fg);margin:8px 0;letter-spacing:-2px;position:relative;z-index:1}
+.revenue-amount .yen{font-size:22px;color:var(--accent);margin-right:2px;vertical-align:top;position:relative;top:8px}
+.revenue-change{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:500}
+.revenue-change.up{background:var(--accent-light);color:var(--accent-dark)}
+.revenue-change.down{background:var(--red-light);color:var(--red)}
+.quick-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.stat-value{font-family:'DM Mono',monospace;font-size:20px;font-weight:500}
+.stat-label{font-size:11px;color:var(--fg-dim);margin-top:4px}
+.stat-value.accent{color:var(--accent-dark)}.stat-value.gold{color:var(--orange)}.stat-value.blue{color:var(--blue)}
+.section{margin-bottom:22px}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:0 2px}
+.section-title{font-size:15px;font-weight:700;letter-spacing:-.3px}
+.section-badge{font-size:10px;padding:2px 8px;border-radius:8px;background:var(--accent-light);color:var(--accent-dark);font-weight:500}
+.period-row{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+.period-tab{padding:5px 12px;border-radius:16px;border:1px solid var(--border);background:var(--card);color:var(--fg-dim);font-size:11px;cursor:pointer;transition:all .15s;font-family:inherit}
+.period-tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.period-tab:hover:not(.active){background:var(--card-hover)}
+.period-tab.custom{background:var(--blue-light);border-color:var(--blue);color:#1e40af}
+.period-tab.custom.active{background:var(--blue);color:#fff}
+.date-range{display:none;gap:6px;margin-bottom:12px;align-items:center;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.date-range.show{display:flex}
+.date-range label{font-size:12px;color:var(--fg-dim);white-space:nowrap}
+.date-range input[type=date]{padding:6px 10px;border:1px solid var(--border);border-radius:8px;font-size:12px;font-family:inherit;color:var(--fg);background:var(--bg);outline:none;min-width:0;flex:1}
+.date-range input[type=date]:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(59,130,246,.15)}
+.date-range .arrow{color:var(--fg-dim);font-size:14px}
+.date-range .go-btn{padding:6px 14px;border-radius:8px;border:none;background:var(--blue);color:#fff;font-size:12px;font-family:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+.date-range .go-btn:active{opacity:.8}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.chart-card canvas{width:100%!important}
+.cat-list{display:flex;flex-direction:column;gap:8px}
+.cat-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all .15s;box-shadow:0 1px 2px rgba(0,0,0,.02)}
+.cat-item:hover{background:var(--card-hover);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.cat-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cat-info{flex:1;min-width:0}
+.cat-name{font-size:14px;font-weight:600}
+.cat-stores{font-size:11px;color:var(--fg-dim);margin-top:2px}
+.cat-right{text-align:right;flex-shrink:0}
+.cat-amount{font-family:'DM Mono',monospace;font-size:15px;font-weight:500}
+.cat-pct{font-size:11px;color:var(--fg-dim);margin-top:2px}
+.cat-bar{height:3px;border-radius:2px;background:#f1f5f9;margin-top:8px;overflow:hidden}
+.cat-bar-fill{height:100%;border-radius:2px;transition:width .8s cubic-bezier(.22,1,.36,1)}
+.insight-list{display:flex;flex-direction:column;gap:10px}
+.insight-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;border-left:3px solid var(--accent);box-shadow:0 1px 2px rgba(0,0,0,.02);animation:fadeUp .4s ease both}
+.insight-card.warn{border-left-color:var(--warn)}.insight-card.good{border-left-color:var(--accent)}.insight-card.info{border-left-color:var(--blue)}.insight-card.gold{border-left-color:var(--purple)}
+.insight-title{font-size:13px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.insight-body{font-size:12px;color:var(--fg-dim);line-height:1.8}
+.insight-tag{font-size:10px;padding:1px 6px;border-radius:6px;font-weight:500}
+.insight-tag.good{background:var(--accent-light);color:var(--accent-dark)}.insight-tag.warn{background:var(--warn-light);color:#92400e}.insight-tag.info{background:var(--blue-light);color:#1e40af}
+.tip-banner{background:linear-gradient(135deg,var(--accent-light),#ecfdf5);border:1px solid #a7f3d0;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
+.tip-icon{font-size:20px;flex-shrink:0}
+.tip-text{font-size:12px;color:#374151;line-height:1.8}
+.tip-text strong{color:#065f46}
+.update-bar{text-align:center;padding:20px 0;font-size:11px;color:var(--fg-dim);border-top:1px solid var(--border);margin-top:20px}
+.update-bar .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:6px;animation:pulse 2s infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.fade-in{animation:fadeUp .5s ease both}
+.d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}.d4{animation-delay:.2s}
+::-webkit-scrollbar{width:0}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="header"><div class="header-top"><div><div class="market-name">妫汭市集（永城店）</div><div class="market-sub">营业数据看板</div></div><div style="text-align:right"><div style="font-size:11px;color:var(--fg-dim)">数据周期</div><div style="font-family:'DM Mono';font-size:12px;color:var(--fg)" id="periodLabel"></div></div></div></div>
+<div class="date-selector" id="dateSelector"></div>
+<div class="revenue-hero fade-in"><div class="revenue-label" id="heroLabel">本日营业额</div><div class="revenue-amount"><span class="yen">&yen;</span><span id="heroAmount">--</span></div><div id="heroChange" style="margin-top:8px"></div></div>
+<div class="quick-stats fade-in d1"><div class="stat-card"><div class="stat-value accent" id="statOrders">--</div><div class="stat-label">订单数</div></div><div class="stat-card"><div class="stat-value gold" id="statAvg">--</div><div class="stat-label">客单价</div></div><div class="stat-card"><div class="stat-value blue" id="statDiscount">--</div><div class="stat-label">优惠率</div></div></div>
+<div class="section fade-in d2"><div class="section-header"><div class="section-title">📈 营收趋势</div></div><div class="period-row" id="trendPeriod"><button class="period-tab" data-days="3" onclick="setTrend(this)">近3天</button><button class="period-tab active" data-days="7" onclick="setTrend(this)">近7天</button><button class="period-tab" data-days="0" onclick="setTrend(this)">全部</button><button class="period-tab custom" onclick="toggleRange('trend')">自定义</button></div><div class="date-range" id="trendRange"><label>从</label><input type="date" id="trendStart" onchange="applyTrend()"><span class="arrow">→</span><label>到</label><input type="date" id="trendEnd" onchange="applyTrend()"></div><div class="chart-card"><canvas id="trendChart" height="200"></canvas></div></div>
+<div class="section fade-in d3"><div class="section-header"><div class="section-title">🏷️ 品类营业额</div><div class="section-badge" id="catBadge">--</div></div><div class="period-row" id="catPeriod"><button class="period-tab active" data-days="1" onclick="setCat(this)">当日</button><button class="period-tab" data-days="3" onclick="setCat(this)">近3天</button><button class="period-tab" data-days="7" onclick="setCat(this)">近7天</button><button class="period-tab" data-days="0" onclick="setCat(this)">全部</button><button class="period-tab custom" onclick="toggleRange('cat')">自定义</button></div><div class="date-range" id="catRange"><label>从</label><input type="date" id="catStart" onchange="applyCat()"><span class="arrow">→</span><label>到</label><input type="date" id="catEnd" onchange="applyCat()"></div><div class="chart-card"><canvas id="catPie" height="260"></canvas></div><div class="cat-list" id="catList"></div></div>
+<div class="section fade-in d4"><div class="section-header"><div class="section-title">📊 品类趋势对比</div></div><div class="period-row" id="compPeriod"><button class="period-tab" data-days="3" onclick="setComp(this)">近3天</button><button class="period-tab active" data-days="7" onclick="setComp(this)">近7天</button><button class="period-tab" data-days="0" onclick="setComp(this)">全部</button><button class="period-tab custom" onclick="toggleRange('comp')">自定义</button></div><div class="date-range" id="compRange"><label>从</label><input type="date" id="compStart" onchange="applyComp()"><span class="arrow">→</span><label>到</label><input type="date" id="compEnd" onchange="applyComp()"></div><div class="chart-card"><canvas id="catTrend" height="240"></canvas></div></div>
+<div class="section fade-in"><div class="section-header"><div class="section-title">🏆 门店排行</div><div class="section-badge">TOP 10</div></div><div id="storeList" style="display:flex;flex-direction:column;gap:8px"></div></div>
+<div class="section fade-in"><div class="section-header"><div class="section-title">💡 当日经营建议</div><div class="section-badge">智能分析</div></div><div class="tip-banner"><div class="tip-icon">📌</div><div class="tip-text" id="tipText">加载中...</div></div><div class="insight-list" id="insightList"></div></div>
+<div class="section fade-in"><div class="section-header"><div class="section-title">📋 周期性经营分析</div><div class="section-badge">自定义周期</div></div><div class="date-range show" id="insightRange"><label>从</label><input type="date" id="insightStart" onchange="applyInsight()"><span class="arrow">→</span><label>到</label><input type="date" id="insightEnd" onchange="applyInsight()"><button class="go-btn" onclick="applyInsight()" style="margin-left:8px">分析</button></div><div class="insight-list" id="cycleInsightList"></div></div>
+<div class="update-bar"><span class="dot"></span>数据来源：客如云收银系统 · 更新时间 <span id="updateTime">--</span></div>
+</div>
+<script>var D=JSON.parse(document.getElementById('app-data').textContent);
+var WD=['日','一','二','三','四','五','六'];
+var CC={'水果':{bg:'#fff7ed',fg:'#ea580c',c:'#f97316',ic:'🍎'},'蔬菜':{bg:'#f0fdf4',fg:'#16a34a',c:'#22c55e',ic:'🥬'},'肉类':{bg:'#fef2f2',fg:'#dc2626',c:'#ef4444',ic:'🥩'},'干货':{bg:'#faf5f0',fg:'#a16207',c:'#ca8a04',ic:'🥜'},'面点':{bg:'#fffbeb',fg:'#d97706',c:'#f59e0b',ic:'🥟'},'豆制品':{bg:'#fefce8',fg:'#ca8a04',c:'#eab308',ic:'🧈'},'粮油':{bg:'#fef9c3',fg:'#a16207',c:'#ca8a04',ic:'🫙'},'熟食':{bg:'#fff7ed',fg:'#ea580c',c:'#f97316',ic:'🍖'},'海鲜':{bg:'#ecfeff',fg:'#0891b2',c:'#06b6d4',ic:'🦐'},'酒水':{bg:'#faf5ff',fg:'#9333ea',c:'#a855f7',ic:'🍷'},'冻品':{bg:'#f8fafc',fg:'#475569',c:'#64748b',ic:'🧊'},'餐饮':{bg:'#fff7ed',fg:'#ea580c',c:'#fb923c',ic:'🍜'},'文具百货':{bg:'#fdf4f0',fg:'#c2410c',c:'#ea580c',ic:'📝'},'其他':{bg:'#f9fafb',fg:'#6b7280',c:'#9ca3af',ic:'📦'}};
+function gc(n){return CC[n]||CC['其他']}
+function fn(n){return n.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})}
+
+function getDays(prefix){
+  var el=document.getElementById(prefix+'Range');
+  if(el.classList.contains('show')){
+    var s=document.getElementById(prefix+'Start').value;
+    var e=document.getElementById(prefix+'End').value;
+    if(s&&e){
+      var si=dts.indexOf(s),ei=dts.indexOf(e);
+      if(si!==-1&&ei!==-1){return{start:Math.min(si,ei),end:Math.max(si,ei)}}
+    }
+  }
+  return null;
+}
+function sumField(range){
+  var start,end;
+  if(range&&range.start!==undefined){start=range.start;end=range.end}
+  else{start=0;end=sum.length-1}
+  var r={};
+  for(var i=start;i<=end;i++){
+    Object.keys(sum[i].categories).forEach(function(cat){
+      if(!r[cat])r[cat]={revenue:0,income:0,orders:0,stores:[]};
+      r[cat].revenue+=sum[i].categories[cat].revenue;
+      r[cat].income+=sum[i].categories[cat].income;
+      r[cat].orders+=sum[i].categories[cat].orders;
+      sum[i].categories[cat].stores.forEach(function(s){if(r[cat].stores.indexOf(s)===-1)r[cat].stores.push(s)});
+    });
+  }
+  return r;
+}
+
+var sum=D.daily_summary,dts=sum.map(function(s){return s.date}),cIdx=-1;
+document.getElementById('periodLabel').textContent=D.period;
+document.getElementById('updateTime').textContent=new Date().toLocaleString('zh-CN',{hour12:false});
+
+var sel=document.getElementById('dateSelector');
+dts.forEach(function(d,i){var dt=new Date(d),ch=document.createElement('button');ch.className='date-chip';ch.innerHTML=d.slice(5)+'<span class="wd">周'+WD[dt.getDay()]+'</span>';ch.onclick=function(){selDate(i)};sel.appendChild(ch)});
+
+function toggleRange(p){
+  var el=document.getElementById(p+'Range');
+  var show=!el.classList.contains('show');
+  el.classList.toggle('show',show);
+  var btn=document.querySelector('#'+p+'Period .period-tab.custom');
+  btn.classList.toggle('active',show);
+  if(show){
+    var min=dts[0],max=dts[dts.length-1];
+    document.getElementById(p+'Start').value=min;
+    document.getElementById(p+'End').value=max;
+  }
+}
+function clearCustom(p){
+  document.getElementById(p+'Range').classList.remove('show');
+  document.querySelector('#'+p+'Period .period-tab.custom').classList.remove('active');
+}
+function setActive(p,activeBtn){
+  document.querySelectorAll('#'+p+'Period .period-tab:not(.custom)').forEach(function(t){t.classList.remove('active')});
+  activeBtn.classList.add('active');
+  clearCustom(p);
+}
+function setTrend(btn){setActive('trend',btn);rTC()}
+function setCat(btn){setActive('cat',btn);rCP();rCL()}
+function setComp(btn){setActive('comp',btn);rCT()}
+function applyTrend(){rTC()}
+function applyCat(){rCP();rCL()}
+function applyComp(){rCT()}
+
+function selDate(i){cIdx=i;document.querySelectorAll('.date-chip').forEach(function(c,j){c.classList.toggle('active',j===i)});render(i)}
+selDate(dts.length-1);
+var tC=null,cP=null,cT=null;
+
+function render(i){
+  var dy=sum[i],tr=dy.total_revenue,
+      ti=Object.values(dy.categories).reduce(function(s,c){return s+c.income},0),
+      to=Object.values(dy.categories).reduce(function(s,c){return s+c.orders},0),
+      td=tr-ti,dr=tr>0?(td/tr*100):0,ap=to>0?(ti/to):0;
+  document.getElementById('heroAmount').textContent=fn(tr);
+  document.getElementById('heroLabel').textContent=dy.date+' 营业额';
+  if(i>0){var pv=sum[i-1].total_revenue,chg=pv>0?((tr-pv)/pv*100):0,up=chg>=0;document.getElementById('heroChange').innerHTML='<span class="revenue-change '+(up?'up':'down')+'">'+(up?'▲':'▼')+' 较昨日 '+(up?'+':'')+chg.toFixed(1)+'%</span><span style="font-size:11px;color:var(--fg-dim);margin-left:8px">昨日 ¥'+fn(pv)+'</span>'}else{document.getElementById('heroChange').innerHTML='<span style="font-size:11px;color:var(--fg-dim)">无前日对比</span>'}
+  document.getElementById('statOrders').textContent=to.toLocaleString();document.getElementById('statAvg').textContent='¥'+ap.toFixed(0);document.getElementById('statDiscount').textContent=dr.toFixed(1)+'%';
+  rTC();rCP();rCL();rCT();rSR(dy);rIns(i,dy);
+}
+
+function rTC(){
+  var range=getDays('trend');var start,end;
+  if(range){start=range.start;end=range.end}else{start=0;end=sum.length-1}
+  var lb=[],rv=[],ic=[];
+  for(var i=start;i<=end;i++){lb.push(dts[i].slice(5));rv.push(sum[i].total_revenue);ic.push(Object.values(sum[i].categories).reduce(function(s,c){return s+c.income},0))}
+  var ctx=document.getElementById('trendChart').getContext('2d');if(tC)tC.destroy();
+  tC=new Chart(ctx,{type:'line',data:{labels:lb,datasets:[
+    {label:'营业额',data:rv,borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.1)',borderWidth:2.5,fill:true,tension:.4,pointRadius:4,pointBackgroundColor:'#fff',pointBorderColor:'#10b981',pointBorderWidth:2,pointHoverRadius:6},
+    {label:'实收',data:ic,borderColor:'#3b82f6',borderWidth:1.5,borderDash:[5,3],fill:false,tension:.4,pointRadius:0}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',align:'end',labels:{color:'#7c8495',font:{size:11},boxWidth:12,padding:12,usePointStyle:true}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',padding:10,cornerRadius:8,callbacks:{label:function(ctx){return ctx.dataset.label+': ¥'+fn(ctx.parsed.y)}}}},scales:{x:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:11},callback:function(v){return'¥'+(v/1000).toFixed(0)+'k'}}}}}});
+}
+
+function rCP(){
+  var range=getDays('cat');var cats=sumField(range);
+  var es=Object.entries(cats).sort(function(a,b){return b[1].revenue-a[1].revenue});
+  var totalRev=es.reduce(function(s,e){return s+e[1].revenue},0);
+  var lb=es.map(function(e){return e[0]}),dt=es.map(function(e){return e[1].revenue}),cl=es.map(function(e){return gc(e[0]).c});
+  document.getElementById('catBadge').textContent=es.length+' 个品类';
+  var ctx=document.getElementById('catPie').getContext('2d');if(cP)cP.destroy();
+  cP=new Chart(ctx,{type:'pie',data:{labels:lb,datasets:[{data:dt,backgroundColor:cl,borderColor:'#fff',borderWidth:3,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:'#374151',font:{size:11},boxWidth:12,padding:10,usePointStyle:true,pointStyle:'circle'}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,padding:10,callbacks:{label:function(ctx){var p=(ctx.parsed/totalRev*100).toFixed(1);return ctx.label+': ¥'+fn(ctx.parsed)+' ('+p+'%)'}}}}}});
+}
+
+function rCL(){
+  var range=getDays('cat');var cats=sumField(range);
+  var es=Object.entries(cats).sort(function(a,b){return b[1].revenue-a[1].revenue});
+  var totalRev=es.reduce(function(s,e){return s+e[1].revenue},0),mx=es[0]?es[0][1].revenue:1;
+  var dl=range?'('+dts[range.start].slice(5)+'~'+dts[range.end].slice(5)+')':'当日';
+  document.getElementById('catList').innerHTML=es.map(function(e){
+    var n=e[0],d=e[1],c=gc(n),p=(d.revenue/totalRev*100).toFixed(1),b=(d.revenue/mx*100).toFixed(0);
+    return '<div class="cat-item"><div class="cat-icon" style="background:'+c.bg+'">'+c.ic+'</div><div class="cat-info"><div class="cat-name">'+n+'</div><div class="cat-stores">'+d.stores.length+' 个摊位 · '+dl+'</div><div class="cat-bar"><div class="cat-bar-fill" style="width:'+b+'%;background:'+c.fg+'"></div></div></div><div class="cat-right"><div class="cat-amount">¥'+fn(d.revenue)+'</div><div class="cat-pct">'+p+'%</div></div></div>';
+  }).join('');
+}
+
+function rCT(){
+  var range=getDays('comp');var start,end;
+  if(range){start=range.start;end=range.end}else{start=0;end=sum.length-1}
+  var ct={};
+  for(var i=start;i<=end;i++){Object.keys(sum[i].categories).forEach(function(cat){ct[cat]=(ct[cat]||0)+sum[i].categories[cat].revenue})}
+  var top=Object.entries(ct).sort(function(a,b){return b[1]-a[1]}).slice(0,6).map(function(e){return e[0]});
+  var lb=[];for(var j=start;j<=end;j++)lb.push(dts[j].slice(5));
+  var ctx=document.getElementById('catTrend').getContext('2d');if(cT)cT.destroy();
+  cT=new Chart(ctx,{type:'bar',data:{labels:lb,datasets:top.map(function(cat){return{label:cat,data:(function(){var a=[];for(var j=start;j<=end;j++)a.push(sum[j].categories[cat]?sum[j].categories[cat].revenue:0);return a})(),backgroundColor:gc(cat).c+'66',borderColor:gc(cat).c,borderWidth:1.5,borderRadius:6}})},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',align:'end',labels:{color:'#7c8495',font:{size:10},boxWidth:10,padding:8,usePointStyle:true}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,callbacks:{label:function(ctx){return ctx.dataset.label+': ¥'+fn(ctx.parsed.y)}}}},scales:{x:{stacked:false,grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:10}}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:10},callback:function(v){return'¥'+(v/1000).toFixed(0)+'k'}}}}}});
+}
+
+function rSR(dy){
+  var rk=dy.store_ranking||[],t10=rk.slice(0,10),md=['🥇','🥈','🥉'];
+  document.getElementById('storeList').innerHTML=t10.map(function(s,i){
+    var c=gc(s.category),rn=i<3?md[i]:'<span style="color:var(--fg-dim);font-family:DM Mono;font-size:13px;width:20px;display:inline-block;text-align:center">'+(i+1)+'</span>';
+    return '<div class="cat-item" style="padding:10px 14px"><div style="width:28px;text-align:center;font-size:16px;flex-shrink:0">'+rn+'</div><div class="cat-info"><div class="cat-name" style="font-size:13px">'+s.store+'</div><div class="cat-stores">'+c.ic+' '+s.category+'</div></div><div class="cat-right"><div class="cat-amount" style="font-size:14px">¥'+fn(s.revenue)+'</div></div></div>';
+  }).join('');
+}
+
+function rIns(idx,dy){
+  var ins=[],cs=Object.entries(dy.categories).sort(function(a,b){return b[1].revenue-a[1].revenue}),tr=dy.total_revenue;
+  var tp=cs[0],tpP=(tp[1].revenue/tr*100).toFixed(0);
+  ins.push({t:'good',ti:'营收主力',tg:'表现优秀',tx:tp[0]+'以 ¥'+fn(tp[1].revenue)+' 占比 '+tpP+'%，是市场核心收入来源。建议持续保障该品类供应链稳定。'});
+  var bt=cs[cs.length-1];
+  if(bt[1].revenue/tr<0.03){ins.push({t:'warn',ti:'低营收品类',tg:'需关注',tx:bt[0]+'仅 ¥'+fn(bt[1].revenue)+'（'+(bt[1].revenue/tr*100).toFixed(1)+'%），建议评估选品、陈列位置，或引入新品牌激活品类。'})}
+  var tdi=tr-Object.values(dy.categories).reduce(function(s,c){return s+c.income},0),dr2=(tdi/tr*100);
+  if(dr2>10){ins.push({t:'warn',ti:'优惠率偏高',tg:'成本关注',tx:'当日优惠率 '+dr2.toFixed(1)+'%，折损 ¥'+fn(tdi)+'。建议检查各门店折扣力度，考虑用满减替代全场折扣。'})}
+  else if(dr2<3){ins.push({t:'good',ti:'优惠率健康',tg:'控制良好',tx:'优惠率仅 '+dr2.toFixed(1)+'%，折损控制良好。'})}
+  if(idx>=5){
+    var a3=(sum[idx].total_revenue+sum[idx-1].total_revenue+sum[idx-2].total_revenue)/3;
+    var f3=(sum[0].total_revenue+sum[1].total_revenue+sum[2].total_revenue)/3;
+    if(a3<f3*0.85){ins.push({t:'warn',ti:'营收下行趋势',tg:'趋势预警',tx:'近3日日均 ¥'+fn(a3)+'，较前3日下降 '+((1-a3/f3)*100).toFixed(1)+'%。排查因素：天气变化？周边竞争？促销力度不足？'})}
+    else if(a3>f3*1.1){ins.push({t:'good',ti:'营收上升势头',tg:'积极信号',tx:'近3日日均 ¥'+fn(a3)+'，较前3日增长 '+((a3/f3-1)*100).toFixed(1)+'%，势头良好！可加大推广力度。'})}
+    else{ins.push({t:'info',ti:'营收平稳',tg:'正常波动',tx:'近3日日均 ¥'+fn(a3)+'，与前期基本持平，经营稳定。'})}
+  }
+  if(idx>=3){
+    cs.slice(0,6).forEach(function(e){
+      var cat=e[0],cur=dy.categories[cat]?dy.categories[cat].revenue:0,prev=sum[idx-3].categories[cat]?sum[idx-3].categories[cat].revenue:0;
+      if(prev>0){var chg=((cur-prev)/prev*100);if(chg<-20){ins.push({t:'warn',ti:cat+' 下滑',tg:'品类预警',tx:cat+'近3日下降 '+chg.toFixed(1)+'%。检查：供应商涨价？缺货？竞品分流？'})}else if(chg>20){ins.push({t:'good',ti:cat+' 增长',tg:'品类亮点',tx:cat+'近3日增长 '+chg.toFixed(1)+'%，势头强劲！可适当增加铺货和陈列面积。'})}}
+    });
+  }
+  var top3Pct=0;for(var k=0;k<Math.min(3,cs.length);k++)top3Pct+=(cs[k][1].revenue/tr*100);
+  if(top3Pct>70){ins.push({t:'info',ti:'品类集中度高',tg:'风险提示',tx:'前3大品类占营收 '+top3Pct.toFixed(0)+'%，集中度过高。建议培育新品类、扶持弱势品类，分散经营风险。'})}
+  else{ins.push({t:'info',ti:'品类结构均衡',tg:'结构良好',tx:'前3大品类占 '+top3Pct.toFixed(0)+'%，品类结构相对均衡，抗风险能力较强。'})}
+  var totalIAll=0,totalOAll=0;
+  sum.forEach(function(d){Object.values(d.categories).forEach(function(c){totalIAll+=c.income;totalOAll+=c.orders})});
+  var avgAll=totalOAll>0?totalIAll/totalOAll:0;
+  var curI=Object.values(dy.categories).reduce(function(s,c){return s+c.income},0);
+  var curO=Object.values(dy.categories).reduce(function(s,c){return s+c.orders},0);
+  var avgNow=curO>0?curI/curO:0;
+  if(avgNow<avgAll*0.8){ins.push({t:'warn',ti:'客单价偏低',tg:'消费提醒',tx:'当日客单价 ¥'+avgNow.toFixed(0)+'，低于周期均值 ¥'+avgAll.toFixed(0)+'。可考虑推出组合套餐、满减活动提升客单价。'})}
+  else if(avgNow>avgAll*1.2){ins.push({t:'good',ti:'客单价提升',tg:'积极信号',tx:'当日客单价 ¥'+avgNow.toFixed(0)+'，高于均值 ¥'+avgAll.toFixed(0)+'。可总结当日畅销高客单商品经验。'})}
+  if(sum.length>=5){
+    var wkend=[],wkday=[];
+    sum.forEach(function(d){var day=new Date(d.date).getDay();if(day===0||day===6)wkend.push(d.total_revenue);else wkday.push(d.total_revenue)});
+    if(wkend.length>0&&wkday.length>0){
+      var avgWE=wkend.reduce(function(a,b){return a+b},0)/wkend.length;
+      var avgWD=wkday.reduce(function(a,b){return a+b},0)/wkday.length;
+      if(avgWE>avgWD*1.15){ins.push({t:'info',ti:'周末效应明显',tg:'运营参考',tx:'周末日均 ¥'+fn(avgWE)+'，工作日 ¥'+fn(avgWD)+'，周末高出 '+((avgWE/avgWD-1)*100).toFixed(0)+'%。建议周末增加人手、备货量。'})}
+      else if(avgWE<avgWD*0.9){ins.push({t:'info',ti:'周末客流偏低',tg:'运营参考',tx:'周末日均 ¥'+fn(avgWE)+'，低于工作日 ¥'+fn(avgWD)+'。建议周末加强促销活动引流。'})}
+    }
+  }
+  if(dy.store_ranking&&dy.store_ranking.length>5){
+    var best=dy.store_ranking[0],worst=dy.store_ranking[dy.store_ranking.length-1];
+    if(best.revenue>worst.revenue*10){ins.push({t:'info',ti:'门店差异大',tg:'管理建议',tx:'最佳门店 '+best.store+'（¥'+fn(best.revenue)+'）是最弱 '+worst.store+'（¥'+fn(worst.revenue)+'）的 '+(best.revenue/worst.revenue).toFixed(0)+' 倍。建议分析弱店原因并制定帮扶计划。'})}
+  }
+  var avgR=sum.reduce(function(s,d){return s+d.total_revenue},0)/sum.length;
+  document.getElementById('tipText').innerHTML='本周日均营业额 <strong>¥'+fn(avgR)+'</strong>，当前日 '+(dy.total_revenue>=avgR?'<strong>高于</strong>':'<strong>低于</strong>')+' 日均值（差 ¥'+fn(Math.abs(dy.total_revenue-avgR))+'）。'+(dy.total_revenue<avgR?'建议关注促销活动和客流引流策略。':'继续保持当前经营节奏。');
+  document.getElementById('insightList').innerHTML=ins.map(function(o){
+    return '<div class="insight-card '+o.t+'"><div class="insight-title">'+o.ti+' <span class="insight-tag '+o.t+'">'+o.tg+'</span></div><div class="insight-body">'+o.tx+'</div></div>';
+  }).join('');
+}
+
+setInsightDates();
+applyInsight();
+
+function setInsightDates(){
+  var min=dts[0],max=dts[dts.length-1];
+  var s=document.getElementById('insightStart'),e=document.getElementById('insightEnd');
+  s.min=min;s.max=max;e.min=min;e.max=max;
+  var defStart=dts[Math.max(0,dts.length-3)];
+  s.value=defStart;e.value=max;
+}
+
+function applyInsight(){
+  var s=document.getElementById('insightStart').value;
+  var e=document.getElementById('insightEnd').value;
+  if(!s||!e){document.getElementById('cycleInsightList').innerHTML='<div class="tip-banner"><div class="tip-icon">📋</div><div class="tip-text">请选择起始和结束日期</div></div>';return}
+  var si=dts.indexOf(s),ei=dts.indexOf(e);
+  if(si===-1||ei===-1||si>=ei){document.getElementById('cycleInsightList').innerHTML='<div class="tip-banner"><div class="tip-icon">📋</div><div class="tip-text">日期范围无效，请重新选择</div></div>';return}
+  var start=Math.min(si,ei),end=Math.max(si,ei),n=end-start+1;
+  var totalRev=0,totalInc=0,totalOrd=0,catData={},dailyRevs=[];
+  for(var i=start;i<=end;i++){
+    totalRev+=sum[i].total_revenue;dailyRevs.push(sum[i].total_revenue);
+    Object.keys(sum[i].categories).forEach(function(cat){
+      var c=sum[i].categories[cat];
+      totalInc+=c.income;totalOrd+=c.orders;
+      if(!catData[cat])catData[cat]={rev:0,inc:0,ord:0,days:0};
+      catData[cat].rev+=c.revenue;catData[cat].inc+=c.income;catData[cat].ord+=c.orders;catData[cat].days++;
+    });
+  }
+  var avgRev=totalRev/n,avgInc=totalInc/n,avgOrd=totalOrd/n,avgPrice=avgOrd>0?avgInc/avgOrd:0;
+  var dl=dts[start].slice(5)+' ~ '+dts[end].slice(5);
+  var ins=[];
+
+  ins.push({t:'info',ti:'\ud83d\udcca '+dl+' \u5468\u671f\u603b\u89c8',tg:'\u6570\u636e\u6982\u89c8',tx:'\u5171\u8ba1 '+n+' \u5929\uff0c\u603b\u8425\u4e1a\u989d \u00a5'+fn(totalRev)+'\uff0c\u65e5\u5747 \u00a5'+fn(avgRev)+'\uff0c\u65e5\u5747\u8ba2\u5355 '+Math.round(avgOrd)+' \u5355\uff0c\u5e73\u5747\u5ba2\u5355\u4ef7 \u00a5'+avgPrice.toFixed(0)+'\u3002'});
+
+  if(n>=4){
+    var half=Math.floor(n/2),f1=0,f2=0;
+    for(var i=start;i<start+half;i++)f1+=sum[i].total_revenue;
+    for(var i=start+half;i<=end;i++)f2+=sum[i].total_revenue;
+    var a1=f1/half,a2=f2/(n-half),chg=((a2-a1)/a1*100);
+    if(chg>5)ins.push({t:'good',ti:'\ud83d\udcc8 \u8425\u6536\u4e0a\u5347\u8d8b\u52bf',tg:'\u540e\u534a\u5468\u671f',tx:'\u540e\u534a\u5468\u671f\u65e5\u5747 \u00a5'+fn(a2)+'\uff0c\u8f83\u524d\u534a \u00a5'+fn(a1)+' \u589e\u957f '+chg.toFixed(1)+'%\u3002\u589e\u957f\u52bf\u5934\u826f\u597d\uff0c\u5efa\u8bae\u4fdd\u6301\u5f53\u524d\u7b56\u7565\u3002'});
+    else if(chg<-5)ins.push({t:'warn',ti:'\ud83d\udcc9 \u8425\u6536\u4e0b\u964d\u8d8b\u52bf',tg:'\u540e\u534a\u5468\u671f',tx:'\u540e\u534a\u5468\u671f\u65e5\u5747 \u00a5'+fn(a2)+'\uff0c\u8f83\u524d\u534a \u00a5'+fn(a1)+' \u4e0b\u964d '+Math.abs(chg).toFixed(1)+'%\u3002\u9700\u5173\u6ce8\u539f\u56e0\uff1a\u4fc3\u9500\u75b2\u52b3\uff1f\u7ade\u4e89\u52a0\u5267\uff1f\u5929\u6c14\u5f71\u54cd\uff1f'});
+    else ins.push({t:'info',ti:'\u27a1\ufe0f \u8425\u6536\u57fa\u672c\u6301\u5e73',tg:'\u540e\u534a\u5468\u671f',tx:'\u524d\u540e\u534a\u5468\u671f\u65e5\u5747\u8425\u4e1a\u989d\u57fa\u672c\u6301\u5e73\uff08\u00a5'+fn(a1)+' vs \u00a5'+fn(a2)+'\uff09\uff0c\u7ecf\u8425\u7a33\u5b9a\u3002'});
+  }
+
+  var catArr=Object.entries(catData).sort(function(a,b){return b[1].rev-a[1].rev});
+  ins.push({t:'good',ti:'\ud83c\udfc6 \u5468\u671f\u8425\u6536\u51a0\u519b\u54c1\u7c7b',tg:catArr[0][0],tx:catArr[0][0]+'\u7d2f\u8ba1 \u00a5'+fn(catArr[0][1].rev)+'\uff08\u65e5\u5747 \u00a5'+fn(catArr[0][1].rev/catArr[0][1].days)+'\uff09\uff0c\u5360\u603b\u8425\u6536 '+((catArr[0][1].rev/totalRev)*100).toFixed(1)+'%\u3002'});
+  var btm=catArr[catArr.length-1];
+  if(btm[1].rev/totalRev<0.03)ins.push({t:'warn',ti:'\u26a0\ufe0f \u5468\u671f\u5f31\u52bf\u54c1\u7c7b',tg:btm[0],tx:btm[0]+'\u7d2f\u8ba1\u4ec5 \u00a5'+fn(btm[1].rev)+'\uff0c\u65e5\u5747 \u00a5'+fn(btm[1].rev/btm[1].days)+'\u3002\u5efa\u8bae\u8bc4\u4f30\u662f\u5426\u9700\u8981\u8c03\u6574\u8be5\u54c1\u7c7b\u3002'});
+
+  if(n>=2){
+    var fDay={},lDay={};
+    Object.keys(sum[start].categories).forEach(function(cat){fDay[cat]=sum[start].categories[cat].revenue});
+    Object.keys(sum[end].categories).forEach(function(cat){lDay[cat]=sum[end].categories[cat].revenue});
+    catArr.slice(0,5).forEach(function(e){
+      var cat=e[0],fv=fDay[cat]||0,lv=lDay[cat]||0;
+      if(fv>0){var c2=((lv-fv)/fv*100);if(c2>10)ins.push({t:'good',ti:cat+' \u6301\u7eed\u589e\u957f',tg:'\u5468\u671f\u5bf9\u6bd4',tx:cat+'\u4ece '+dts[start].slice(5)+' \u00a5'+fn(fv)+' \u589e\u81f3 '+dts[end].slice(5)+' \u00a5'+fn(lv)+'\uff08+'+c2.toFixed(1)+'%\uff09\uff0c\u52bf\u5934\u5f3a\u52b2\u3002'});else if(c2<-10)ins.push({t:'warn',ti:cat+' \u5468\u671f\u4e0b\u6ed1',tg:'\u5468\u671f\u5bf9\u6bd4',tx:cat+'\u4ece '+dts[start].slice(5)+' \u00a5'+fn(fv)+' \u964d\u81f3 '+dts[end].slice(5)+' \u00a5'+fn(lv)+'\uff08'+c2.toFixed(1)+'%\uff09\u3002'});}
+    });
+  }
+
+  var totalDisc=totalRev-totalInc,discRate=(totalDisc/totalRev*100);
+  if(discRate>8)ins.push({t:'warn',ti:'\ud83d\udcb0 \u4f18\u60e0\u7387\u504f\u9ad8',tg:'\u6210\u672c\u5173\u6ce8',tx:'\u5468\u671f\u5e73\u5747\u4f18\u60e0\u7387 '+discRate.toFixed(1)+'%\uff0c\u7d2f\u8ba1\u6298\u635f \u00a5'+fn(totalDisc)+'\u3002\u5efa\u8bae\u4f18\u5316\u6298\u6263\u7b56\u7565\u3002'});
+  else if(discRate<3)ins.push({t:'good',ti:'\ud83d\udcb0 \u4f18\u60e0\u7387\u5065\u5eb7',tg:'\u63a7\u5236\u826f\u597d',tx:'\u5468\u671f\u5e73\u5747\u4f18\u60e0\u7387\u4ec5 '+discRate.toFixed(1)+'%\uff0c\u6298\u635f\u63a7\u5236\u4f18\u79c0\u3002'});
+
+  if(n>=5){
+    var weD=[],wdD=[];
+    for(var i=start;i<=end;i++){var dow=new Date(sum[i].date).getDay();if(dow===0||dow===6)weD.push(sum[i].total_revenue);else wdD.push(sum[i].total_revenue)}
+    if(weD.length>0&&wdD.length>0){
+      var aW=weD.reduce(function(a,b){return a+b},0)/weD.length,aD=wdD.reduce(function(a,b){return a+b},0)/wdD.length;
+      ins.push({t:'info',ti:'\ud83d\udcc5 \u5468\u672bvs\u5de5\u4f5c\u65e5',tg:'\u5468\u671f\u5bf9\u6bd4',tx:'\u5468\u672b\u65e5\u5747 \u00a5'+fn(aW)+'\uff08'+weD.length+'\u5929\uff09\uff0c\u5de5\u4f5c\u65e5 \u00a5'+fn(aD)+'\uff08'+wdD.length+'\u5929\uff09\uff0c'+(aW>aD?'\u5468\u672b\u9ad8\u51fa '+((aW/aD-1)*100).toFixed(0)+'%\u3002':((1-aW/aD)*100).toFixed(0)+'%\u3002')});
+    }
+  }
+
+  if(n>=3){
+    var fO=0,fI=0,lO=0,lI=0;
+    Object.values(sum[start].categories).forEach(function(c){fO+=c.orders;fI+=c.income});
+    Object.values(sum[end].categories).forEach(function(c){lO+=c.orders;lI+=c.income});
+    var fp=fO>0?fI/fO:0,lp=lO>0?lI/lO:0;
+    if(fp>0&&lp>0){
+      var pc=((lp-fp)/fp*100);
+      if(pc>10)ins.push({t:'good',ti:'\ud83d\udcb5 \u5ba2\u5355\u4ef7\u4e0a\u5347',tg:'\u6d88\u8d39\u5347\u7ea7',tx:'\u5ba2\u5355\u4ef7\u4ece \u00a5'+fp.toFixed(0)+' \u4e0a\u5347\u81f3 \u00a5'+lp.toFixed(0)+'\uff0c\u53ef\u5c1d\u8bd5\u5f15\u5165\u66f4\u9ad8\u4ef7\u4f4d\u5546\u54c1\u3002'});
+      else if(pc<-10)ins.push({t:'warn',ti:'\ud83d\udcb5 \u5ba2\u5355\u4ef7\u4e0b\u964d',tg:'\u6d88\u8d39\u5173\u6ce8',tx:'\u5ba2\u5355\u4ef7\u4ece \u00a5'+fp.toFixed(0)+' \u964d\u81f3 \u00a5'+lp.toFixed(0)+'\u3002\u5efa\u8bae\u63a8\u51fa\u7ec4\u5408\u5957\u9910\u63d0\u5347\u5ba2\u5355\u4ef7\u3002'});
+      else ins.push({t:'info',ti:'\ud83d\udcb5 \u5ba2\u5355\u4ef7\u7a33\u5b9a',tg:'\u6b63\u5e38\u6ce2\u52a8',tx:'\u5ba2\u5355\u4ef7\u4fdd\u6301\u5728 \u00a5'+fp.toFixed(0)+'~\u00a5'+lp.toFixed(0)+' \u533a\u95f4\u3002'});
+    }
+  }
+
+  var tips=[];
+  if(avgRev<30000)tips.push('\u65e5\u5747\u8425\u4e1a\u989d\u504f\u4f4e\uff0c\u5efa\u8bae\u52a0\u5927\u5f15\u6d41\u4fc3\u9500\u6d3b\u52a8');
+  if(avgPrice<25)tips.push('\u5ba2\u5355\u4ef7\u6709\u63d0\u5347\u7a7a\u95f4\uff0c\u5efa\u8bae\u63a8\u51fa\u7ec4\u5408\u5957\u9910');
+  if(discRate>10)tips.push('\u4f18\u60e0\u7387\u504f\u9ad8\uff0c\u5efa\u8bae\u4f18\u5316\u6298\u6263\u7b56\u7565');
+  var tp3=0;for(var k=0;k<Math.min(3,catArr.length);k++)tp3+=(catArr[k][1].rev/totalRev*100);
+  if(tp3>70)tips.push('\u8425\u6536\u8fc7\u5ea6\u96c6\u4e2d\uff0c\u5efa\u8bae\u57f9\u80b2\u65b0\u54c1\u7c7b');
+  if(tips.length>0)ins.push({t:'gold',ti:'\ud83c\udfaf \u7efc\u5408\u7ecf\u8425\u5efa\u8bae',tg:'\u884c\u52a8\u6307\u5357',tx:tips.join('\uff1b')+'\u3002'});
+
+  document.getElementById('cycleInsightList').innerHTML=ins.map(function(o){
+    return '<div class="insight-card '+o.t+'"><div class="insight-title">'+o.ti+' <span class="insight-tag '+o.t+'">'+o.tg+'</span></div><div class="insight-body">'+o.tx+'</div></div>';
+  }).join('');
+}
+</script>
+</body>
+</html>
