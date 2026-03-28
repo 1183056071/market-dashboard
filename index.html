@@ -3124,9 +3124,9 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;backgro
 <div class="date-selector" id="dateSelector"></div>
 <div class="revenue-hero fade-in"><div class="revenue-label" id="heroLabel">本日营业额</div><div class="revenue-amount"><span class="yen">&yen;</span><span id="heroAmount">--</span></div><div id="heroChange" style="margin-top:8px"></div></div>
 <div class="quick-stats fade-in d1"><div class="stat-card"><div class="stat-value accent" id="statOrders">--</div><div class="stat-label">订单数</div></div><div class="stat-card"><div class="stat-value gold" id="statAvg">--</div><div class="stat-label">客单价</div></div><div class="stat-card"><div class="stat-value blue" id="statDiscount">--</div><div class="stat-label">优惠率</div></div></div>
-<div class="section fade-in d2"><div class="section-header"><div class="section-title">📈 营收趋势</div></div><div class="period-row" id="trendPeriod"><button class="period-tab" data-days="3">近3天</button><button class="period-tab active" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="trendRange"><label>从</label><input type="date" id="trendStart"><span class="arrow">→</span><label>到</label><input type="date" id="trendEnd"></div><div class="chart-card"><canvas id="trendChart" height="200"></canvas></div></div>
-<div class="section fade-in d3"><div class="section-header"><div class="section-title">🏷️ 品类营业额</div><div class="section-badge" id="catBadge">--</div></div><div class="period-row" id="catPeriod"><button class="period-tab active" data-days="1">当日</button><button class="period-tab" data-days="3">近3天</button><button class="period-tab" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="catRange"><label>从</label><input type="date" id="catStart"><span class="arrow">→</span><label>到</label><input type="date" id="catEnd"></div><div class="chart-card"><canvas id="catPie" height="260"></canvas></div><div class="cat-list" id="catList"></div></div>
-<div class="section fade-in d4"><div class="section-header"><div class="section-title">📊 品类趋势对比</div></div><div class="period-row" id="compPeriod"><button class="period-tab" data-days="3">近3天</button><button class="period-tab active" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="compRange"><label>从</label><input type="date" id="compStart"><span class="arrow">→</span><label>到</label><input type="date" id="compEnd"></div><div class="chart-card"><canvas id="catTrend" height="240"></canvas></div></div>
+<div class="section fade-in d2"><div class="section-header"><div class="section-title">📈 营收趋势</div></div><div class="period-row" id="trendPeriod"><button class="period-tab" data-days="3">近3天</button><button class="period-tab active" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="trendRange"><label>从</label><input type="date" id="trendStart"><span class="arrow">→</span><label>到</label><input type="date" id="trendEnd"><button class="go-btn" id="trendGo">查询</button></div><div class="chart-card"><canvas id="trendChart" height="200"></canvas></div></div>
+<div class="section fade-in d3"><div class="section-header"><div class="section-title">🏷️ 品类营业额</div><div class="section-badge" id="catBadge">--</div></div><div class="period-row" id="catPeriod"><button class="period-tab active" data-days="1">当日</button><button class="period-tab" data-days="3">近3天</button><button class="period-tab" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="catRange"><label>从</label><input type="date" id="catStart"><span class="arrow">→</span><label>到</label><input type="date" id="catEnd"><button class="go-btn" id="catGo">查询</button></div><div class="chart-card"><canvas id="catPie" height="260"></canvas></div><div class="cat-list" id="catList"></div></div>
+<div class="section fade-in d4"><div class="section-header"><div class="section-title">📊 品类趋势对比</div></div><div class="period-row" id="compPeriod"><button class="period-tab" data-days="3">近3天</button><button class="period-tab active" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="compRange"><label>从</label><input type="date" id="compStart"><span class="arrow">→</span><label>到</label><input type="date" id="compEnd"><button class="go-btn" id="compGo">查询</button></div><div class="chart-card"><canvas id="catTrend" height="240"></canvas></div></div>
 <div class="section fade-in"><div class="section-header"><div class="section-title">🏆 门店排行</div><div class="section-badge" id="storeBadge">当日 TOP 10</div></div><div id="storeList" style="display:flex;flex-direction:column;gap:8px"></div></div>
 <div class="section fade-in"><div class="section-header"><div class="section-title">💡 当日经营建议</div><div class="section-badge">智能分析</div></div><div class="tip-banner"><div class="tip-icon">📌</div><div class="tip-text" id="tipText">加载中...</div></div><div class="insight-list" id="insightList"></div></div>
 <div class="section fade-in"><div class="section-header"><div class="section-title">📋 周期性经营分析</div><div class="section-badge">自定义周期</div></div><div class="date-range show" id="insightRange"><label>从</label><input type="date" id="insightStart"><span class="arrow">→</span><label>到</label><input type="date" id="insightEnd"><button class="go-btn"  style="margin-left:8px">分析</button></div><div class="insight-list" id="cycleInsightList"></div></div>
@@ -3215,18 +3215,18 @@ function drawCatChart(days,startIdx,endIdx){
   cP=new Chart(ctx,{type:'pie',data:{labels:lb,datasets:[{data:dt,backgroundColor:cl,borderColor:'#fff',borderWidth:3,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:'#374151',font:{size:11},boxWidth:12,padding:10,usePointStyle:true,pointStyle:'circle'}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,padding:10,callbacks:{label:function(ctx){var p=(ctx.parsed/totalRev*100).toFixed(1);return ctx.label+': ¥'+fn(ctx.parsed)+' ('+p+'%)'}}}}}});
 }
 
-/* ========== 品类列表（可展开每日详情） ========== */
+/* ========== 品类列表（可展开门店每日详情） ========== */
 function drawCatList(days,startIdx,endIdx){
   var start,end;
   if(startIdx!==undefined&&endIdx!==undefined){start=startIdx;end=endIdx}
   else{start=days===0?0:Math.max(0,sum.length-days);end=sum.length-1}
+  // Build category totals
   var cats={};
   for(var i=start;i<=end;i++){
     Object.keys(sum[i].categories).forEach(function(cat){
-      if(!cats[cat])cats[cat]={revenue:0,stores:[],daily:{}};
+      if(!cats[cat])cats[cat]={revenue:0,stores:[]};
       cats[cat].revenue+=sum[i].categories[cat].revenue;
       sum[i].categories[cat].stores.forEach(function(s){if(cats[cat].stores.indexOf(s)===-1)cats[cat].stores.push(s)});
-      cats[cat].daily[dts[i]]=sum[i].categories[cat].revenue;
     });
   }
   var es=Object.entries(cats).sort(function(a,b){return b[1].revenue-a[1].revenue});
@@ -3236,20 +3236,37 @@ function drawCatList(days,startIdx,endIdx){
   listEl.innerHTML='';
   es.forEach(function(e,idx){
     var n=e[0],d=e[1],c=gc(n),p=(d.revenue/totalRev*100).toFixed(1),b=(d.revenue/mx*100).toFixed(0);
-    // Build daily detail rows
-    var dailyKeys=Object.keys(d.daily).sort();
-    var maxDaily=0;dailyKeys.forEach(function(k){if(d.daily[k]>maxDaily)maxDaily=d.daily[k]});
+    // Build store daily detail
+    var storeData={};
+    for(var i=start;i<=end;i++){
+      sum[i].store_ranking.forEach(function(sr){
+        if(sr.category===n){
+          if(!storeData[sr.store])storeData[sr.store]={};
+          storeData[sr.store][dts[i]]=sr.revenue;
+        }
+      });
+    }
+    var storeArr=Object.entries(storeData).map(function(s){
+      var total=0,count=0;
+      Object.values(s[1]).forEach(function(v){total+=v;count++});
+      return{name:s[0],daily:s[1],total:total,avg:count>0?total/count:0};
+    }).sort(function(a,b){return b.total-a.total});
+    var maxStore=storeArr.length>0?storeArr[0].total:1;
     var detailHtml='<div class="cat-detail" id="catDetail_'+idx+'">';
-    detailHtml+='<div style="font-size:11px;color:var(--fg-dim);margin-bottom:8px">'+n+' 每日营业明细（'+dl+'）</div>';
-    dailyKeys.forEach(function(date){
-      var rev=d.daily[date],pct=maxDaily>0?(rev/maxDaily*100).toFixed(0):0;
-      var dow=new Date(date).getDay();
-      detailHtml+='<div class="cat-detail-row"><span class="cat-detail-date">'+date.slice(5)+' 周'+WD[dow]+'</span><span class="cat-detail-amount">¥'+fn(rev)+'</span></div>';
-      detailHtml+='<div class="cat-detail-bar"><div class="cat-detail-bar-fill" style="width:'+pct+'%;background:'+c.fg+'"></div></div>';
+    detailHtml+='<div style="font-size:11px;color:var(--fg-dim);margin-bottom:10px">'+n+' · '+storeArr.length+' 个门店每日明细</div>';
+    storeArr.forEach(function(store,si){
+      detailHtml+='<div style="margin-bottom:10px;'+(si>0?'padding-top:8px;border-top:1px dashed #e8e8e8':'')+'">';
+      detailHtml+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:600;color:var(--fg)">'+store.name+'</span><span style="font-family:DM Mono;font-size:12px;color:'+c.fg+'">¥'+fn(store.total)+' · 日均 ¥'+fn(store.avg)+'</span></div>';
+      var dailyKeys=Object.keys(store.daily).sort();
+      var maxDay=0;dailyKeys.forEach(function(k){if(store.daily[k]>maxDay)maxDay=store.daily[k]});
+      dailyKeys.forEach(function(date){
+        var rev=store.daily[date],pct=maxDay>0?(rev/maxDay*100).toFixed(0):0;
+        var dow=new Date(date).getDay();
+        detailHtml+='<div style="display:flex;justify-content:space-between;font-size:11px;padding:2px 0"><span style="color:var(--fg-dim)">'+date.slice(5)+' 周'+WD[dow]+'</span><span style="font-family:DM Mono;color:var(--fg)">¥'+fn(rev)+'</span></div>';
+        detailHtml+='<div class="cat-detail-bar"><div class="cat-detail-bar-fill" style="width:'+pct+'%;background:'+c.fg+'44"></div></div>';
+      });
+      detailHtml+='</div>';
     });
-    var dailyTotal=dailyKeys.reduce(function(s,k){return s+d.daily[k]},0);
-    var dailyAvg=dailyKeys.length>0?(dailyTotal/dailyKeys.length):0;
-    detailHtml+='<div class="cat-detail-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:8px;font-weight:600"><span class="cat-detail-date">日均 ¥'+fn(dailyAvg)+'</span><span class="cat-detail-amount" style="color:'+c.fg+'">合计 ¥'+fn(dailyTotal)+'</span></div>';
     detailHtml+='</div>';
     // Main item
     var itemHtml='<div class="cat-item expandable" data-idx="'+idx+'" onclick="toggleCatDetail('+idx+')">';
@@ -3268,10 +3285,8 @@ function toggleCatDetail(idx){
   var detail=document.getElementById('catDetail_'+idx);
   if(!item||!detail)return;
   var isExpanded=item.classList.contains('expanded');
-  // Close all first
   items.forEach(function(it){it.classList.remove('expanded')});
   document.querySelectorAll('.cat-detail').forEach(function(d){d.classList.remove('show')});
-  // Toggle current
   if(!isExpanded){
     item.classList.add('expanded');
     detail.classList.add('show');
@@ -3475,37 +3490,29 @@ initCycleInsight();
   setupCustomToggle('cat');
   setupCustomToggle('comp');
 
-  // 自定义日期 change
-  document.getElementById('trendStart').addEventListener('change',function(){
-    var s=this.value,e=document.getElementById('trendEnd').value;
+  // 查询按钮
+  document.getElementById('trendGo').addEventListener('click',function(){
+    var s=document.getElementById('trendStart').value,e=document.getElementById('trendEnd').value;
     var si=dts.indexOf(s),ei=dts.indexOf(e);
-    if(si!==-1&&ei!==-1)drawTrendChart(0,Math.min(si,ei),Math.max(si,ei));
+    if(si!==-1&&ei!==-1){drawTrendChart(0,Math.min(si,ei),Math.max(si,ei))}
   });
-  document.getElementById('trendEnd').addEventListener('change',function(){
-    var s=document.getElementById('trendStart').value,e=this.value;
-    var si=dts.indexOf(s),ei=dts.indexOf(e);
-    if(si!==-1&&ei!==-1)drawTrendChart(0,Math.min(si,ei),Math.max(si,ei));
-  });
-  document.getElementById('catStart').addEventListener('change',function(){
-    var s=this.value,e=document.getElementById('catEnd').value;
+  document.getElementById('catGo').addEventListener('click',function(){
+    var s=document.getElementById('catStart').value,e=document.getElementById('catEnd').value;
     var si=dts.indexOf(s),ei=dts.indexOf(e);
     if(si!==-1&&ei!==-1){drawCatChart(0,Math.min(si,ei),Math.max(si,ei));drawCatList(0,Math.min(si,ei),Math.max(si,ei))}
   });
-  document.getElementById('catEnd').addEventListener('change',function(){
-    var s=document.getElementById('catStart').value,e=this.value;
+  document.getElementById('compGo').addEventListener('click',function(){
+    var s=document.getElementById('compStart').value,e=document.getElementById('compEnd').value;
     var si=dts.indexOf(s),ei=dts.indexOf(e);
-    if(si!==-1&&ei!==-1){drawCatChart(0,Math.min(si,ei),Math.max(si,ei));drawCatList(0,Math.min(si,ei),Math.max(si,ei))}
+    if(si!==-1&&ei!==-1){drawCompChart(0,Math.min(si,ei),Math.max(si,ei))}
   });
-  document.getElementById('compStart').addEventListener('change',function(){
-    var s=this.value,e=document.getElementById('compEnd').value;
-    var si=dts.indexOf(s),ei=dts.indexOf(e);
-    if(si!==-1&&ei!==-1)drawCompChart(0,Math.min(si,ei),Math.max(si,ei));
-  });
-  document.getElementById('compEnd').addEventListener('change',function(){
-    var s=document.getElementById('compStart').value,e=this.value;
-    var si=dts.indexOf(s),ei=dts.indexOf(e);
-    if(si!==-1&&ei!==-1)drawCompChart(0,Math.min(si,ei),Math.max(si,ei));
-  });
+  // 自定义日期 change（选完自动更新）
+  document.getElementById('trendStart').addEventListener('change',function(){document.getElementById('trendGo').click()});
+  document.getElementById('trendEnd').addEventListener('change',function(){document.getElementById('trendGo').click()});
+  document.getElementById('catStart').addEventListener('change',function(){document.getElementById('catGo').click()});
+  document.getElementById('catEnd').addEventListener('change',function(){document.getElementById('catGo').click()});
+  document.getElementById('compStart').addEventListener('change',function(){document.getElementById('compGo').click()});
+  document.getElementById('compEnd').addEventListener('change',function(){document.getElementById('compGo').click()});
   document.getElementById('insightStart').addEventListener('change',runCycleInsight);
   document.getElementById('insightEnd').addEventListener('change',runCycleInsight);
 })();
