@@ -3110,12 +3110,12 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;backgro
 <div class="date-selector" id="dateSelector"></div>
 <div class="revenue-hero fade-in"><div class="revenue-label" id="heroLabel">本日营业额</div><div class="revenue-amount"><span class="yen">&yen;</span><span id="heroAmount">--</span></div><div id="heroChange" style="margin-top:8px"></div></div>
 <div class="quick-stats fade-in d1"><div class="stat-card"><div class="stat-value accent" id="statOrders">--</div><div class="stat-label">订单数</div></div><div class="stat-card"><div class="stat-value gold" id="statAvg">--</div><div class="stat-label">客单价</div></div><div class="stat-card"><div class="stat-value blue" id="statDiscount">--</div><div class="stat-label">优惠率</div></div></div>
-<div class="section fade-in d2"><div class="section-header"><div class="section-title">📈 营收趋势</div></div><div class="period-row" id="trendPeriod"><button class="period-tab" data-days="3" onclick="setTrend(this,3)">近3天</button><button class="period-tab active" data-days="7" onclick="setTrend(this,7)">近7天</button><button class="period-tab" data-days="0" onclick="setTrend(this,0)">全部</button><button class="period-tab custom" onclick="toggleRange('trend')">自定义</button></div><div class="date-range" id="trendRange"><label>从</label><input type="date" id="trendStart" onchange="applyTrend()"><span class="arrow">→</span><label>到</label><input type="date" id="trendEnd" onchange="applyTrend()"></div><div class="chart-card"><canvas id="trendChart" height="200"></canvas></div></div>
-<div class="section fade-in d3"><div class="section-header"><div class="section-title">🏷️ 品类营业额</div><div class="section-badge" id="catBadge">--</div></div><div class="period-row" id="catPeriod"><button class="period-tab active" data-days="1" onclick="setCat(this,1)">当日</button><button class="period-tab" data-days="3" onclick="setCat(this,3)">近3天</button><button class="period-tab" data-days="7" onclick="setCat(this,7)">近7天</button><button class="period-tab" data-days="0" onclick="setCat(this,0)">全部</button><button class="period-tab custom" onclick="toggleRange('cat')">自定义</button></div><div class="date-range" id="catRange"><label>从</label><input type="date" id="catStart" onchange="applyCat()"><span class="arrow">→</span><label>到</label><input type="date" id="catEnd" onchange="applyCat()"></div><div class="chart-card"><canvas id="catPie" height="260"></canvas></div><div class="cat-list" id="catList"></div></div>
-<div class="section fade-in d4"><div class="section-header"><div class="section-title">📊 品类趋势对比</div></div><div class="period-row" id="compPeriod"><button class="period-tab" data-days="3" onclick="setComp(this,3)">近3天</button><button class="period-tab active" data-days="7" onclick="setComp(this,7)">近7天</button><button class="period-tab" data-days="0" onclick="setComp(this,0)">全部</button><button class="period-tab custom" onclick="toggleRange('comp')">自定义</button></div><div class="date-range" id="compRange"><label>从</label><input type="date" id="compStart" onchange="applyComp()"><span class="arrow">→</span><label>到</label><input type="date" id="compEnd" onchange="applyComp()"></div><div class="chart-card"><canvas id="catTrend" height="240"></canvas></div></div>
+<div class="section fade-in d2"><div class="section-header"><div class="section-title">📈 营收趋势</div></div><div class="period-row" id="trendPeriod"><button class="period-tab" data-days="3">近3天</button><button class="period-tab active" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="trendRange"><label>从</label><input type="date" id="trendStart"><span class="arrow">→</span><label>到</label><input type="date" id="trendEnd"></div><div class="chart-card"><canvas id="trendChart" height="200"></canvas></div></div>
+<div class="section fade-in d3"><div class="section-header"><div class="section-title">🏷️ 品类营业额</div><div class="section-badge" id="catBadge">--</div></div><div class="period-row" id="catPeriod"><button class="period-tab active" data-days="1">当日</button><button class="period-tab" data-days="3">近3天</button><button class="period-tab" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="catRange"><label>从</label><input type="date" id="catStart"><span class="arrow">→</span><label>到</label><input type="date" id="catEnd"></div><div class="chart-card"><canvas id="catPie" height="260"></canvas></div><div class="cat-list" id="catList"></div></div>
+<div class="section fade-in d4"><div class="section-header"><div class="section-title">📊 品类趋势对比</div></div><div class="period-row" id="compPeriod"><button class="period-tab" data-days="3">近3天</button><button class="period-tab active" data-days="7">近7天</button><button class="period-tab" data-days="0">全部</button><button class="period-tab custom">自定义</button></div><div class="date-range" id="compRange"><label>从</label><input type="date" id="compStart"><span class="arrow">→</span><label>到</label><input type="date" id="compEnd"></div><div class="chart-card"><canvas id="catTrend" height="240"></canvas></div></div>
 <div class="section fade-in"><div class="section-header"><div class="section-title">🏆 门店排行</div><div class="section-badge" id="storeBadge">当日 TOP 10</div></div><div id="storeList" style="display:flex;flex-direction:column;gap:8px"></div></div>
 <div class="section fade-in"><div class="section-header"><div class="section-title">💡 当日经营建议</div><div class="section-badge">智能分析</div></div><div class="tip-banner"><div class="tip-icon">📌</div><div class="tip-text" id="tipText">加载中...</div></div><div class="insight-list" id="insightList"></div></div>
-<div class="section fade-in"><div class="section-header"><div class="section-title">📋 周期性经营分析</div><div class="section-badge">自定义周期</div></div><div class="date-range show" id="insightRange"><label>从</label><input type="date" id="insightStart" onchange="applyInsight()"><span class="arrow">→</span><label>到</label><input type="date" id="insightEnd" onchange="applyInsight()"><button class="go-btn" onclick="applyInsight()" style="margin-left:8px">分析</button></div><div class="insight-list" id="cycleInsightList"></div></div>
+<div class="section fade-in"><div class="section-header"><div class="section-title">📋 周期性经营分析</div><div class="section-badge">自定义周期</div></div><div class="date-range show" id="insightRange"><label>从</label><input type="date" id="insightStart"><span class="arrow">→</span><label>到</label><input type="date" id="insightEnd"><button class="go-btn"  style="margin-left:8px">分析</button></div><div class="insight-list" id="cycleInsightList"></div></div>
 <div class="update-bar"><span class="dot"></span>数据来源：客如云收银系统 · 更新时间 <span id="updateTime">--</span></div>
 </div>
 <script>var D=JSON.parse(document.getElementById('app-data').textContent);
@@ -3128,119 +3128,71 @@ var sum=D.daily_summary,dts=sum.map(function(s){return s.date}),cIdx=-1;
 document.getElementById('periodLabel').textContent=D.period;
 document.getElementById('updateTime').textContent=new Date().toLocaleString('zh-CN',{hour12:false});
 
-// === Date selector chips ===
 var sel=document.getElementById('dateSelector');
 dts.forEach(function(d,i){var dt=new Date(d),ch=document.createElement('button');ch.className='date-chip';ch.innerHTML=d.slice(5)+'<span class="wd">周'+WD[dt.getDay()]+'</span>';ch.onclick=function(){selDate(i)};sel.appendChild(ch)});
 
-// === Filter state for each section ===
-var trendFilter={type:'preset',days:7};  // type: 'preset'(days) or 'custom'(start,end indices)
-var catFilter={type:'preset',days:1};
-var compFilter={type:'preset',days:7};
-
-function calcRange(f){
-  if(f.type==='preset'){
-    if(f.days===0)return{start:0,end:sum.length-1};
-    var s=Math.max(0,sum.length-f.days);return{start:s,end:sum.length-1};
-  }else{
-    return{start:f.start,end:f.end};
-  }
-}
-
-// === Toggle / Apply helpers ===
-function toggleRange(p){
-  var el=document.getElementById(p+'Range');
-  var show=!el.classList.contains('show');
-  el.classList.toggle('show',show);
-  document.querySelector('#'+p+'Period .period-tab.custom').classList.toggle('active',show);
-  if(show){
-    var min=dts[0],max=dts[dts.length-1];
-    document.getElementById(p+'Start').value=min;
-    document.getElementById(p+'End').value=max;
-  }
-}
-function clearCustom(p){
-  document.getElementById(p+'Range').classList.remove('show');
-  document.querySelector('#'+p+'Period .period-tab.custom').classList.remove('active');
-}
-
-// === Preset button handlers ===
-function setTrend(btn,days){
-  document.querySelectorAll('#trendPeriod .period-tab:not(.custom)').forEach(function(t){t.classList.remove('active')});
-  btn.classList.add('active');clearCustom('trend');
-  trendFilter={type:'preset',days:days};rTC();
-}
-function setCat(btn,days){
-  document.querySelectorAll('#catPeriod .period-tab:not(.custom)').forEach(function(t){t.classList.remove('active')});
-  btn.classList.add('active');clearCustom('cat');
-  catFilter={type:'preset',days:days};rCP();rCL();
-}
-function setComp(btn,days){
-  document.querySelectorAll('#compPeriod .period-tab:not(.custom)').forEach(function(t){t.classList.remove('active')});
-  btn.classList.add('active');clearCustom('comp');
-  compFilter={type:'preset',days:days};rCT();
-}
-
-// === Custom date handlers ===
-function applyTrend(){
-  var s=document.getElementById('trendStart').value,e=document.getElementById('trendEnd').value;
-  var si=dts.indexOf(s),ei=dts.indexOf(e);
-  if(si!==-1&&ei!==-1){trendFilter={type:'custom',start:Math.min(si,ei),end:Math.max(si,ei)};rTC()}
-}
-function applyCat(){
-  var s=document.getElementById('catStart').value,e=document.getElementById('catEnd').value;
-  var si=dts.indexOf(s),ei=dts.indexOf(e);
-  if(si!==-1&&ei!==-1){catFilter={type:'custom',start:Math.min(si,ei),end:Math.max(si,ei)};rCP();rCL()}
-}
-function applyComp(){
-  var s=document.getElementById('compStart').value,e=document.getElementById('compEnd').value;
-  var si=dts.indexOf(s),ei=dts.indexOf(e);
-  if(si!==-1&&ei!==-1){compFilter={type:'custom',start:Math.min(si,ei),end:Math.max(si,ei)};rCT()}
-}
-
-// === Sum helper ===
-function sumRange(range){
-  var start=range.start,end=range.end,r={};
-  for(var i=start;i<=end;i++){
-    Object.keys(sum[i].categories).forEach(function(cat){
-      if(!r[cat])r[cat]={revenue:0,income:0,orders:0,stores:[]};
-      r[cat].revenue+=sum[i].categories[cat].revenue;
-      r[cat].income+=sum[i].categories[cat].income;
-      r[cat].orders+=sum[i].categories[cat].orders;
-      sum[i].categories[cat].stores.forEach(function(s){if(r[cat].stores.indexOf(s)===-1)r[cat].stores.push(s)});
-    });
-  }
-  return r;
-}
-
-// === Render entry ===
-function selDate(i){cIdx=i;document.querySelectorAll('.date-chip').forEach(function(c,j){c.classList.toggle('active',j===i)});render(i)}
-selDate(dts.length-1);
 var tC=null,cP=null,cT=null;
 
-function render(i){
-  var dy=sum[i],tr=dy.total_revenue,
-      ti=Object.values(dy.categories).reduce(function(s,c){return s+c.income},0),
-      to=Object.values(dy.categories).reduce(function(s,c){return s+c.orders},0),
-      td=tr-ti,dr=tr>0?(td/tr*100):0,ap=to>0?(ti/to):0;
-  document.getElementById('heroAmount').textContent=fn(tr);
-  document.getElementById('heroLabel').textContent=dy.date+' 营业额';
-  if(i>0){var pv=sum[i-1].total_revenue,chg=pv>0?((tr-pv)/pv*100):0,up=chg>=0;document.getElementById('heroChange').innerHTML='<span class="revenue-change '+(up?'up':'down')+'">'+(up?'▲':'▼')+' 较昨日 '+(up?'+':'')+chg.toFixed(1)+'%</span><span style="font-size:11px;color:var(--fg-dim);margin-left:8px">昨日 ¥'+fn(pv)+'</span>'}else{document.getElementById('heroChange').innerHTML='<span style="font-size:11px;color:var(--fg-dim)">无前日对比</span>'}
-  document.getElementById('statOrders').textContent=to.toLocaleString();document.getElementById('statAvg').textContent='¥'+ap.toFixed(0);document.getElementById('statDiscount').textContent=dr.toFixed(1)+'%';
-  rTC();rCP();rCL();rCT();rSR(dy);rIns(i,dy);
+function selDate(i){
+  cIdx=i;
+  var chips=sel.querySelectorAll('.date-chip');
+  for(var j=0;j<chips.length;j++){chips[j].classList.toggle('active',j===i)}
+  render(i);
 }
 
-function rTC(){
-  var r=calcRange(trendFilter),lb=[],rv=[],ic=[];
-  for(var i=r.start;i<=r.end;i++){lb.push(dts[i].slice(5));rv.push(sum[i].total_revenue);ic.push(Object.values(sum[i].categories).reduce(function(s,c){return s+c.income},0))}
-  var ctx=document.getElementById('trendChart').getContext('2d');if(tC)tC.destroy();
+selDate(dts.length-1);
+
+function render(i){
+  var dy=sum[i],tr=dy.total_revenue;
+  var ti=0,to=0;
+  Object.keys(dy.categories).forEach(function(cat){ti+=dy.categories[cat].income;to+=dy.categories[cat].orders});
+  var td=tr-ti,dr=tr>0?(td/tr*100):0,ap=to>0?(ti/to):0;
+  document.getElementById('heroAmount').textContent=fn(tr);
+  document.getElementById('heroLabel').textContent=dy.date+' 营业额';
+  if(i>0){
+    var pv=sum[i-1].total_revenue,chg=pv>0?((tr-pv)/pv*100):0,up=chg>=0;
+    document.getElementById('heroChange').innerHTML='<span class="revenue-change '+(up?'up':'down')+'">'+(up?'▲':'▼')+' 较昨日 '+(up?'+':'')+chg.toFixed(1)+'%</span><span style="font-size:11px;color:var(--fg-dim);margin-left:8px">昨日 ¥'+fn(pv)+'</span>';
+  }else{
+    document.getElementById('heroChange').innerHTML='<span style="font-size:11px;color:var(--fg-dim)">无前日对比</span>';
+  }
+  document.getElementById('statOrders').textContent=to.toLocaleString();
+  document.getElementById('statAvg').textContent='¥'+ap.toFixed(0);
+  document.getElementById('statDiscount').textContent=dr.toFixed(1)+'%';
+  drawTrendChart(7);drawCatChart(1);drawCatList(1);drawCompChart(7);drawStoreRank(dy);drawInsights(i,dy);
+}
+
+/* ========== 营收趋势 ========== */
+function drawTrendChart(days){
+  var start=days===0?0:Math.max(0,sum.length-days),lb=[],rv=[],ic=[];
+  for(var i=start;i<sum.length;i++){
+    lb.push(dts[i].slice(5));
+    rv.push(sum[i].total_revenue);
+    var inc=0;Object.values(sum[i].categories).forEach(function(c){inc+=c.income});
+    ic.push(inc);
+  }
+  var ctx=document.getElementById('trendChart').getContext('2d');
+  if(tC)tC.destroy();
   tC=new Chart(ctx,{type:'line',data:{labels:lb,datasets:[
     {label:'营业额',data:rv,borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.1)',borderWidth:2.5,fill:true,tension:.4,pointRadius:4,pointBackgroundColor:'#fff',pointBorderColor:'#10b981',pointBorderWidth:2,pointHoverRadius:6},
     {label:'实收',data:ic,borderColor:'#3b82f6',borderWidth:1.5,borderDash:[5,3],fill:false,tension:.4,pointRadius:0}
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',align:'end',labels:{color:'#7c8495',font:{size:11},boxWidth:12,padding:12,usePointStyle:true}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',padding:10,cornerRadius:8,callbacks:{label:function(ctx){return ctx.dataset.label+': ¥'+fn(ctx.parsed.y)}}}},scales:{x:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:11},callback:function(v){return'¥'+(v/1000).toFixed(0)+'k'}}}}}});
 }
 
-function rCP(){
-  var r=calcRange(catFilter),cats=sumRange(r);
+/* ========== 品类营业额（饼图） ========== */
+function drawCatChart(days,startIdx,endIdx){
+  var start,end;
+  if(startIdx!==undefined&&endIdx!==undefined){start=startIdx;end=endIdx}
+  else{start=days===0?0:Math.max(0,sum.length-days);end=sum.length-1}
+  var cats={};
+  for(var i=start;i<=end;i++){
+    Object.keys(sum[i].categories).forEach(function(cat){
+      if(!cats[cat])cats[cat]={revenue:0,income:0,orders:0,stores:[]};
+      cats[cat].revenue+=sum[i].categories[cat].revenue;
+      cats[cat].income+=sum[i].categories[cat].income;
+      cats[cat].orders+=sum[i].categories[cat].orders;
+      sum[i].categories[cat].stores.forEach(function(s){if(cats[cat].stores.indexOf(s)===-1)cats[cat].stores.push(s)});
+    });
+  }
   var es=Object.entries(cats).sort(function(a,b){return b[1].revenue-a[1].revenue});
   var totalRev=es.reduce(function(s,e){return s+e[1].revenue},0);
   var lb=es.map(function(e){return e[0]}),dt=es.map(function(e){return e[1].revenue}),cl=es.map(function(e){return gc(e[0]).c});
@@ -3249,27 +3201,43 @@ function rCP(){
   cP=new Chart(ctx,{type:'pie',data:{labels:lb,datasets:[{data:dt,backgroundColor:cl,borderColor:'#fff',borderWidth:3,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:'#374151',font:{size:11},boxWidth:12,padding:10,usePointStyle:true,pointStyle:'circle'}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,padding:10,callbacks:{label:function(ctx){var p=(ctx.parsed/totalRev*100).toFixed(1);return ctx.label+': ¥'+fn(ctx.parsed)+' ('+p+'%)'}}}}}});
 }
 
-function rCL(){
-  var r=calcRange(catFilter),cats=sumRange(r);
+/* ========== 品类列表 ========== */
+function drawCatList(days,startIdx,endIdx){
+  var start,end;
+  if(startIdx!==undefined&&endIdx!==undefined){start=startIdx;end=endIdx}
+  else{start=days===0?0:Math.max(0,sum.length-days);end=sum.length-1}
+  var cats={};
+  for(var i=start;i<=end;i++){
+    Object.keys(sum[i].categories).forEach(function(cat){
+      if(!cats[cat])cats[cat]={revenue:0,stores:[]};
+      cats[cat].revenue+=sum[i].categories[cat].revenue;
+      sum[i].categories[cat].stores.forEach(function(s){if(cats[cat].stores.indexOf(s)===-1)cats[cat].stores.push(s)});
+    });
+  }
   var es=Object.entries(cats).sort(function(a,b){return b[1].revenue-a[1].revenue});
   var totalRev=es.reduce(function(s,e){return s+e[1].revenue},0),mx=es[0]?es[0][1].revenue:1;
-  var dl=dts[r.start].slice(5)+'~'+dts[r.end].slice(5);
+  var dl=dts[start].slice(5)+'~'+dts[end].slice(5);
   document.getElementById('catList').innerHTML=es.map(function(e){
     var n=e[0],d=e[1],c=gc(n),p=(d.revenue/totalRev*100).toFixed(1),b=(d.revenue/mx*100).toFixed(0);
     return '<div class="cat-item"><div class="cat-icon" style="background:'+c.bg+'">'+c.ic+'</div><div class="cat-info"><div class="cat-name">'+n+'</div><div class="cat-stores">'+d.stores.length+' 个摊位 · '+dl+'</div><div class="cat-bar"><div class="cat-bar-fill" style="width:'+b+'%;background:'+c.fg+'"></div></div></div><div class="cat-right"><div class="cat-amount">¥'+fn(d.revenue)+'</div><div class="cat-pct">'+p+'%</div></div></div>';
   }).join('');
 }
 
-function rCT(){
-  var r=calcRange(compFilter),ct={};
-  for(var i=r.start;i<=r.end;i++){Object.keys(sum[i].categories).forEach(function(cat){ct[cat]=(ct[cat]||0)+sum[i].categories[cat].revenue})}
+/* ========== 品类趋势对比 ========== */
+function drawCompChart(days,startIdx,endIdx){
+  var start,end;
+  if(startIdx!==undefined&&endIdx!==undefined){start=startIdx;end=endIdx}
+  else{start=days===0?0:Math.max(0,sum.length-days);end=sum.length-1}
+  var ct={};
+  for(var i=start;i<=end;i++){Object.keys(sum[i].categories).forEach(function(cat){ct[cat]=(ct[cat]||0)+sum[i].categories[cat].revenue})}
   var top=Object.entries(ct).sort(function(a,b){return b[1]-a[1]}).slice(0,6).map(function(e){return e[0]});
-  var lb=[];for(var j=r.start;j<=r.end;j++)lb.push(dts[j].slice(5));
+  var lb=[];for(var j=start;j<=end;j++)lb.push(dts[j].slice(5));
   var ctx=document.getElementById('catTrend').getContext('2d');if(cT)cT.destroy();
-  cT=new Chart(ctx,{type:'bar',data:{labels:lb,datasets:top.map(function(cat){return{label:cat,data:(function(){var a=[];for(var j=r.start;j<=r.end;j++)a.push(sum[j].categories[cat]?sum[j].categories[cat].revenue:0);return a})(),backgroundColor:gc(cat).c+'66',borderColor:gc(cat).c,borderWidth:1.5,borderRadius:6}})},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',align:'end',labels:{color:'#7c8495',font:{size:10},boxWidth:10,padding:8,usePointStyle:true}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,callbacks:{label:function(ctx){return ctx.dataset.label+': ¥'+fn(ctx.parsed.y)}}}},scales:{x:{stacked:false,grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:10}}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:10},callback:function(v){return'¥'+(v/1000).toFixed(0)+'k'}}}}}});
+  cT=new Chart(ctx,{type:'bar',data:{labels:lb,datasets:top.map(function(cat){return{label:cat,data:(function(){var a=[];for(var j=start;j<=end;j++)a.push(sum[j].categories[cat]?sum[j].categories[cat].revenue:0);return a})(),backgroundColor:gc(cat).c+'66',borderColor:gc(cat).c,borderWidth:1.5,borderRadius:6}})},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',align:'end',labels:{color:'#7c8495',font:{size:10},boxWidth:10,padding:8,usePointStyle:true}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,callbacks:{label:function(ctx){return ctx.dataset.label+': ¥'+fn(ctx.parsed.y)}}}},scales:{x:{stacked:false,grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:10}}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{color:'#7c8495',font:{size:10},callback:function(v){return'¥'+(v/1000).toFixed(0)+'k'}}}}}});
 }
 
-function rSR(dy){
+/* ========== 门店排行 ========== */
+function drawStoreRank(dy){
   var dateStr=dy.date.slice(5)+' 周'+WD[new Date(dy.date).getDay()];
   document.getElementById('storeBadge').textContent=dateStr+' TOP 10';
   var rk=dy.store_ranking||[],t10=rk.slice(0,10),md=['🥇','🥈','🥉'];
@@ -3279,76 +3247,56 @@ function rSR(dy){
   }).join('');
 }
 
-function rIns(idx,dy){
+/* ========== 当日经营建议 ========== */
+function drawInsights(idx,dy){
   var ins=[],cs=Object.entries(dy.categories).sort(function(a,b){return b[1].revenue-a[1].revenue}),tr=dy.total_revenue;
   var tp=cs[0],tpP=(tp[1].revenue/tr*100).toFixed(0);
-  ins.push({t:'good',ti:'营收主力',tg:'表现优秀',tx:tp[0]+'以 ¥'+fn(tp[1].revenue)+' 占比 '+tpP+'%，是市场核心收入来源。建议持续保障该品类供应链稳定。'});
+  ins.push({t:'good',ti:'营收主力',tg:'表现优秀',tx:tp[0]+'以 ¥'+fn(tp[1].revenue)+' 占比 '+tpP+'%，是市场核心收入来源。'});
   var bt=cs[cs.length-1];
-  if(bt[1].revenue/tr<0.03){ins.push({t:'warn',ti:'低营收品类',tg:'需关注',tx:bt[0]+'仅 ¥'+fn(bt[1].revenue)+'（'+(bt[1].revenue/tr*100).toFixed(1)+'%），建议评估选品、陈列位置，或引入新品牌激活品类。'})}
+  if(bt[1].revenue/tr<0.03){ins.push({t:'warn',ti:'低营收品类',tg:'需关注',tx:bt[0]+'仅 ¥'+fn(bt[1].revenue)+'（'+(bt[1].revenue/tr*100).toFixed(1)+'%），建议评估调整。'})}
   var tdi=tr-Object.values(dy.categories).reduce(function(s,c){return s+c.income},0),dr2=(tdi/tr*100);
-  if(dr2>10){ins.push({t:'warn',ti:'优惠率偏高',tg:'成本关注',tx:'当日优惠率 '+dr2.toFixed(1)+'%，折损 ¥'+fn(tdi)+'。建议检查各门店折扣力度，考虑用满减替代全场折扣。'})}
-  else if(dr2<3){ins.push({t:'good',ti:'优惠率健康',tg:'控制良好',tx:'优惠率仅 '+dr2.toFixed(1)+'%，折损控制良好。'})}
+  if(dr2>10){ins.push({t:'warn',ti:'优惠率偏高',tg:'成本关注',tx:'当日优惠率 '+dr2.toFixed(1)+'%，折损 ¥'+fn(tdi)+'。'})}
+  else if(dr2<3){ins.push({t:'good',ti:'优惠率健康',tg:'控制良好',tx:'优惠率仅 '+dr2.toFixed(1)+'%，控制良好。'})}
   if(idx>=5){
     var a3=(sum[idx].total_revenue+sum[idx-1].total_revenue+sum[idx-2].total_revenue)/3;
     var f3=(sum[0].total_revenue+sum[1].total_revenue+sum[2].total_revenue)/3;
-    if(a3<f3*0.85){ins.push({t:'warn',ti:'营收下行趋势',tg:'趋势预警',tx:'近3日日均 ¥'+fn(a3)+'，较前3日下降 '+((1-a3/f3)*100).toFixed(1)+'%。'})}
-    else if(a3>f3*1.1){ins.push({t:'good',ti:'营收上升势头',tg:'积极信号',tx:'近3日日均 ¥'+fn(a3)+'，较前3日增长 '+((a3/f3-1)*100).toFixed(1)+'%。'})}
-    else{ins.push({t:'info',ti:'营收平稳',tg:'正常波动',tx:'近3日日均 ¥'+fn(a3)+'，与前期基本持平。'})}
-  }
-  if(idx>=3){
-    cs.slice(0,6).forEach(function(e){
-      var cat=e[0],cur=dy.categories[cat]?dy.categories[cat].revenue:0,prev=sum[idx-3].categories[cat]?sum[idx-3].categories[cat].revenue:0;
-      if(prev>0){var chg=((cur-prev)/prev*100);if(chg<-20){ins.push({t:'warn',ti:cat+' 下滑',tg:'品类预警',tx:cat+'近3日下降 '+chg.toFixed(1)+'%。'})}else if(chg>20){ins.push({t:'good',ti:cat+' 增长',tg:'品类亮点',tx:cat+'近3日增长 '+chg.toFixed(1)+'%。'})}}
-    });
+    if(a3<f3*0.85){ins.push({t:'warn',ti:'营收下行',tg:'趋势预警',tx:'近3日日均 ¥'+fn(a3)+'，较前3日下降 '+((1-a3/f3)*100).toFixed(1)+'%。'})}
+    else if(a3>f3*1.1){ins.push({t:'good',ti:'营收上升',tg:'积极信号',tx:'近3日日均 ¥'+fn(a3)+'，较前3日增长 '+((a3/f3-1)*100).toFixed(1)+'%。'})}
+    else{ins.push({t:'info',ti:'营收平稳',tg:'正常波动',tx:'近3日日均 ¥'+fn(a3)+'，与前期持平。'})}
   }
   var top3Pct=0;for(var k=0;k<Math.min(3,cs.length);k++)top3Pct+=(cs[k][1].revenue/tr*100);
-  if(top3Pct>70){ins.push({t:'info',ti:'品类集中度高',tg:'风险提示',tx:'前3大品类占营收 '+top3Pct.toFixed(0)+'%，集中度过高。'})}
-  else{ins.push({t:'info',ti:'品类结构均衡',tg:'结构良好',tx:'前3大品类占 '+top3Pct.toFixed(0)+'%，品类结构相对均衡。'})}
+  if(top3Pct>70){ins.push({t:'info',ti:'品类集中度高',tg:'风险提示',tx:'前3大品类占 '+top3Pct.toFixed(0)+'%，集中度高。'})}
+  else{ins.push({t:'info',ti:'品类结构均衡',tg:'结构良好',tx:'前3大品类占 '+top3Pct.toFixed(0)+'%，结构均衡。'})}
   var totalIAll=0,totalOAll=0;
   sum.forEach(function(d){Object.values(d.categories).forEach(function(c){totalIAll+=c.income;totalOAll+=c.orders})});
   var avgAll=totalOAll>0?totalIAll/totalOAll:0;
   var curI=Object.values(dy.categories).reduce(function(s,c){return s+c.income},0);
   var curO=Object.values(dy.categories).reduce(function(s,c){return s+c.orders},0);
   var avgNow=curO>0?curI/curO:0;
-  if(avgNow<avgAll*0.8){ins.push({t:'warn',ti:'客单价偏低',tg:'消费提醒',tx:'当日客单价 ¥'+avgNow.toFixed(0)+'，低于周期均值 ¥'+avgAll.toFixed(0)+'。'})}
-  else if(avgNow>avgAll*1.2){ins.push({t:'good',ti:'客单价提升',tg:'积极信号',tx:'当日客单价 ¥'+avgNow.toFixed(0)+'，高于均值 ¥'+avgAll.toFixed(0)+'。'})}
-  if(sum.length>=5){
-    var wkend=[],wkday=[];
-    sum.forEach(function(d){var day=new Date(d.date).getDay();if(day===0||day===6)wkend.push(d.total_revenue);else wkday.push(d.total_revenue)});
-    if(wkend.length>0&&wkday.length>0){
-      var avgWE=wkend.reduce(function(a,b){return a+b},0)/wkend.length;
-      var avgWD=wkday.reduce(function(a,b){return a+b},0)/wkday.length;
-      if(avgWE>avgWD*1.15){ins.push({t:'info',ti:'周末效应明显',tg:'运营参考',tx:'周末日均 ¥'+fn(avgWE)+'，工作日 ¥'+fn(avgWD)+'。建议周末增加人手备货。'})}
-      else if(avgWE<avgWD*0.9){ins.push({t:'info',ti:'周末客流偏低',tg:'运营参考',tx:'周末日均 ¥'+fn(avgWE)+'，低于工作日 ¥'+fn(avgWD)+'。建议周末加强引流。'})}
-    }
-  }
-  if(dy.store_ranking&&dy.store_ranking.length>5){
-    var best=dy.store_ranking[0],worst=dy.store_ranking[dy.store_ranking.length-1];
-    if(best.revenue>worst.revenue*10){ins.push({t:'info',ti:'门店差异大',tg:'管理建议',tx:'最佳 '+best.store+'（¥'+fn(best.revenue)+'）是最弱 '+worst.store+'（¥'+fn(worst.revenue)+'）的 '+(best.revenue/worst.revenue).toFixed(0)+' 倍。'})}
-  }
+  if(avgNow<avgAll*0.8){ins.push({t:'warn',ti:'客单价偏低',tg:'消费提醒',tx:'当日 ¥'+avgNow.toFixed(0)+'，低于均值 ¥'+avgAll.toFixed(0)+'。'})}
+  else if(avgNow>avgAll*1.2){ins.push({t:'good',ti:'客单价提升',tg:'积极信号',tx:'当日 ¥'+avgNow.toFixed(0)+'，高于均值 ¥'+avgAll.toFixed(0)+'。'})}
   var avgR=sum.reduce(function(s,d){return s+d.total_revenue},0)/sum.length;
-  document.getElementById('tipText').innerHTML='本周日均营业额 <strong>¥'+fn(avgR)+'</strong>，当前日 '+(dy.total_revenue>=avgR?'<strong>高于</strong>':'<strong>低于</strong>')+' 日均值（差 ¥'+fn(Math.abs(dy.total_revenue-avgR))+'）。';
+  document.getElementById('tipText').innerHTML='日均营业额 <strong>¥'+fn(avgR)+'</strong>，当日 '+(dy.total_revenue>=avgR?'高于':'低于')+' 日均值。';
   document.getElementById('insightList').innerHTML=ins.map(function(o){
     return '<div class="insight-card '+o.t+'"><div class="insight-title">'+o.ti+' <span class="insight-tag '+o.t+'">'+o.tg+'</span></div><div class="insight-body">'+o.tx+'</div></div>';
   }).join('');
 }
 
-// === 周期性经营分析 ===
-setInsightDates();applyInsight();
-
-function setInsightDates(){
+/* ========== 周期性经营分析 ========== */
+function initCycleInsight(){
   var min=dts[0],max=dts[dts.length-1];
   var s=document.getElementById('insightStart'),e=document.getElementById('insightEnd');
   s.min=min;s.max=max;e.min=min;e.max=max;
   s.value=dts[Math.max(0,dts.length-3)];e.value=max;
+  runCycleInsight();
 }
 
-function applyInsight(){
+function runCycleInsight(){
   var s=document.getElementById('insightStart').value;
   var e=document.getElementById('insightEnd').value;
-  if(!s||!e){document.getElementById('cycleInsightList').innerHTML='<div class="tip-banner"><div class="tip-icon">📋</div><div class="tip-text">请选择起始和结束日期</div></div>';return}
+  if(!s||!e){document.getElementById('cycleInsightList').innerHTML='<div class="tip-banner"><div class="tip-icon">📋</div><div class="tip-text">请选择日期范围</div></div>';return}
   var si=dts.indexOf(s),ei=dts.indexOf(e);
-  if(si===-1||ei===-1){document.getElementById('cycleInsightList').innerHTML='<div class="tip-banner"><div class="tip-icon">📋</div><div class="tip-text">日期无效，请选择数据范围内的日期（'+dts[0]+' ~ '+dts[dts.length-1]+'）</div></div>';return}
+  if(si===-1||ei===-1){document.getElementById('cycleInsightList').innerHTML='<div class="tip-banner"><div class="tip-icon">📋</div><div class="tip-text">请选择有效日期</div></div>';return}
   var start=Math.min(si,ei),end=Math.max(si,ei),n=end-start+1;
   var totalRev=0,totalInc=0,totalOrd=0,catData={};
   for(var i=start;i<=end;i++){
@@ -3360,61 +3308,152 @@ function applyInsight(){
       catData[cat].rev+=c.revenue;catData[cat].inc+=c.income;catData[cat].ord+=c.orders;catData[cat].days++;
     });
   }
-  var avgRev=totalRev/n,avgInc=totalInc/n,avgOrd=totalOrd/n,avgPrice=avgOrd>0?avgInc/avgOrd:0;
+  var avgRev=totalRev/n,avgOrd=totalOrd/n,avgPrice=avgOrd>0?(totalInc/n)/avgOrd:0;
   var dl=dts[start].slice(5)+' ~ '+dts[end].slice(5);
   var ins=[];
-  ins.push({t:'info',ti:'📊 '+dl+' 周期总览',tg:'数据概览',tx:'共计 '+n+' 天，总营业额 ¥'+fn(totalRev)+'，日均 ¥'+fn(avgRev)+'，日均订单 '+Math.round(avgOrd)+' 单，平均客单价 ¥'+avgPrice.toFixed(0)+'。'});
+  ins.push({t:'info',ti:'📊 '+dl+' 总览',tg:'概览',tx:n+'天，总营业额 ¥'+fn(totalRev)+'，日均 ¥'+fn(avgRev)+'，日均 '+Math.round(avgOrd)+' 单，客单价 ¥'+avgPrice.toFixed(0)+'。'});
   if(n>=4){
     var half=Math.floor(n/2),f1=0,f2=0;
     for(var i=start;i<start+half;i++)f1+=sum[i].total_revenue;
     for(var i=start+half;i<=end;i++)f2+=sum[i].total_revenue;
     var a1=f1/half,a2=f2/(n-half),chg=((a2-a1)/a1*100);
-    if(chg>5)ins.push({t:'good',ti:'📈 营收上升趋势',tg:'后半周期',tx:'后半周期日均 ¥'+fn(a2)+'，较前半 ¥'+fn(a1)+' 增长 '+chg.toFixed(1)+'%。'});
-    else if(chg<-5)ins.push({t:'warn',ti:'📉 营收下降趋势',tg:'后半周期',tx:'后半周期日均 ¥'+fn(a2)+'，较前半 ¥'+fn(a1)+' 下降 '+Math.abs(chg).toFixed(1)+'%。需关注原因。'});
-    else ins.push({t:'info',ti:'➡️ 营收基本持平',tg:'后半周期',tx:'前后半周期日均营业额基本持平（¥'+fn(a1)+' vs ¥'+fn(a2)+'）。'});
+    if(chg>5)ins.push({t:'good',ti:'📈 营收上升',tg:'趋势',tx:'后半周期日均 ¥'+fn(a2)+'，较前半增长 '+chg.toFixed(1)+'%。'});
+    else if(chg<-5)ins.push({t:'warn',ti:'📉 营收下降',tg:'趋势',tx:'后半周期日均 ¥'+fn(a2)+'，较前半下降 '+Math.abs(chg).toFixed(1)+'%。'});
+    else ins.push({t:'info',ti:'➡️ 营收持平',tg:'趋势',tx:'前后半周期基本持平（¥'+fn(a1)+' vs ¥'+fn(a2)+'）。'});
   }
   var catArr=Object.entries(catData).sort(function(a,b){return b[1].rev-a[1].rev});
-  ins.push({t:'good',ti:'🏆 周期营收冠军品类',tg:catArr[0][0],tx:catArr[0][0]+'累计 ¥'+fn(catArr[0][1].rev)+'（日均 ¥'+fn(catArr[0][1].rev/catArr[0][1].days)+'），占总营收 '+((catArr[0][1].rev/totalRev)*100).toFixed(1)+'%。'});
+  ins.push({t:'good',ti:'🏆 冠军品类',tg:catArr[0][0],tx:catArr[0][0]+'累计 ¥'+fn(catArr[0][1].rev)+'（日均 ¥'+fn(catArr[0][1].rev/catArr[0][1].days)+'），占 '+((catArr[0][1].rev/totalRev)*100).toFixed(1)+'%。'});
   var btm=catArr[catArr.length-1];
-  if(btm[1].rev/totalRev<0.03)ins.push({t:'warn',ti:'⚠️ 周期弱势品类',tg:btm[0],tx:btm[0]+'累计仅 ¥'+fn(btm[1].rev)+'，日均 ¥'+fn(btm[1].rev/btm[1].days)+'。建议评估调整。'});
+  if(btm[1].rev/totalRev<0.03)ins.push({t:'warn',ti:'⚠️ 弱势品类',tg:btm[0],tx:btm[0]+'累计仅 ¥'+fn(btm[1].rev)+'，建议评估调整。'});
   if(n>=2){
-    var fDay={},lDay={};
-    Object.keys(sum[start].categories).forEach(function(cat){fDay[cat]=sum[start].categories[cat].revenue});
-    Object.keys(sum[end].categories).forEach(function(cat){lDay[cat]=sum[end].categories[cat].revenue});
+    var fD={},lD={};
+    Object.keys(sum[start].categories).forEach(function(cat){fD[cat]=sum[start].categories[cat].revenue});
+    Object.keys(sum[end].categories).forEach(function(cat){lD[cat]=sum[end].categories[cat].revenue});
     catArr.slice(0,5).forEach(function(e){
-      var cat=e[0],fv=fDay[cat]||0,lv=lDay[cat]||0;
-      if(fv>0){var c2=((lv-fv)/fv*100);if(c2>10)ins.push({t:'good',ti:cat+' 持续增长',tg:'周期对比',tx:cat+'从 '+dts[start].slice(5)+' ¥'+fn(fv)+' 增至 '+dts[end].slice(5)+' ¥'+fn(lv)+'（+'+c2.toFixed(1)+'%）。'});else if(c2<-10)ins.push({t:'warn',ti:cat+' 周期下滑',tg:'周期对比',tx:cat+'从 '+dts[start].slice(5)+' ¥'+fn(fv)+' 降至 '+dts[end].slice(5)+' ¥'+fn(lv)+'（'+c2.toFixed(1)+'%）。'});}
+      var cat=e[0],fv=fD[cat]||0,lv=lD[cat]||0;
+      if(fv>0){var c2=((lv-fv)/fv*100);if(c2>10)ins.push({t:'good',ti:cat+' 增长',tg:'对比',tx:'从 ¥'+fn(fv)+' 增至 ¥'+fn(lv)+'（+'+c2.toFixed(1)+'%）。'});else if(c2<-10)ins.push({t:'warn',ti:cat+' 下滑',tg:'对比',tx:'从 ¥'+fn(fv)+' 降至 ¥'+fn(lv)+'（'+c2.toFixed(1)+'%）。'})}
     });
   }
   var totalDisc=totalRev-totalInc,discRate=(totalDisc/totalRev*100);
-  if(discRate>8)ins.push({t:'warn',ti:'💰 优惠率偏高',tg:'成本关注',tx:'周期平均优惠率 '+discRate.toFixed(1)+'%，累计折损 ¥'+fn(totalDisc)+'。建议优化折扣策略。'});
-  else if(discRate<3)ins.push({t:'good',ti:'💰 优惠率健康',tg:'控制良好',tx:'周期平均优惠率仅 '+discRate.toFixed(1)+'%，折损控制优秀。'});
-  if(n>=5){
-    var weD=[],wdD=[];
-    for(var i=start;i<=end;i++){var dow=new Date(sum[i].date).getDay();if(dow===0||dow===6)weD.push(sum[i].total_revenue);else wdD.push(sum[i].total_revenue)}
-    if(weD.length>0&&wdD.length>0){
-      var aW=weD.reduce(function(a,b){return a+b},0)/weD.length,aD=wdD.reduce(function(a,b){return a+b},0)/wdD.length;
-      ins.push({t:'info',ti:'📅 周末vs工作日',tg:'周期对比',tx:'周末日均 ¥'+fn(aW)+'（'+weD.length+'天），工作日 ¥'+fn(aD)+'（'+wdD.length+'天）。'});
-    }
-  }
-  if(n>=3){
-    var fO=0,fI=0,lO=0,lI=0;
-    Object.values(sum[start].categories).forEach(function(c){fO+=c.orders;fI+=c.income});
-    Object.values(sum[end].categories).forEach(function(c){lO+=c.orders;lI+=c.income});
-    var fp=fO>0?fI/fO:0,lp=lO>0?lI/lO:0;
-    if(fp>0&&lp>0){var pc=((lp-fp)/fp*100);if(pc>10)ins.push({t:'good',ti:'💵 客单价上升',tg:'消费升级',tx:'从 ¥'+fp.toFixed(0)+' 上升至 ¥'+lp.toFixed(0)+'。'});else if(pc<-10)ins.push({t:'warn',ti:'💵 客单价下降',tg:'消费关注',tx:'从 ¥'+fp.toFixed(0)+' 下降至 ¥'+lp.toFixed(0)+'。建议推出组合套餐。'});else ins.push({t:'info',ti:'💵 客单价稳定',tg:'正常波动',tx:'保持在 ¥'+fp.toFixed(0)+'~¥'+lp.toFixed(0)+' 区间。'});}
-  }
-  var tips=[];
-  if(avgRev<30000)tips.push('日均营业额偏低，建议加大引流促销');
-  if(avgPrice<25)tips.push('客单价有提升空间，建议推出组合套餐');
-  if(discRate>10)tips.push('优惠率偏高，建议优化折扣策略');
-  var tp3=0;for(var k=0;k<Math.min(3,catArr.length);k++)tp3+=(catArr[k][1].rev/totalRev*100);
-  if(tp3>70)tips.push('营收过度集中，建议培育新品类');
-  if(tips.length>0)ins.push({t:'gold',ti:'🎯 综合经营建议',tg:'行动指南',tx:tips.join('；')+'。'});
+  if(discRate>8)ins.push({t:'warn',ti:'💰 优惠率偏高',tg:'成本',tx:'周期平均优惠率 '+discRate.toFixed(1)+'%，折损 ¥'+fn(totalDisc)+'。'});
+  else if(discRate<3)ins.push({t:'good',ti:'💰 优惠率健康',tg:'控制良好',tx:'周期平均优惠率仅 '+discRate.toFixed(1)+'%。'});
   document.getElementById('cycleInsightList').innerHTML=ins.map(function(o){
     return '<div class="insight-card '+o.t+'"><div class="insight-title">'+o.ti+' <span class="insight-tag '+o.t+'">'+o.tg+'</span></div><div class="insight-body">'+o.tx+'</div></div>';
   }).join('');
 }
+
+initCycleInsight();
+
+/* ========== 全局点击处理（替代onclick属性） ========== */
+(function(){
+  function getClickTarget(el,cls){
+    while(el&&el!==document){
+      if(el.classList&&el.classList.contains(cls))return el;
+      el=el.parentElement;
+    }
+    return null;
+  }
+
+  document.getElementById('trendPeriod').addEventListener('click',function(ev){
+    var btn=getClickTarget(ev.target,'period-tab');
+    if(!btn||btn.classList.contains('custom'))return;
+    var days=parseInt(btn.getAttribute('data-days'));
+    if(isNaN(days))return;
+    var tabs=this.querySelectorAll('.period-tab:not(.custom)');
+    for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('active');
+    btn.classList.add('active');
+    var range=document.getElementById('trendRange');
+    range.classList.remove('show');
+    var cbtn=this.querySelector('.period-tab.custom');
+    if(cbtn)cbtn.classList.remove('active');
+    drawTrendChart(days);
+  });
+
+  document.getElementById('catPeriod').addEventListener('click',function(ev){
+    var btn=getClickTarget(ev.target,'period-tab');
+    if(!btn||btn.classList.contains('custom'))return;
+    var days=parseInt(btn.getAttribute('data-days'));
+    if(isNaN(days))return;
+    var tabs=this.querySelectorAll('.period-tab:not(.custom)');
+    for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('active');
+    btn.classList.add('active');
+    var range=document.getElementById('catRange');
+    range.classList.remove('show');
+    var cbtn=this.querySelector('.period-tab.custom');
+    if(cbtn)cbtn.classList.remove('active');
+    drawCatChart(days);drawCatList(days);
+  });
+
+  document.getElementById('compPeriod').addEventListener('click',function(ev){
+    var btn=getClickTarget(ev.target,'period-tab');
+    if(!btn||btn.classList.contains('custom'))return;
+    var days=parseInt(btn.getAttribute('data-days'));
+    if(isNaN(days))return;
+    var tabs=this.querySelectorAll('.period-tab:not(.custom)');
+    for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('active');
+    btn.classList.add('active');
+    var range=document.getElementById('compRange');
+    range.classList.remove('show');
+    var cbtn=this.querySelector('.period-tab.custom');
+    if(cbtn)cbtn.classList.remove('active');
+    drawCompChart(days);
+  });
+
+  // 自定义日期 toggle
+  function setupCustomToggle(prefix){
+    var row=document.getElementById(prefix+'Period');
+    var cbtn=row.querySelector('.period-tab.custom');
+    cbtn.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      var range=document.getElementById(prefix+'Range');
+      var show=!range.classList.contains('show');
+      range.classList.toggle('show',show);
+      this.classList.toggle('active',show);
+      if(show){
+        var min=dts[0],max=dts[dts.length-1];
+        document.getElementById(prefix+'Start').value=min;
+        document.getElementById(prefix+'End').value=max;
+      }
+    });
+  }
+  setupCustomToggle('trend');
+  setupCustomToggle('cat');
+  setupCustomToggle('comp');
+
+  // 自定义日期 change
+  document.getElementById('trendStart').addEventListener('change',function(){
+    var s=this.value,e=document.getElementById('trendEnd').value;
+    var si=dts.indexOf(s),ei=dts.indexOf(e);
+    if(si!==-1&&ei!==-1)drawTrendChart(0,Math.min(si,ei),Math.max(si,ei));
+  });
+  document.getElementById('trendEnd').addEventListener('change',function(){
+    var s=document.getElementById('trendStart').value,e=this.value;
+    var si=dts.indexOf(s),ei=dts.indexOf(e);
+    if(si!==-1&&ei!==-1)drawTrendChart(0,Math.min(si,ei),Math.max(si,ei));
+  });
+  document.getElementById('catStart').addEventListener('change',function(){
+    var s=this.value,e=document.getElementById('catEnd').value;
+    var si=dts.indexOf(s),ei=dts.indexOf(e);
+    if(si!==-1&&ei!==-1){drawCatChart(0,Math.min(si,ei),Math.max(si,ei));drawCatList(0,Math.min(si,ei),Math.max(si,ei))}
+  });
+  document.getElementById('catEnd').addEventListener('change',function(){
+    var s=document.getElementById('catStart').value,e=this.value;
+    var si=dts.indexOf(s),ei=dts.indexOf(e);
+    if(si!==-1&&ei!==-1){drawCatChart(0,Math.min(si,ei),Math.max(si,ei));drawCatList(0,Math.min(si,ei),Math.max(si,ei))}
+  });
+  document.getElementById('compStart').addEventListener('change',function(){
+    var s=this.value,e=document.getElementById('compEnd').value;
+    var si=dts.indexOf(s),ei=dts.indexOf(e);
+    if(si!==-1&&ei!==-1)drawCompChart(0,Math.min(si,ei),Math.max(si,ei));
+  });
+  document.getElementById('compEnd').addEventListener('change',function(){
+    var s=document.getElementById('compStart').value,e=this.value;
+    var si=dts.indexOf(s),ei=dts.indexOf(e);
+    if(si!==-1&&ei!==-1)drawCompChart(0,Math.min(si,ei),Math.max(si,ei));
+  });
+  document.getElementById('insightStart').addEventListener('change',runCycleInsight);
+  document.getElementById('insightEnd').addEventListener('change',runCycleInsight);
+})();
 </script>
 </body>
 </html>
