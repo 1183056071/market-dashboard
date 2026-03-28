@@ -3102,6 +3102,20 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;backgro
 .fade-in{animation:fadeUp .5s ease both}
 .d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}.d4{animation-delay:.2s}
 ::-webkit-scrollbar{width:0}
+
+.cat-detail{display:none;padding:12px 16px 14px 68px;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);animation:fadeUp .3s ease}
+.cat-detail.show{display:block}
+.cat-detail-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:12px;border-bottom:1px dashed #e8e8e8}
+.cat-detail-row:last-child{border-bottom:none}
+.cat-detail-date{color:var(--fg-dim)}
+.cat-detail-amount{font-family:DM Mono,monospace;color:var(--fg);font-weight:500}
+.cat-detail-bar{height:4px;border-radius:2px;background:#f1f5f9;margin-top:4px;overflow:hidden}
+.cat-detail-bar-fill{height:100%;border-radius:2px;transition:width .5s ease}
+.cat-item.expandable{cursor:pointer}
+.cat-item.expandable:active{background:var(--card-hover)}
+.cat-expand-arrow{font-size:10px;color:var(--fg-dim);transition:transform .2s}
+.cat-item.expanded .cat-expand-arrow{transform:rotate(90deg)}
+.cat-item.expanded{border-radius:var(--radius-sm) var(--radius-sm) 0 0;border-bottom-color:transparent}
 </style>
 </head>
 <body>
@@ -3201,7 +3215,7 @@ function drawCatChart(days,startIdx,endIdx){
   cP=new Chart(ctx,{type:'pie',data:{labels:lb,datasets:[{data:dt,backgroundColor:cl,borderColor:'#fff',borderWidth:3,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'bottom',labels:{color:'#374151',font:{size:11},boxWidth:12,padding:10,usePointStyle:true,pointStyle:'circle'}},tooltip:{backgroundColor:'#1a1a2e',borderColor:'#e4e8ec',borderWidth:1,titleColor:'#fff',bodyColor:'#a0aec0',cornerRadius:8,padding:10,callbacks:{label:function(ctx){var p=(ctx.parsed/totalRev*100).toFixed(1);return ctx.label+': ¥'+fn(ctx.parsed)+' ('+p+'%)'}}}}}});
 }
 
-/* ========== 品类列表 ========== */
+/* ========== 品类列表（可展开每日详情） ========== */
 function drawCatList(days,startIdx,endIdx){
   var start,end;
   if(startIdx!==undefined&&endIdx!==undefined){start=startIdx;end=endIdx}
@@ -3209,18 +3223,59 @@ function drawCatList(days,startIdx,endIdx){
   var cats={};
   for(var i=start;i<=end;i++){
     Object.keys(sum[i].categories).forEach(function(cat){
-      if(!cats[cat])cats[cat]={revenue:0,stores:[]};
+      if(!cats[cat])cats[cat]={revenue:0,stores:[],daily:{}};
       cats[cat].revenue+=sum[i].categories[cat].revenue;
       sum[i].categories[cat].stores.forEach(function(s){if(cats[cat].stores.indexOf(s)===-1)cats[cat].stores.push(s)});
+      cats[cat].daily[dts[i]]=sum[i].categories[cat].revenue;
     });
   }
   var es=Object.entries(cats).sort(function(a,b){return b[1].revenue-a[1].revenue});
   var totalRev=es.reduce(function(s,e){return s+e[1].revenue},0),mx=es[0]?es[0][1].revenue:1;
   var dl=dts[start].slice(5)+'~'+dts[end].slice(5);
-  document.getElementById('catList').innerHTML=es.map(function(e){
+  var listEl=document.getElementById('catList');
+  listEl.innerHTML='';
+  es.forEach(function(e,idx){
     var n=e[0],d=e[1],c=gc(n),p=(d.revenue/totalRev*100).toFixed(1),b=(d.revenue/mx*100).toFixed(0);
-    return '<div class="cat-item"><div class="cat-icon" style="background:'+c.bg+'">'+c.ic+'</div><div class="cat-info"><div class="cat-name">'+n+'</div><div class="cat-stores">'+d.stores.length+' 个摊位 · '+dl+'</div><div class="cat-bar"><div class="cat-bar-fill" style="width:'+b+'%;background:'+c.fg+'"></div></div></div><div class="cat-right"><div class="cat-amount">¥'+fn(d.revenue)+'</div><div class="cat-pct">'+p+'%</div></div></div>';
-  }).join('');
+    // Build daily detail rows
+    var dailyKeys=Object.keys(d.daily).sort();
+    var maxDaily=0;dailyKeys.forEach(function(k){if(d.daily[k]>maxDaily)maxDaily=d.daily[k]});
+    var detailHtml='<div class="cat-detail" id="catDetail_'+idx+'">';
+    detailHtml+='<div style="font-size:11px;color:var(--fg-dim);margin-bottom:8px">'+n+' 每日营业明细（'+dl+'）</div>';
+    dailyKeys.forEach(function(date){
+      var rev=d.daily[date],pct=maxDaily>0?(rev/maxDaily*100).toFixed(0):0;
+      var dow=new Date(date).getDay();
+      detailHtml+='<div class="cat-detail-row"><span class="cat-detail-date">'+date.slice(5)+' 周'+WD[dow]+'</span><span class="cat-detail-amount">¥'+fn(rev)+'</span></div>';
+      detailHtml+='<div class="cat-detail-bar"><div class="cat-detail-bar-fill" style="width:'+pct+'%;background:'+c.fg+'"></div></div>';
+    });
+    var dailyTotal=dailyKeys.reduce(function(s,k){return s+d.daily[k]},0);
+    var dailyAvg=dailyKeys.length>0?(dailyTotal/dailyKeys.length):0;
+    detailHtml+='<div class="cat-detail-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:8px;font-weight:600"><span class="cat-detail-date">日均 ¥'+fn(dailyAvg)+'</span><span class="cat-detail-amount" style="color:'+c.fg+'">合计 ¥'+fn(dailyTotal)+'</span></div>';
+    detailHtml+='</div>';
+    // Main item
+    var itemHtml='<div class="cat-item expandable" data-idx="'+idx+'" onclick="toggleCatDetail('+idx+')">';
+    itemHtml+='<div class="cat-icon" style="background:'+c.bg+'">'+c.ic+'</div>';
+    itemHtml+='<div class="cat-info"><div class="cat-name">'+n+' <span class="cat-expand-arrow">▶</span></div><div class="cat-stores">'+d.stores.length+' 个摊位 · '+dl+'</div>';
+    itemHtml+='<div class="cat-bar"><div class="cat-bar-fill" style="width:'+b+'%;background:'+c.fg+'"></div></div></div>';
+    itemHtml+='<div class="cat-right"><div class="cat-amount">¥'+fn(d.revenue)+'</div><div class="cat-pct">'+p+'%</div></div>';
+    itemHtml+='</div>';
+    listEl.insertAdjacentHTML('beforeend',itemHtml+detailHtml);
+  });
+}
+
+function toggleCatDetail(idx){
+  var items=document.querySelectorAll('.cat-item.expandable');
+  var item=document.querySelector('.cat-item[data-idx="'+idx+'"]');
+  var detail=document.getElementById('catDetail_'+idx);
+  if(!item||!detail)return;
+  var isExpanded=item.classList.contains('expanded');
+  // Close all first
+  items.forEach(function(it){it.classList.remove('expanded')});
+  document.querySelectorAll('.cat-detail').forEach(function(d){d.classList.remove('show')});
+  // Toggle current
+  if(!isExpanded){
+    item.classList.add('expanded');
+    detail.classList.add('show');
+  }
 }
 
 /* ========== 品类趋势对比 ========== */
