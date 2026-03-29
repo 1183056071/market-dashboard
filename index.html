@@ -3138,6 +3138,7 @@
 </script>
 <style>
 :root{--bg:#f5f6f8;--card:#fff;--card-hover:#f0f2f5;--border:#e4e8ec;--fg:#1a1a2e;--fg-dim:#7c8495;--accent:#10b981;--accent-light:#d1fae5;--accent-dark:#059669;--warn:#f59e0b;--warn-light:#fef3c7;--red:#ef4444;--red-light:#fee2e2;--blue:#3b82f6;--blue-light:#dbeafe;--purple:#8b5cf6;--orange:#f97316;--radius:14px;--radius-sm:10px}
+.page{display:none}.page.active{display:block}
 *{margin:0;padding:0;box-sizing:border-box}
 html{font-size:16px}
 body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -3230,10 +3231,106 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;backgro
 .cat-expand-arrow{font-size:10px;color:var(--fg-dim);transition:transform .2s}
 .cat-item.expanded .cat-expand-arrow{transform:rotate(90deg)}
 .cat-item.expanded{border-radius:var(--radius-sm) var(--radius-sm) 0 0;border-bottom-color:transparent}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);display:flex;z-index:200;box-shadow:0 -2px 10px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom)}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0 6px;cursor:pointer;color:var(--fg-dim);font-size:10px;font-weight:500;transition:all .2s;-webkit-tap-highlight-color:transparent;user-select:none}
+.nav-item .nav-icon{font-size:20px;margin-bottom:2px;transition:transform .2s}
+.nav-item.active{color:var(--accent);font-weight:700}
+.nav-item.active .nav-icon{transform:scale(1.15)}
+.new-page{padding:0 16px 80px}
+.new-page .section-header{margin-bottom:10px}
+.holiday-banner{background:linear-gradient(135deg,#fef3c7,#fffbeb);border:1px solid #fde68a;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:16px;display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#92400e}
+.holiday-banner .hb-icon{font-size:20px;flex-shrink:0}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stat-row .stat-card{grid-column:span 1}
+.month-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.month-card .mc-title{font-size:13px;font-weight:600;margin-bottom:8px}
+.month-card .mc-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;color:var(--fg-dim)}
+.month-card .mc-row .mc-val{font-family:'DM Mono',monospace;color:var(--fg);font-weight:500}
+.month-card .mc-row .mc-val.up{color:var(--accent-dark)}.month-card .mc-row .mc-val.down{color:var(--red)}
+.holiday-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px;border-left:3px solid var(--warn)}
+.holiday-card .hc-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.holiday-card .hc-icon{font-size:22px}
+.holiday-card .hc-name{font-size:14px;font-weight:700}
+.holiday-card .hc-date{font-size:11px;color:var(--fg-dim);margin-left:auto}
+.holiday-card .hc-desc{font-size:12px;color:var(--fg-dim);line-height:1.6;margin-bottom:8px}
+.holiday-card .hc-cats{display:flex;gap:4px;flex-wrap:wrap}
+.holiday-card .hc-cat{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--bg);color:var(--fg-dim);border:1px solid var(--border)}
+.target-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:16px}
+.target-form label{font-size:13px;font-weight:600;display:block;margin-bottom:8px}
+.target-form input{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:16px;font-family:'DM Mono',monospace;color:var(--fg);outline:none;transition:border-color .2s}
+.target-form input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(16,185,129,.12)}
+.target-form .tf-btn{margin-top:10px;padding:10px 24px;border:none;border-radius:10px;background:var(--accent);color:#fff;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;width:100%;transition:opacity .2s}
+.target-form .tf-btn:active{opacity:.8}
+.progress-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px}
+.progress-card .pc-title{font-size:13px;font-weight:600;margin-bottom:4px}
+.progress-card .pc-sub{font-size:11px;color:var(--fg-dim);margin-bottom:8px}
+.progress-bar{height:10px;background:#f1f5f9;border-radius:5px;overflow:hidden;margin-bottom:4px}
+.progress-bar .pb-fill{height:100%;border-radius:5px;transition:width .6s ease}
+.progress-bar .pb-fill.green{background:var(--accent)}.progress-bar .pb-fill.yellow{background:var(--warn)}.progress-bar .pb-fill.red{background:var(--red)}
+.progress-bar .pb-label{font-size:11px;color:var(--fg-dim);text-align:right}
+.adjust-table{width:100%;border-collapse:collapse;margin-top:8px}
+.adjust-table th,.adjust-table td{padding:8px 10px;font-size:12px;text-align:left;border-bottom:1px solid var(--border)}
+.adjust-table th{color:var(--fg-dim);font-weight:500;background:var(--bg)}
+.adjust-table td{color:var(--fg)}
+.adjust-table .adj-up{color:var(--accent-dark);font-weight:600}
+.adjust-table .adj-down{color:var(--red);font-weight:600}
+.overview-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:16px}
+.overview-card .oc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.overview-card .oc-item{text-align:center}
+.overview-card .oc-val{font-family:'DM Mono',monospace;font-size:18px;font-weight:500}
+.overview-card .oc-label{font-size:11px;color:var(--fg-dim);margin-top:2px}
+.advice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px;border-left:3px solid var(--accent)}
+.advice-card.down{border-left-color:var(--red)}.advice-card.up{border-left-color:var(--accent)}
+.advice-card .ac-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.advice-card .ac-icon{font-size:18px}
+.advice-card .ac-name{font-size:14px;font-weight:600}
+.advice-card .ac-change{font-size:11px;margin-left:auto}
+.advice-card .ac-change.up{color:var(--accent-dark)}.advice-card .ac-change.down{color:var(--red)}
+.advice-card .ac-text{font-size:12px;color:var(--fg-dim);line-height:1.8}
+.marketing-cal{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px}
+.marketing-cal .mk-head{font-size:13px;font-weight:700;margin-bottom:6px}
+.marketing-cal .mk-date{font-size:11px;color:var(--fg-dim);margin-bottom:6px}
+.marketing-cal .mk-tip{font-size:12px;color:var(--fg);line-height:1.6;margin-bottom:4px}
+.marketing-cal .mk-cats{display:flex;gap:4px;flex-wrap:wrap}
+.marketing-cal .mk-cat{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--accent-light);color:var(--accent-dark)}
+.action-list{display:flex;flex-direction:column;gap:8px}
+.action-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:all .15s}
+.action-item:active{background:var(--card-hover)}
+.action-item.done{opacity:.5}
+.action-item.done .ai-text{text-decoration:line-through}
+.ai-check{width:20px;height:20px;border-radius:6px;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .2s;margin-top:1px}
+.action-item.done .ai-check{background:var(--accent);border-color:var(--accent);color:#fff}
+.ai-body{flex:1;min-width:0}
+.ai-text{font-size:13px;color:var(--fg);line-height:1.6}
+.ai-tag{display:inline-block;font-size:10px;padding:1px 8px;border-radius:8px;font-weight:600;margin-top:4px}
+.ai-tag.high{background:var(--red-light);color:var(--red)}.ai-tag.mid{background:var(--warn-light);color:#92400e}.ai-tag.low{background:var(--blue-light);color:#1e40af}
+.empty-state{text-align:center;padding:40px 20px;color:var(--fg-dim);font-size:13px}
+.empty-state .es-icon{font-size:40px;margin-bottom:10px;display:block}
+body{padding-bottom:60px}
+/* ===== 宽屏适配 ===== */
+@media(min-width:640px){
+  .app{max-width:640px}
+  .stat-row{grid-template-columns:1fr 1fr 1fr !important}
+  .stat-row .stat-card{grid-column:span 1 !important}
+  .oc-grid{grid-template-columns:1fr 1fr 1fr !important}
+  .cmp-grid{grid-template-columns:1fr 1fr 1fr !important}
+}
+@media(min-width:768px){
+  .app{max-width:780px}
+  .revenue-hero,.ana-hero,.tgt-hero,.po-card{display:flex;align-items:center;gap:24px}
+  .revenue-hero .revenue-amount{font-size:48px;margin:0}
+  .chart-card{padding:20px}
+}
+@media(min-width:1024px){
+  .app{max-width:960px}
+  .stat-row{grid-template-columns:repeat(3,1fr) !important}
+  .section{margin-bottom:28px}
+}
 </style>
 </head>
 <body>
 <div class="app">
+<div id="page-overview" class="page active">
 <div class="header"><div class="header-top"><div><div class="market-name">妫汭市集（永城店）</div><div class="market-sub">营业数据看板</div></div><div style="text-align:right"><div style="font-size:11px;color:var(--fg-dim)">数据周期</div><div style="font-family:'DM Mono';font-size:12px;color:var(--fg)" id="periodLabel"></div></div></div></div>
 <div class="date-selector" id="dateSelector"></div>
 <div class="revenue-hero fade-in"><div class="revenue-label" id="heroLabel">本日营业额</div><div class="revenue-amount"><span class="yen">&yen;</span><span id="heroAmount">--</span></div><div id="heroChange" style="margin-top:8px"></div></div>
@@ -3258,6 +3355,39 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;backgro
 <div class="section fade-in"><div class="section-header"><div class="section-title">💡 当日经营建议</div><div class="section-badge">智能分析</div></div><div class="tip-banner"><div class="tip-icon">📌</div><div class="tip-text" id="tipText">加载中...</div></div><div class="insight-list" id="insightList"></div></div>
 <div class="section fade-in"><div class="section-header"><div class="section-title">📋 周期性经营分析</div><div class="section-badge">自定义周期</div></div><div class="date-range show" id="insightRange"><label>从</label><input type="date" id="insightStart"><span class="arrow">→</span><label>到</label><input type="date" id="insightEnd"><button class="go-btn"  style="margin-left:8px">分析</button></div><div class="insight-list" id="cycleInsightList"></div></div>
 <div class="update-bar"><span class="dot"></span>数据来源：客如云收银系统 · 更新时间 <span id="updateTime">--</span></div>
+</div>
+
+<div id="page-analysis" class="page new-page">
+<div class="header"><div class="header-top"><div><div class="market-name">📈 数据分析</div><div class="market-sub">环比趋势 · 节日影响</div></div></div></div>
+<div id="holidayBanner"></div>
+<div class="section"><div class="section-header"><div class="section-title">📊 月度环比</div></div><div id="monthCompare"></div></div>
+<div class="section"><div class="section-header"><div class="section-title">📅 年度同比</div></div><div id="yearCompare"></div></div>
+<div class="section"><div class="section-header"><div class="section-title">🏮 节日影响分析</div></div><div id="holidayAnalysis"></div></div>
+<div class="section"><div class="section-header"><div class="section-title">🏷️ 品类环比对比</div></div><div id="catCompare"></div></div>
+</div>
+
+<div id="page-targets" class="page new-page">
+<div class="header"><div class="header-top"><div><div class="market-name">🎯 目标管理</div><div class="market-sub">月度目标 · 周度拆解</div></div></div></div>
+<div id="targetOverview"></div>
+<div class="target-form"><label>设定本月营业额目标</label><input type="number" id="targetInput" placeholder="输入目标金额"><button class="tf-btn" id="saveTargetBtn">保存目标</button></div>
+<div class="section"><div class="section-header"><div class="section-title">📅 周度目标拆解</div></div><div id="weeklyBreakdown"></div></div>
+<div class="section"><div class="section-header"><div class="section-title">🏮 节日调整系数</div></div><div id="holidayAdjust"></div></div>
+</div>
+
+<div id="page-plan" class="page new-page">
+<div class="header"><div class="header-top"><div><div class="market-name">📋 营销方案</div><div class="market-sub">智能建议 · 行动清单</div></div></div></div>
+<div id="planOverview"></div>
+<div class="section"><div class="section-header"><div class="section-title">🏷️ 品类专项建议</div></div><div id="catAdvice"></div></div>
+<div class="section"><div class="section-header"><div class="section-title">🎊 节日营销日历</div></div><div id="marketingCalendar"></div></div>
+<div class="section"><div class="section-header"><div class="section-title">✅ 行动清单</div></div><div class="action-list" id="actionList"></div></div>
+</div>
+
+<nav class="bottom-nav">
+<div class="nav-item active" data-page="page-overview" onclick="switchPage('page-overview')"><span class="nav-icon">📊</span>总览</div>
+<div class="nav-item" data-page="page-analysis" onclick="switchPage('page-analysis')"><span class="nav-icon">📈</span>分析</div>
+<div class="nav-item" data-page="page-targets" onclick="switchPage('page-targets')"><span class="nav-icon">🎯</span>目标</div>
+<div class="nav-item" data-page="page-plan" onclick="switchPage('page-plan')"><span class="nav-icon">📋</span>方案</div>
+</nav>
 </div>
 <script>var D=JSON.parse(document.getElementById('app-data').textContent);
 var WD=['日','一','二','三','四','五','六'];
@@ -3694,5 +3824,376 @@ initCycleInsight();
   document.getElementById('insightEnd').addEventListener('change',runCycleInsight);
 })();
 </script>
+<script>/* ================================================================
+   PART 2: 多页面导航 + 数据分析 + 目标管理 + 营销方案
+   ================================================================ */
+
+/* ---------- 农历节日数据 2024-2027 ---------- */
+var HOLIDAYS=[
+{n:'春节',d:'2024-02-10',ic:'🧨',imp:95,bf:15,af:15,desc:'年货采购高峰，肉类、海鲜、干货、水果需求激增',cats:['肉类','海鲜','干货','水果','酒水','粮油']},
+{n:'元宵节',d:'2024-02-24',ic:'🏮',imp:50,bf:3,af:1,desc:'汤圆原料需求上升',cats:['粮油','面点','豆制品']},
+{n:'清明节',d:'2024-04-04',ic:'🍃',imp:40,bf:3,af:1,desc:'祭扫用品、水果、肉类需求上升',cats:['水果','肉类','干货']},
+{n:'劳动节',d:'2024-05-01',ic:'👷',imp:55,bf:1,af:4,desc:'五一假期聚餐增多',cats:['肉类','海鲜','水果','酒水']},
+{n:'端午节',d:'2024-06-10',ic:'🐉',imp:70,bf:5,af:2,desc:'粽子原料需求大增：糯米、粽叶、肉类、蜜枣',cats:['粮油','肉类','干货','豆制品','调料']},
+{n:'中秋节',d:'2024-09-17',ic:'🥮',imp:75,bf:7,af:2,desc:'月饼原料、水果礼盒、海鲜需求上升',cats:['水果','海鲜','肉类','干货','酒水','粮油']},
+{n:'国庆节',d:'2024-10-01',ic:'🇨🇳',imp:65,bf:1,af:6,desc:'长假聚餐增多，旅游消费带动',cats:['肉类','海鲜','水果','酒水','熟食']},
+{n:'冬至',d:'2024-12-21',ic:'❄️',imp:55,bf:2,af:1,desc:'饺子、汤圆原料需求大增',cats:['面点','肉类','蔬菜','粮油']},
+{n:'元旦',d:'2025-01-01',ic:'🎉',imp:40,bf:1,af:1,desc:'跨年聚餐需求',cats:['肉类','海鲜','酒水','水果']},
+{n:'春节',d:'2025-01-29',ic:'🧨',imp:95,bf:15,af:15,desc:'年货采购高峰',cats:['肉类','海鲜','干货','水果','酒水','粮油']},
+{n:'元宵节',d:'2025-02-12',ic:'🏮',imp:50,bf:3,af:1,desc:'汤圆原料需求',cats:['粮油','面点','豆制品']},
+{n:'清明节',d:'2025-04-04',ic:'🍃',imp:40,bf:3,af:1,desc:'祭扫用品需求',cats:['水果','肉类','干货']},
+{n:'劳动节',d:'2025-05-01',ic:'👷',imp:55,bf:1,af:4,desc:'五一假期',cats:['肉类','海鲜','水果','酒水']},
+{n:'端午节',d:'2025-05-31',ic:'🐉',imp:70,bf:5,af:2,desc:'粽子原料需求',cats:['粮油','肉类','干货','豆制品','调料']},
+{n:'中秋节',d:'2025-10-06',ic:'🥮',imp:75,bf:7,af:2,desc:'月饼原料、水果礼盒',cats:['水果','海鲜','肉类','干货','酒水','粮油']},
+{n:'国庆节',d:'2025-10-01',ic:'🇨🇳',imp:65,bf:1,af:6,desc:'长假消费',cats:['肉类','海鲜','水果','酒水','熟食']},
+{n:'冬至',d:'2025-12-21',ic:'❄️',imp:55,bf:2,af:1,desc:'饺子汤圆需求',cats:['面点','肉类','蔬菜','粮油']},
+{n:'元旦',d:'2026-01-01',ic:'🎉',imp:40,bf:1,af:1,desc:'跨年聚餐',cats:['肉类','海鲜','酒水','水果']},
+{n:'春节',d:'2026-02-17',ic:'🧨',imp:95,bf:15,af:15,desc:'年货采购高峰',cats:['肉类','海鲜','干货','水果','酒水','粮油']},
+{n:'元宵节',d:'2026-03-03',ic:'🏮',imp:50,bf:3,af:1,desc:'汤圆原料需求',cats:['粮油','面点','豆制品']},
+{n:'清明节',d:'2026-04-05',ic:'🍃',imp:40,bf:3,af:1,desc:'祭扫用品需求',cats:['水果','肉类','干货']},
+{n:'劳动节',d:'2026-05-01',ic:'👷',imp:55,bf:1,af:4,desc:'五一假期',cats:['肉类','海鲜','水果','酒水']},
+{n:'端午节',d:'2026-06-19',ic:'🐉',imp:70,bf:5,af:2,desc:'粽子原料需求',cats:['粮油','肉类','干货','豆制品','调料']},
+{n:'中秋节',d:'2026-09-25',ic:'🥮',imp:75,bf:7,af:2,desc:'月饼原料、水果礼盒',cats:['水果','海鲜','肉类','干货','酒水','粮油']},
+{n:'国庆节',d:'2026-10-01',ic:'🇨🇳',imp:65,bf:1,af:6,desc:'长假消费',cats:['肉类','海鲜','水果','酒水','熟食']},
+{n:'重阳节',d:'2026-10-18',ic:'🌼',imp:30,bf:1,af:0,desc:'重阳糕、菊花酒',cats:['面点','酒水']},
+{n:'冬至',d:'2026-12-22',ic:'❄️',imp:55,bf:2,af:1,desc:'饺子汤圆需求',cats:['面点','肉类','蔬菜','粮油']},
+{n:'元旦',d:'2027-01-01',ic:'🎉',imp:40,bf:1,af:1,desc:'跨年聚餐',cats:['肉类','海鲜','酒水','水果']},
+{n:'春节',d:'2027-02-06',ic:'🧨',imp:95,bf:15,af:15,desc:'年货采购高峰',cats:['肉类','海鲜','干货','水果','酒水','粮油']}
+];
+
+/* ---------- 工具函数 ---------- */
+function addDays(ds,d){var dt=new Date(ds);dt.setDate(dt.getDate()+d);return dt.toISOString().slice(0,10)}
+function fM(v){return v.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function pct(c,p){if(!p||p===0)return{v:0,dir:'flat',s:'--'};var r=((c-p)/p*100);return{v:r,dir:r>=2?'up':r<=-2?'down':'flat',s:(r>=0?'+':'')+r.toFixed(1)+'%'}}
+function getMonthData(y,m){var r={rev:0,inc:0,ord:0,days:0,cats:{}};sum.forEach(function(s){var dy=new Date(s.date);if(dy.getFullYear()===y&&dy.getMonth()===m){r.rev+=s.total_revenue;r.days++;Object.keys(s.categories).forEach(function(c){var cat=s.categories[c];r.inc+=cat.income;r.ord+=cat.orders;if(!r.cats[c])r.cats[c]=0;r.cats[c]+=cat.revenue})}});return r}
+function getHolidaysInRange(s,e){return HOLIDAYS.filter(function(h){return addDays(h.d,-h.bf)<=e&&addDays(h.d,h.af)>=s})}
+function getUpcomingHolidays(n){var t=new Date().toISOString().slice(0,10);return HOLIDAYS.filter(function(h){return h.d>=t}).sort(function(a,b){return a.d.localeCompare(b.d)}).slice(0,n)}
+function mKey(y,m){return y+'-'+String(m+1).padStart(2,'0')}
+function mLabel(y,m){return y+'年'+(m+1)+'月'}
+
+/* ---------- 页面导航 ---------- */
+function switchPage(id){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+  document.getElementById(id).classList.add('active');
+  var nv=document.querySelector('[data-page="'+id+'"]');if(nv)nv.classList.add('active');
+  if(id==='page-analysis')renderAnalysis();
+  if(id==='page-targets')renderTargets();
+  if(id==='page-plan')renderPlan();
+  window.scrollTo(0,0);
+}
+
+/* ================================================================
+   分析页
+   ================================================================ */
+function renderAnalysis(){
+  var now=new Date(),cm={y:now.getFullYear(),m:now.getMonth()};
+  var mk=mKey(cm.y,cm.m),first=dts[0],last=dts[dts.length-1];
+
+  /* 节日提醒 */
+  var holInRange=getHolidaysInRange(addDays(first,-15),addDays(last,15));
+  var banner=document.getElementById('holidayBanner');
+  if(holInRange.length>0){
+    var tips=holInRange.map(function(h){var isAfter=new Date(h.d)>new Date(last);return h.ic+' <strong>'+h.n+'</strong>（'+h.d.slice(5)+'）'+(isAfter?' 即将到来':' 已在数据周期内')}).join('<br>');
+    banner.innerHTML='<div class="holiday-banner"><span class="hb-icon">🏮</span><div>'+tips+'<br><span style="font-size:11px;opacity:.8">对比分析时请考虑节日对消费的影响</span></div></div>';
+  }else{banner.innerHTML=''}
+
+  /* 月度环比 */
+  var lm=new Date(cm.y,cm.m-1,1);
+  var cd=getMonthData(cm.y,cm.m),pd=getMonthData(lm.getFullYear(),lm.getMonth());
+  var cp=pct(cd.rev,pd.rev),op=pct(cd.ord,pd.ord);
+  var hc=getHolidaysInRange(mk+'-01',mk+'-31'),hp=getHolidaysInRange(mKey(lm.getFullYear(),lm.getMonth())+'-01',mKey(lm.getFullYear(),lm.getMonth())+'-31');
+  var hNote='';
+  if(hc.length||hp.length){
+    hNote='<div class="holiday-card" style="margin-top:10px"><div class="hc-head"><span>⚠️</span><strong style="font-size:12px">节日影响提示</strong></div><div style="font-size:11px;color:var(--fg-dim);line-height:1.8">';
+    if(hc.length)hNote+='本月：'+hc.map(function(h){return h.ic+h.n}).join(' ')+'。';
+    if(hp.length)hNote+='上月：'+hp.map(function(h){return h.ic+h.n}).join(' ')+'。';
+    hNote+='节日月份消费波动较大，环比仅供参考。</div></div>';
+  }
+  var momH='<div class="overview-card"><div class="mc-title" style="margin-bottom:12px">📊 '+mLabel(cm.y,cm.m)+' vs '+mLabel(lm.getFullYear(),lm.getMonth())+'</div>';
+  if(!cd.days&&!pd.days){
+    momH+='<div class="empty-state"><span class="es-icon">📭</span>暂无月度数据</div>';
+  }else if(!pd.days){
+    momH+='<div class="month-card"><div class="mc-row"><span>本月营业额</span><span class="mc-val">¥'+fM(cd.rev)+'</span></div><div class="mc-row"><span>天数</span><span class="mc-val">'+cd.days+'天</span></div></div><div class="empty-state" style="padding:20px"><span class="es-icon">📋</span>暂无上月数据</div>';
+  }else{
+    momH+='<div class="stat-row"><div class="stat-card"><div class="stat-value accent">¥'+fM(cd.rev)+'</div><div class="stat-label">本月 ('+cd.days+'天)</div><div class="cmp-chg '+cp.dir+'" style="margin-top:6px;display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:10px;font-size:12px">'+(cp.dir==='up'?'▲':cp.dir==='down'?'▼':'—')+' '+cp.s+'</div></div><div class="stat-card"><div class="stat-value blue">¥'+fM(pd.rev)+'</div><div class="stat-label">上月 ('+pd.days+'天)</div></div></div>';
+    momH+='<div class="stat-row"><div class="stat-card"><div class="stat-value gold">'+cd.ord.toLocaleString()+'</div><div class="stat-label">订单</div><div class="cmp-chg '+op.dir+'" style="margin-top:6px;display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:10px;font-size:12px">'+(op.dir==='up'?'▲':op.dir==='down'?'▼':'—')+' '+op.s+'</div></div><div class="stat-card"><div class="stat-value" style="color:var(--purple)">¥'+(cd.ord>0?(cd.inc/cd.ord).toFixed(0):0)+'</div><div class="stat-label">客单价</div></div></div>'+hNote;
+  }
+  momH+='</div>';
+  document.getElementById('monthCompare').innerHTML=momH;
+
+  /* 年度同比 */
+  var yd=getMonthData(cm.y-1,cm.m),yp=pct(cd.rev,yd.rev);
+  var yoyH='<div class="overview-card"><div class="mc-title" style="margin-bottom:12px">📈 '+mLabel(cm.y,cm.m)+' vs '+mLabel(cm.y-1,cm.m)+'</div>';
+  if(!yd.days){
+    yoyH+='<div class="empty-state"><span class="es-icon">📊</span>暂无去年同月数据<br>导入历史数据后可进行年度同比</div>';
+  }else{
+    var yh1=getHolidaysInRange(mk+'-01',mk+'-31'),yh2=getHolidaysInRange(mKey(cm.y-1,cm.m)+'-01',mKey(cm.y-1,cm.m)+'-31');
+    yoyH+='<div class="stat-row"><div class="stat-card"><div class="stat-value accent">¥'+fM(cd.rev)+'</div><div class="stat-label">今年 ('+cd.days+'天)</div><div class="cmp-chg '+yp.dir+'" style="margin-top:6px;display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:10px;font-size:12px">'+(yp.dir==='up'?'▲':yp.dir==='down'?'▼':'—')+' 同比 '+yp.s+'</div></div><div class="stat-card"><div class="stat-value blue">¥'+fM(yd.rev)+'</div><div class="stat-label">去年 ('+yd.days+'天)</div></div></div>';
+    if(yh1.length||yh2.length){
+      yoyH+='<div class="holiday-card" style="margin-top:10px"><div class="hc-head"><span>💡</span><strong style="font-size:12px">农历节日对齐</strong></div><div style="font-size:11px;color:var(--fg-dim);line-height:1.8">农历节日每年公历日期不同，对比时需注意。<br>';
+      if(yh1.length)yoyH+='今年：'+yh1.map(function(h){return h.ic+h.n}).join(' ');
+      if(yh2.length)yoyH+='<br>去年：'+yh2.map(function(h){return h.ic+h.n}).join(' ');
+      yoyH+='</div></div>';
+    }
+  }
+  yoyH+='</div>';
+  document.getElementById('yearCompare').innerHTML=yoyH;
+
+  /* 节日影响分析 */
+  var allH=getHolidaysInRange(first,last),haH='';
+  if(!allH.length){
+    haH='<div class="empty-state"><span class="es-icon">📅</span>数据周期内无主要节日影响</div>';
+  }else{
+    allH.forEach(function(h){
+      var inR=new Date(h.d)>=new Date(first)&&new Date(h.d)<=new Date(last);
+      haH+='<div class="holiday-card"'+(inR?' style="border-left-color:var(--accent)"':'')+'><div class="hc-head"><span class="hc-icon">'+h.ic+'</span><span class="hc-name">'+h.n+'</span><span class="hc-date">'+h.d.slice(5)+(inR?' ✅':' → 影响'+(h.bf)+'~+'+h.af+'天')+'</span></div><div class="hc-desc">'+h.desc+'</div><div class="hc-cats">';
+      h.cats.forEach(function(c){haH+='<span class="hc-cat">'+c+'</span>'});
+      haH+='</div></div>';
+    });
+  }
+  document.getElementById('holidayAnalysis').innerHTML=haH;
+
+  /* 品类环比 */
+  if(cd.days>0&&pd.days>0){
+    var ccH='';var ac=Object.keys(cd.cats).sort(function(a,b){return cd.cats[b]-cd.cats[a]});
+    ac.forEach(function(c){
+      var cv=cd.cats[c]||0,pv=pd.cats[c]||0,chg=pct(cv,pv),cfg=gc(c);
+      ccH+='<div class="advice-card '+(chg.dir==='down'?'down':'up')+'"><div class="ac-head"><span class="ac-icon">'+cfg.ic+'</span><span class="ac-name">'+c+'</span><span class="ac-change '+chg.dir+'">'+(chg.dir==='up'?'▲':chg.dir==='down'?'▼':'—')+' '+chg.s+'</span></div><div class="ac-text">本月 ¥'+fM(cv)+' → 上月 ¥'+fM(pv)+'</div></div>';
+    });
+    document.getElementById('catCompare').innerHTML=ccH;
+  }else{
+    document.getElementById('catCompare').innerHTML='<div class="empty-state"><span class="es-icon">🏷️</span>需两个月数据</div>';
+  }
+}
+
+/* ================================================================
+   目标页
+   ================================================================ */
+function renderTargets(){
+  var now=new Date(),cm={y:now.getFullYear(),m:now.getMonth()},mk=mKey(cm.y,cm.m);
+  var cd=getMonthData(cm.y,cm.m);
+  var saved=JSON.parse(localStorage.getItem('market-targets')||'{}');
+  var tgt=saved[mk]||null;
+  var dim=new Date(cm.y,cm.m+1,0).getDate();
+  var dLeft=Math.max(0,dim-new Date().getDate());
+
+  /* 概览 */
+  var ovH='';
+  if(tgt){
+    var rate=cd.rev>0?(cd.rev/tgt.revenue*100):0;
+    var dAct=cd.days>0?cd.rev/cd.days:0;
+    var dNeed=dLeft>0?((tgt.revenue-cd.rev)/dLeft):0;
+    var clr=rate>=100?'green':rate>=70?'yellow':'red';
+    ovH='<div class="overview-card"><div class="mc-title">🎯 '+mLabel(cm.y,cm.m)+' 目标达成</div>';
+    ovH+='<div class="oc-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">';
+    ovH+='<div class="oc-item"><div class="oc-val" style="color:'+clr+'">'+rate.toFixed(1)+'%</div><div class="oc-label">完成率</div></div>';
+    ovH+='<div class="oc-item"><div class="oc-val" style="color:var(--accent)">¥'+fM(cd.rev)+'</div><div class="oc-label">已达成</div></div>';
+    ovH+='<div class="oc-item"><div class="oc-val" style="color:var(--blue)">¥'+fM(tgt.revenue)+'</div><div class="oc-label">月目标</div></div>';
+    ovH+='<div class="oc-item"><div class="oc-val" style="color:'+(dNeed>dAct?'var(--red)':'var(--accent)')+'">¥'+fM(dNeed)+'</div><div class="oc-label">剩余日均('+dLeft+'天)</div></div>';
+    ovH+='</div><div class="progress-bar" style="margin-top:12px"><div class="pb-fill '+clr+'" style="width:'+Math.min(rate,100)+'%"></div></div><div style="font-size:11px;color:var(--fg-dim);text-align:right">¥'+fM(cd.rev)+' / ¥'+fM(tgt.revenue)+'</div></div>';
+  }else{
+    var sug=cd.days>0?Math.round(cd.rev/cd.days*dim):0;
+    ovH='<div class="overview-card"><div class="mc-title">🎯 设定 '+mLabel(cm.y,cm.m)+' 目标</div><div style="font-size:12px;color:var(--fg-dim);margin-top:8px">当前日均 ¥'+fM(cd.days>0?cd.rev/cd.days:0)+'，推算月约 <strong>¥'+fM(sug)+'</strong></div><div style="font-size:11px;color:var(--fg-dim);margin-top:4px">建议在此基础上上浮5%-15%</div></div>';
+  }
+  document.getElementById('targetOverview').innerHTML=ovH;
+
+  /* 输入框 */
+  document.getElementById('targetInput').value=tgt?tgt.revenue:'';
+  document.getElementById('saveTargetBtn').onclick=function(){
+    var v=parseFloat(document.getElementById('targetInput').value);
+    if(isNaN(v)||v<=0){alert('请输入有效金额');return}
+    var s=JSON.parse(localStorage.getItem('market-targets')||'{}');
+    s[mk]={revenue:v,setDate:new Date().toISOString().slice(0,10)};
+    localStorage.setItem('market-targets',JSON.stringify(s));
+    renderTargets();
+  };
+
+  /* 周度拆解 */
+  var wH='';
+  if(tgt){
+    var weeks=getWeeksOfMonth(cm.y,cm.m);
+    var hm=getHolidaysInRange(mk+'-01',mk+'-31');
+    var baseW=tgt.revenue/weeks.length;
+    weeks.forEach(function(w,i){
+      var factor=1;
+      w.days.forEach(function(d){hm.forEach(function(h){var diff=(new Date(d)-new Date(h.d))/864e5;if(diff>=-h.bf&&diff<=h.af){if(diff<0)factor+=h.imp/100*0.3;else if(diff<=2)factor+=h.imp/100*0.2}})});
+      var wTgt=Math.round(baseW*factor),wAct=0;
+      sum.forEach(function(s){if(w.days.indexOf(s.date)!==-1)wAct+=s.total_revenue});
+      var wp=wTgt>0?(wAct/wTgt*100):0;
+      var wc=wp>=100?'green':wp>=70?'yellow':'red';
+      wH+='<div class="progress-card"><div class="pc-title">第'+(i+1)+'周</div><div class="pc-sub">'+w.days[0].slice(5)+' ~ '+w.days[w.days.length-1].slice(5)+'</div><div class="progress-bar"><div class="pb-fill '+wc+'" style="width:'+Math.min(wp,100)+'%"></div></div><div class="pb-label">¥'+fM(wAct)+' / ¥'+fM(wTgt)+' ('+wp.toFixed(0)+'%)</div></div>';
+    });
+  }else{
+    wH='<div class="empty-state"><span class="es-icon">📅</span>请先设定月度目标</div>';
+  }
+  document.getElementById('weeklyBreakdown').innerHTML=wH;
+
+  /* 节日调整 */
+  var aH='',hM=getHolidaysInRange(mk+'-01',mk+'-31');
+  if(hM.length){
+    hM.forEach(function(h){
+      aH+='<div class="holiday-card"><div class="hc-head"><span class="hc-icon">'+h.ic+'</span><span class="hc-name">'+h.n+'</span><span class="hc-date">'+h.d.slice(5)+'</span></div><div class="hc-desc">'+h.desc+'</div>';
+      aH+='<div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0"><span style="color:var(--fg-dim)">影响系数</span><span class="mc-val up">+'+Math.round(h.imp*0.3)+'%</span></div>';
+      aH+='<div class="hc-cats" style="margin-top:4px">';h.cats.forEach(function(c){aH+='<span class="hc-cat">'+c+'</span>'});aH+='</div></div>';
+    });
+  }else{
+    aH='<div class="empty-state" style="padding:20px"><span class="es-icon">🌿</span>本月无主要节日影响</div>';
+  }
+  document.getElementById('holidayAdjust').innerHTML=aH;
+}
+
+function getWeeksOfMonth(y,m){
+  var ws=[],first=new Date(y,m,1),last=new Date(y,m+1,0),cur=new Date(first);
+  while(cur<=last){
+    var wk=[],dow=cur.getDay()||7,ws2=new Date(cur);ws2.setDate(cur.getDate()-(dow-1));
+    for(var i=0;i<7;i++){var dd=new Date(ws2);dd.setDate(ws2.getDate()+i);if(dd.getMonth()===m)wk.push(dd.toISOString().slice(0,10))}
+    if(wk.length)ws.push({days:wk});
+    cur.setDate(cur.getDate()+7);
+  }
+  return ws;
+}
+
+/* ================================================================
+   营销方案页
+   ================================================================ */
+var CAT_ADVICE={
+'肉类':{up:'销售表现良好，建议维持品质和供应，推出周末特惠套餐组合',down:'销售下滑，建议：①联合肉铺推出周末特惠套餐，搭配葱姜调料组合促销；②增加现切鲜肉品种，设置每日特价档'},
+'海鲜':{up:'海鲜品类销售强劲，建议维持活鲜品种，增设午市加工服务',down:'销售下滑，建议：①增加活鲜品种，设置午市海鲜加工服务；②推出"每日特价海鲜"；③加强鲜活度展示'},
+'蔬菜':{up:'蔬菜品类稳定，建议引入时令品种增加新鲜感',down:'销售下滑，建议：①引入时令品种，设置每日特价菜摊位；②推出"净菜套餐"方便年轻顾客'},
+'水果':{up:'水果销售良好，建议丰富品种，设置水果拼盘服务',down:'销售下滑，建议：①设置水果拼盘/鲜切服务；②推出时令水果试吃；③搭配节日礼盒装'},
+'干货':{up:'干货品类稳健，建议保持策略',down:'销售下滑，建议：①推出散装干货组合装；②设置节日礼盒专区；③加强试用装推广'},
+'面点':{up:'面点表现好，建议增加品种和预订服务',down:'销售下滑，建议：①增加现做面点品种；②推出节假日主食套餐预订；③加强早市时段供应'},
+'豆制品':{up:'销售稳定，建议保持新鲜度',down:'销售下滑，建议：①增加品种，推出每日现做豆腐；②设置豆制品组合套餐'},
+'粮油':{up:'品类稳健',down:'销售下滑，建议：①推出大包装优惠活动；②设置粮油调料组合套餐'},
+'熟食':{up:'熟食受欢迎，建议增加品种',down:'销售下滑，建议：①推出新品试吃活动；②增设晚市热食时段；③推出熟食套餐'}
+};
+
+function renderPlan(){
+  var now=new Date(),cm={y:now.getFullYear(),m:now.getMonth()},mk=mKey(cm.y,cm.m);
+  var cd=getMonthData(cm.y,cm.m);
+  var saved=JSON.parse(localStorage.getItem('market-targets')||'{}');
+  var tgt=saved[mk]||null;
+
+  /* 总览 */
+  var pH='<div class="overview-card"><div class="mc-title">📋 营销方案</div>';
+  if(tgt){
+    var rate=cd.rev>0?(cd.rev/tgt.revenue*100):0;
+    var gap=tgt.revenue-cd.rev;
+    var dim=new Date(cm.y,cm.m+1,0).getDate();
+    var dLeft=Math.max(0,dim-new Date().getDate());
+    var dNeed=dLeft>0?(gap/dLeft):0;
+    pH+='<div class="oc-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">';
+    pH+='<div class="oc-item"><div class="oc-val" style="color:'+(rate>=100?'var(--accent)':'var(--red)')+'">'+rate.toFixed(0)+'%</div><div class="oc-label">达成率</div></div>';
+    pH+='<div class="oc-item"><div class="oc-val" style="color:var(--warn)">¥'+fM(gap)+'</div><div class="oc-label">缺口</div></div>';
+    pH+='<div class="oc-item"><div class="oc-val" style="color:var(--blue)">¥'+fM(dNeed)+'</div><div class="oc-label">日均缺口</div></div></div>';
+    if(rate<50)pH+='<div style="margin-top:10px;font-size:12px;color:var(--red);background:var(--red-light);padding:8px 12px;border-radius:8px">⚠️ 达成率偏低，建议立即采取促销措施</div>';
+    else if(rate<80)pH+='<div style="margin-top:10px;font-size:12px;color:#92400e;background:var(--warn-light);padding:8px 12px;border-radius:8px">💡 需保持日均 ¥'+fM(dNeed)+' 以上达成目标</div>';
+    else pH+='<div style="margin-top:10px;font-size:12px;color:var(--accent-dark);background:var(--accent-light);padding:8px 12px;border-radius:8px">✅ 进度良好，继续保持</div>';
+  }else{
+    pH+='<div style="font-size:12px;color:var(--fg-dim);margin-top:8px">请先在「目标」页设定月度目标</div>';
+  }
+  pH+='</div>';
+  document.getElementById('planOverview').innerHTML=pH;
+
+  /* 品类建议 */
+  var lm=new Date(cm.y,cm.m-1,1),pd=getMonthData(lm.getFullYear(),lm.getMonth());
+  var caH='';
+  if(pd.days>0){
+    var ac=Object.keys(cd.cats).sort(function(a,b){return cd.cats[b]-cd.cats[a]});
+    ac.forEach(function(c){
+      var cv=cd.cats[c]||0,pv=pd.cats[c]||0,chg=pct(cv,pv);
+      var isD=chg.dir==='down'&&chg.v<-5,adv=CAT_ADVICE[c];
+      if(!adv)return;var cfg=gc(c);
+      caH+='<div class="advice-card '+(isD?'down':'up')+'"><div class="ac-head"><span class="ac-icon">'+cfg.ic+'</span><span class="ac-name">'+c+'</span><span class="ac-change '+chg.dir+'">'+(chg.dir==='up'?'▲':chg.dir==='down'?'▼':'—')+' '+chg.s+'</span></div><div class="ac-text">'+(isD?adv.down:adv.up)+'</div></div>';
+    });
+  }else{
+    caH='<div class="empty-state"><span class="es-icon">🏷️</span>需两个月数据生成建议</div>';
+  }
+  document.getElementById('catAdvice').innerHTML=caH;
+
+  /* 节日营销日历 */
+  var up=getUpcomingHolidays(5),mcH='';
+  if(up.length){
+    up.forEach(function(h){
+      var dU=Math.ceil((new Date(h.d)-new Date())/864e5);
+      var urg=dU<=7?'high':dU<=15?'mid':'low';
+      var tip=h.imp>=70?'<strong>提前'+h.bf+'天</strong>开始备货促销，重点备足'+h.cats.slice(0,3).join('、')+'等品类':'可适当增加'+h.cats.slice(0,2).join('、')+'备货量';
+      mcH+='<div class="marketing-cal"><div class="mk-head">'+h.ic+' '+h.n+'</div><div class="mk-date">'+h.d+'（'+dU+'天后）</div><div class="mk-tip">'+tip+'</div><div class="mk-tip" style="color:var(--fg-dim)">预计消费增幅：+'+Math.round(h.imp*0.3)+'%</div><div class="mk-cats">';
+      h.cats.forEach(function(c){mcH+='<span class="mk-cat">'+c+'</span>'});
+      mcH+='</div></div>';
+    });
+  }else{
+    mcH='<div class="empty-state"><span class="es-icon">🎊</span>暂无近期节日</div>';
+  }
+  document.getElementById('marketingCalendar').innerHTML=mcH;
+
+  /* 行动清单 */
+  var actions=generateActions(cd,tgt,cm);
+  var savedActs=JSON.parse(localStorage.getItem('market-actions')||'{}');
+  var aListH='';
+  actions.forEach(function(a,i){
+    var key=mk+'-'+i;
+    var done=savedActs[key]||false;
+    var pClass=a.pri==='high'?'high':a.pri==='mid'?'mid':'low';
+    var pLabel=a.pri==='high'?'高优先':a.pri==='mid'?'中优先':'低优先';
+    aListH+='<div class="action-item'+(done?' done':'')+'" onclick="toggleAction(\''+key+'\')"><div class="ai-check">'+(done?'✓':'')+'</div><div class="ai-body"><div class="ai-text">'+a.text+'</div><span class="ai-tag '+pClass+'">'+pLabel+'</span></div></div>';
+  });
+  document.getElementById('actionList').innerHTML=aListH;
+}
+
+function toggleAction(key){
+  var s=JSON.parse(localStorage.getItem('market-actions')||'{}');
+  s[key]=!s[key];
+  localStorage.setItem('market-actions',JSON.stringify(s));
+  renderPlan();
+}
+
+function generateActions(cd,tgt,cm){
+  var acts=[],mk=mKey(cm.y,cm.m);
+  var rate=tgt&&cd.rev>0?(cd.rev/tgt.revenue*100):0;
+  var hols=getHolidaysInRange(mk+'-01',mk+'-31');
+  var upHols=getUpcomingHolidays(3);
+
+  /* 基于目标差距 */
+  if(tgt&&rate<50){
+    acts.push({text:'立即开展全品类促销活动，设置每日特价摊位吸引客流',pri:'high'});
+    acts.push({text:'联合周边社区开展满减活动（满50减5，满100减12）',pri:'high'});
+    acts.push({text:'增加晚市时段（17:00-19:00）促销力度，延长营业时间',pri:'high'});
+  }else if(tgt&&rate<80){
+    acts.push({text:'针对下滑品类设置周末促销活动',pri:'mid'});
+    acts.push({text:'推出"每日一特价"活动，轮流推广各品类',pri:'mid'});
+  }
+
+  /* 基于品类 */
+  var lm=new Date(cm.y,cm.m-1,1),pd=getMonthData(lm.getFullYear(),lm.getMonth());
+  if(pd.days>0){
+    Object.keys(cd.cats).forEach(function(c){
+      var cv=cd.cats[c]||0,pv=pd.cats[c]||0;
+      if(pv>0&&((cv-pv)/pv)<-0.15){
+        acts.push({text:CAT_ADVICE[c]?CAT_ADVICE[c].down:'检查'+c+'品类经营状况',pri:'mid'});
+      }
+    });
+  }
+
+  /* 基于节日 */
+  if(upHols.length){
+    var next=upHols[0];
+    var days=Math.ceil((new Date(next.d)-new Date())/864e5);
+    if(days<=15&&next.imp>=70){
+      acts.push({text:'🧨 '+next.n+'备货：提前协调'+next.cats.slice(0,3).join('、')+'供应商确保库存充足',pri:'high'});
+      acts.push({text:'🧨 '+next.n+'营销：设计节日促销海报，张贴于市场入口',pri:'mid'});
+      acts.push({text:'🧨 '+next.n+'氛围：布置节日装饰，营造消费氛围',pri:'low'});
+    }else if(days<=30&&next.imp>=50){
+      acts.push({text:'🏮 '+next.n+'（'+days+'天后）：提前规划'+next.cats.slice(0,2).join('、')+'备货方案',pri:'mid'});
+    }
+  }
+
+  /* 常规优化 */
+  acts.push({text:'优化早市时段（6:00-9:00）供货品种，增加引流品类',pri:'low'});
+  acts.push({text:'每周统计各品类坪效数据，优化摊位布局',pri:'low'});
+
+  return acts;
+}</script>
 </body>
 </html>
