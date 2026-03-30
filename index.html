@@ -3307,6 +3307,39 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:280px;backgro
 .empty-state{text-align:center;padding:40px 20px;color:var(--fg-dim);font-size:13px}
 .empty-state .es-icon{font-size:40px;margin-bottom:10px;display:block}
 body{padding-bottom:60px}
+.rpt{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:0;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04);overflow:hidden}
+.rpt-head{background:linear-gradient(135deg,#ecfdf5,#f0fdf4);padding:20px;border-bottom:1px solid var(--border)}
+.rpt-head h2{font-size:18px;font-weight:900;color:#065f46;letter-spacing:-.5px;margin-bottom:4px}
+.rpt-head .rpt-sub{font-size:12px;color:var(--fg-dim)}
+.rpt-head .rpt-date{font-size:11px;color:var(--fg-dim);margin-top:4px}
+.rpt-section{padding:16px 18px;border-bottom:1px solid #f1f5f9}
+.rpt-section:last-child{border-bottom:none}
+.rpt-section-title{font-size:14px;font-weight:700;color:var(--fg);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.rpt-section-title .st-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;flex-shrink:0}
+.rpt-p{font-size:13px;color:#374151;line-height:2;margin-bottom:8px}
+.rpt-p:last-child{margin-bottom:0}
+.rpt-p strong{color:var(--fg);font-weight:600}
+.rpt-p em{color:var(--accent-dark);font-style:normal;font-weight:500}
+.rpt-p .warn{color:var(--red);font-weight:500}
+.rpt-highlight{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:12px;color:#78350f;line-height:1.8}
+.rpt-highlight strong{color:#92400e}
+.rpt-success{background:var(--accent-light);border:1px solid #a7f3d0;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:12px;color:#065f46;line-height:1.8}
+.rpt-danger{background:var(--red-light);border:1px solid #fecaca;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:12px;color:#991b1b;line-height:1.8}
+.rpt-info{background:var(--blue-light);border:1px solid #bfdbfe;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:12px;color:#1e40af;line-height:1.8}
+.rpt-cat-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed #e5e7eb}
+.rpt-cat-item:last-child{border-bottom:none}
+.rpt-cat-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rpt-cat-body{flex:1}
+.rpt-cat-name{font-size:13px;font-weight:600;color:var(--fg)}
+.rpt-cat-text{font-size:12px;color:#374151;line-height:1.8;margin-top:2px}
+.rpt-hol-item{padding:8px 0;border-bottom:1px dashed #e5e7eb}
+.rpt-hol-item:last-child{border-bottom:none}
+.rpt-hol-name{font-size:13px;font-weight:600;color:var(--fg)}
+.rpt-hol-text{font-size:12px;color:#374151;line-height:1.8;margin-top:2px}
+.rpt-action{display:flex;gap:8px;align-items:flex-start;padding:6px 0}
+.rpt-action-num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.rpt-action-text{font-size:12px;color:#374151;line-height:1.8}
+.rpt-footer{text-align:center;padding:16px;font-size:10px;color:var(--fg-dim);border-top:1px solid #f1f5f9}
 /* ===== 宽屏适配 ===== */
 @media(min-width:640px){
   .app{max-width:640px}
@@ -3375,11 +3408,8 @@ body{padding-bottom:60px}
 </div>
 
 <div id="page-plan" class="page new-page">
-<div class="header"><div class="header-top"><div><div class="market-name">📋 营销方案</div><div class="market-sub">智能建议 · 行动清单</div></div></div></div>
-<div id="planOverview"></div>
-<div class="section"><div class="section-header"><div class="section-title">🏷️ 品类专项建议</div></div><div id="catAdvice"></div></div>
-<div class="section"><div class="section-header"><div class="section-title">🎊 节日营销日历</div></div><div id="marketingCalendar"></div></div>
-<div class="section"><div class="section-header"><div class="section-title">✅ 行动清单</div></div><div class="action-list" id="actionList"></div></div>
+<div class="header"><div class="header-top"><div><div class="market-name">📋 营销方案</div><div class="market-sub">自动生成 · 经营分析报告</div></div></div></div>
+<div id="planReport"></div>
 </div>
 
 <nav class="bottom-nav">
@@ -4055,18 +4085,18 @@ function getWeeksOfMonth(y,m){
 }
 
 /* ================================================================
-   营销方案页
+   营销方案页 — 自动生成文字分析报告
    ================================================================ */
-var CAT_ADVICE={
-'肉类':{up:'销售表现良好，建议维持品质和供应，推出周末特惠套餐组合',down:'销售下滑，建议：①联合肉铺推出周末特惠套餐，搭配葱姜调料组合促销；②增加现切鲜肉品种，设置每日特价档'},
-'海鲜':{up:'海鲜品类销售强劲，建议维持活鲜品种，增设午市加工服务',down:'销售下滑，建议：①增加活鲜品种，设置午市海鲜加工服务；②推出"每日特价海鲜"；③加强鲜活度展示'},
-'蔬菜':{up:'蔬菜品类稳定，建议引入时令品种增加新鲜感',down:'销售下滑，建议：①引入时令品种，设置每日特价菜摊位；②推出"净菜套餐"方便年轻顾客'},
-'水果':{up:'水果销售良好，建议丰富品种，设置水果拼盘服务',down:'销售下滑，建议：①设置水果拼盘/鲜切服务；②推出时令水果试吃；③搭配节日礼盒装'},
-'干货':{up:'干货品类稳健，建议保持策略',down:'销售下滑，建议：①推出散装干货组合装；②设置节日礼盒专区；③加强试用装推广'},
-'面点':{up:'面点表现好，建议增加品种和预订服务',down:'销售下滑，建议：①增加现做面点品种；②推出节假日主食套餐预订；③加强早市时段供应'},
-'豆制品':{up:'销售稳定，建议保持新鲜度',down:'销售下滑，建议：①增加品种，推出每日现做豆腐；②设置豆制品组合套餐'},
-'粮油':{up:'品类稳健',down:'销售下滑，建议：①推出大包装优惠活动；②设置粮油调料组合套餐'},
-'熟食':{up:'熟食受欢迎，建议增加品种',down:'销售下滑，建议：①推出新品试吃活动；②增设晚市热食时段；③推出熟食套餐'}
+var CAT_REPORT={
+'肉类':{down:'本月肉类营业额出现明显下滑。建议联合商户推出周末特惠套餐，搭配葱姜蒜等调料组合促销，同时增加现切鲜肉品种、设置每日特价档位吸引客流。可考虑与周边餐饮商户合作，推出"市场直供"概念提升信任感。',up:'本月肉类销售表现良好，是市场的核心品类之一。建议维持现有品质标准和供应量稳定，可适时推出周末家庭套餐组合（肉类+蔬菜+调料），进一步拉高客单价。'},
+'海鲜':{down:'海鲜品类销售下滑，建议增加活鲜品种、设置午市海鲜加工服务，推出"每日特价海鲜"活动吸引周边餐饮商户采购。同时加强鲜活度展示，设置透明冰台让顾客直观感受新鲜度。',up:'海鲜品类销售强劲，顾客认可度高。建议维持活鲜品种数量，可增设午市加工服务（代杀代洗），进一步提升顾客便利性和客单价。'},
+'蔬菜':{down:'蔬菜营业额下滑，建议引入时令品种增加新鲜感，设置每日特价菜摊位。同时推出"净菜套餐"方便年轻上班族，考虑增加有机蔬菜或本地特色蔬菜品种。',up:'蔬菜品类经营稳定，建议引入时令新品种保持新鲜感，可考虑设置"每日特价菜"摊位引流，带动其他品类销售。'},
+'水果':{down:'水果销售下滑，建议设置水果拼盘和鲜切服务，推出时令水果试吃活动，搭配节日礼盒装提升客单价。关注应季水果品种切换，确保品种丰富度。',up:'水果销售良好，建议丰富进口水果品种，设置水果拼盘服务。可配合节日推出水果礼盒装，开拓送礼市场。'},
+'干货':{down:'干货品类下滑，建议推出散装干货组合装（煲汤包、卤料包），方便顾客一次购齐。设置节日礼盒专区，加强试用装推广降低顾客尝试门槛。',up:'干货品类经营稳健，建议保持现有品类和价格策略，可开发节日礼盒装（春节坚果礼盒、中秋干货礼盒），提升客单价。'},
+'面点':{down:'面点销售下滑，建议增加现做面点品种，设置"现烤现卖"区域增强购买欲。推出节假日主食套餐预订服务（馒头、饺子、包子套餐），加强早市时段供应满足上班族需求。',up:'面点品类表现良好，建议增加现做品种、推出预订服务，特别是节假日主食套餐预订。加强早市时段（6:00-8:00）供应。'},
+'豆制品':{down:'豆制品销售下滑，建议增加品种、推出每日现做豆腐，设置豆制品组合套餐（豆腐+豆干+腐竹+豆皮），强调"每日新鲜"概念。',up:'豆制品销售稳定，建议保持新鲜度和供应频次，可推出组合套餐提升客单价。'},
+'粮油':{down:'粮油销售下滑，建议推出大包装优惠活动，设置粮油调料组合套餐。可配合节日推出礼盒装（食用油+米+杂粮礼盒），提升客单价。',up:'粮油品类稳健，建议维持现有策略，可考虑增加小包装便利装满足独居年轻人需求。'},
+'熟食':{down:'熟食销售下滑，建议推出新品试吃活动，增设晚市热食时段（17:00-19:00），推出熟食套餐组合（卤味拼盘+主食）。加强食品卫生展示，提升顾客信任。',up:'熟食品类受欢迎，建议增加品种和口味选择，推出套餐组合提升客单价。可增设晚市热食时段满足下班族需求。'}
 };
 
 function renderPlan(){
@@ -4074,124 +4104,228 @@ function renderPlan(){
   var cd=getMonthData(cm.y,cm.m);
   var saved=JSON.parse(localStorage.getItem('market-targets')||'{}');
   var tgt=saved[mk]||null;
+  var lm=new Date(cm.y,cm.m-1,1),pd=getMonthData(lm.getFullYear(),lm.getMonth());
+  var hols=getHolidaysInRange(mk+'-01',mk+'-31');
+  var upHols=getUpcomingHolidays(5);
+  var dim=new Date(cm.y,cm.m+1,0).getDate();
+  var dLeft=Math.max(0,dim-new Date().getDate());
+  var dAct=cd.days>0?(cd.rev/cd.days):0;
 
-  /* 总览 */
-  var pH='<div class="overview-card"><div class="mc-title">📋 营销方案</div>';
+  var r='<div class="rpt">';
+
+  /* 报告头 */
+  r+='<div class="rpt-head"><h2>📋 '+mLabel(cm.y,cm.m)+' 经营分析报告</h2>';
+  r+='<div class="rpt-sub">妫汭市集（永城店）· 自动生成</div>';
+  r+='<div class="rpt-date">报告期间：'+(dts[0]?dts[0]:'—')+' ~ '+(dts[dts.length-1]?dts[dts.length-1]:'—')+'· 生成时间：'+now.toLocaleString('zh-CN',{hour12:false})+'</div></div>';
+
+  /* 一、整体经营概况 */
+  r+='<div class="rpt-section"><div class="rpt-section-title"><span class="st-num">1</span>整体经营概况</div>';
+  r+='<p class="rpt-p">本月（'+mLabel(cm.y,cm.m)+'）累计经营 <strong>'+cd.days+'</strong> 天，';
+  r+'总营业额 <strong>¥'+fM(cd.rev)+'</strong>，';
+  r+'日均营业额 <em>¥'+fM(dAct)+'</em>，';
+  r+'总订单 <strong>'+cd.ord.toLocaleString()+'</strong> 单，';
+  r+'客单价 <strong>¥'+(cd.ord>0?(cd.inc/cd.ord).toFixed(0):0)+'</strong>。</p>';
+
+  if(pd.days>0){
+    var rp=pct(cd.rev,pd.rev);
+    r+='<p class="rpt-p">环比上月（'+mLabel(lm.getFullYear(),lm.getMonth())+'），';
+    if(rp.dir==='up')r+='营业额<strong class="warn" style="color:var(--accent-dark)">增长 '+rp.s+'</strong>，整体趋势向好。';
+    else if(rp.dir==='down')r+='营业额<strong class="warn">下降 '+rp.s+'</strong>，需关注经营状况并采取相应措施。';
+    else r+='营业额基本持平，经营态势稳定。';
+    r+='上月日均 ¥'+fM(pd.rev/pd.days)+'，本月日均 ¥'+fM(dAct)+'。';
+    r+='</p>';
+  }
+
   if(tgt){
     var rate=cd.rev>0?(cd.rev/tgt.revenue*100):0;
     var gap=tgt.revenue-cd.rev;
-    var dim=new Date(cm.y,cm.m+1,0).getDate();
-    var dLeft=Math.max(0,dim-new Date().getDate());
     var dNeed=dLeft>0?(gap/dLeft):0;
-    pH+='<div class="oc-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">';
-    pH+='<div class="oc-item"><div class="oc-val" style="color:'+(rate>=100?'var(--accent)':'var(--red)')+'">'+rate.toFixed(0)+'%</div><div class="oc-label">达成率</div></div>';
-    pH+='<div class="oc-item"><div class="oc-val" style="color:var(--warn)">¥'+fM(gap)+'</div><div class="oc-label">缺口</div></div>';
-    pH+='<div class="oc-item"><div class="oc-val" style="color:var(--blue)">¥'+fM(dNeed)+'</div><div class="oc-label">日均缺口</div></div></div>';
-    if(rate<50)pH+='<div style="margin-top:10px;font-size:12px;color:var(--red);background:var(--red-light);padding:8px 12px;border-radius:8px">⚠️ 达成率偏低，建议立即采取促销措施</div>';
-    else if(rate<80)pH+='<div style="margin-top:10px;font-size:12px;color:#92400e;background:var(--warn-light);padding:8px 12px;border-radius:8px">💡 需保持日均 ¥'+fM(dNeed)+' 以上达成目标</div>';
-    else pH+='<div style="margin-top:10px;font-size:12px;color:var(--accent-dark);background:var(--accent-light);padding:8px 12px;border-radius:8px">✅ 进度良好，继续保持</div>';
+    r+='<p class="rpt-p">月度目标 ¥'+fM(tgt.revenue)+'，当前完成 <strong>'+rate.toFixed(1)+'%</strong>，';
+    if(rate>=100)r+='已超额完成目标，表现优秀。';
+    else if(rate>=80)r+='距离目标还差 <strong>¥'+fM(gap)+'</strong>，剩余 '+dLeft+' 天需日均 <strong>¥'+fM(dNeed)+'</strong> 即可达成。';
+    else if(rate>=50)r+='距离目标还差 <strong>¥'+fM(gap)+'</strong>，剩余 '+dLeft+' 天需日均 <strong class="warn">¥'+fM(dNeed)+'</strong>，压力较大，建议立即启动促销措施。';
+    else r+='当前完成率偏低，缺口 <strong class="warn">¥'+fM(gap)+'</strong>，需采取紧急措施拉升营业额。';
+    r+='</p>';
   }else{
-    pH+='<div style="font-size:12px;color:var(--fg-dim);margin-top:8px">请先在「目标」页设定月度目标</div>';
+    var sug=Math.round(dAct*dim);
+    r+='<p class="rpt-p">按当前日均 ¥'+fM(dAct)+' 推算，本月预计可达 <strong>¥'+fM(sug)+'</strong>。建议设定月度目标（在「目标」页面设置），系统将据此生成更精准的营销方案。</p>';
   }
-  pH+='</div>';
-  document.getElementById('planOverview').innerHTML=pH;
+  r+='</div>';
 
-  /* 品类建议 */
-  var lm=new Date(cm.y,cm.m-1,1),pd=getMonthData(lm.getFullYear(),lm.getMonth());
-  var caH='';
-  if(pd.days>0){
-    var ac=Object.keys(cd.cats).sort(function(a,b){return cd.cats[b]-cd.cats[a]});
-    ac.forEach(function(c){
-      var cv=cd.cats[c]||0,pv=pd.cats[c]||0,chg=pct(cv,pv);
-      var isD=chg.dir==='down'&&chg.v<-5,adv=CAT_ADVICE[c];
-      if(!adv)return;var cfg=gc(c);
-      caH+='<div class="advice-card '+(isD?'down':'up')+'"><div class="ac-head"><span class="ac-icon">'+cfg.ic+'</span><span class="ac-name">'+c+'</span><span class="ac-change '+chg.dir+'">'+(chg.dir==='up'?'▲':chg.dir==='down'?'▼':'—')+' '+chg.s+'</span></div><div class="ac-text">'+(isD?adv.down:adv.up)+'</div></div>';
-    });
-  }else{
-    caH='<div class="empty-state"><span class="es-icon">🏷️</span>需两个月数据生成建议</div>';
-  }
-  document.getElementById('catAdvice').innerHTML=caH;
+  /* 二、品类表现分析 */
+  r+='<div class="rpt-section"><div class="rpt-section-title"><span class="st-num">2</span>品类表现分析</div>';
+  var allCats=Object.keys(cd.cats).sort(function(a,b){return cd.cats[b]-cd.cats[a]});
+  if(allCats.length>0){
+    var topCat=allCats[0],topPct=(cd.cats[topCat]/cd.rev*100).toFixed(1);
+    r+='<p class="rpt-p">本月共经营 <strong>'+allCats.length+'</strong> 个品类，';
+    r+'<em>'+topCat+'</em> 以 ¥'+fM(cd.cats[topCat])+' 占比 '+topPct+'%，是市场营收主力。';
+    var top3=allCats.slice(0,3),top3Pct=0;
+    top3.forEach(function(c){top3Pct+=cd.cats[c]/cd.rev*100});
+    r+='前三大品类（'+top3.join('、')+'）合计占比 <strong>'+top3Pct.toFixed(0)+'%</strong>。';
+    r+='</p>';
 
-  /* 节日营销日历 */
-  var up=getUpcomingHolidays(5),mcH='';
-  if(up.length){
-    up.forEach(function(h){
-      var dU=Math.ceil((new Date(h.d)-new Date())/864e5);
-      var urg=dU<=7?'high':dU<=15?'mid':'low';
-      var tip=h.imp>=70?'<strong>提前'+h.bf+'天</strong>开始备货促销，重点备足'+h.cats.slice(0,3).join('、')+'等品类':'可适当增加'+h.cats.slice(0,2).join('、')+'备货量';
-      mcH+='<div class="marketing-cal"><div class="mk-head">'+h.ic+' '+h.n+'</div><div class="mk-date">'+h.d+'（'+dU+'天后）</div><div class="mk-tip">'+tip+'</div><div class="mk-tip" style="color:var(--fg-dim)">预计消费增幅：+'+Math.round(h.imp*0.3)+'%</div><div class="mk-cats">';
-      h.cats.forEach(function(c){mcH+='<span class="mk-cat">'+c+'</span>'});
-      mcH+='</div></div>';
-    });
-  }else{
-    mcH='<div class="empty-state"><span class="es-icon">🎊</span>暂无近期节日</div>';
-  }
-  document.getElementById('marketingCalendar').innerHTML=mcH;
-
-  /* 行动清单 */
-  var actions=generateActions(cd,tgt,cm);
-  var savedActs=JSON.parse(localStorage.getItem('market-actions')||'{}');
-  var aListH='';
-  actions.forEach(function(a,i){
-    var key=mk+'-'+i;
-    var done=savedActs[key]||false;
-    var pClass=a.pri==='high'?'high':a.pri==='mid'?'mid':'low';
-    var pLabel=a.pri==='high'?'高优先':a.pri==='mid'?'中优先':'低优先';
-    aListH+='<div class="action-item'+(done?' done':'')+'" onclick="toggleAction(\''+key+'\')"><div class="ai-check">'+(done?'✓':'')+'</div><div class="ai-body"><div class="ai-text">'+a.text+'</div><span class="ai-tag '+pClass+'">'+pLabel+'</span></div></div>';
-  });
-  document.getElementById('actionList').innerHTML=aListH;
-}
-
-function toggleAction(key){
-  var s=JSON.parse(localStorage.getItem('market-actions')||'{}');
-  s[key]=!s[key];
-  localStorage.setItem('market-actions',JSON.stringify(s));
-  renderPlan();
-}
-
-function generateActions(cd,tgt,cm){
-  var acts=[],mk=mKey(cm.y,cm.m);
-  var rate=tgt&&cd.rev>0?(cd.rev/tgt.revenue*100):0;
-  var hols=getHolidaysInRange(mk+'-01',mk+'-31');
-  var upHols=getUpcomingHolidays(3);
-
-  /* 基于目标差距 */
-  if(tgt&&rate<50){
-    acts.push({text:'立即开展全品类促销活动，设置每日特价摊位吸引客流',pri:'high'});
-    acts.push({text:'联合周边社区开展满减活动（满50减5，满100减12）',pri:'high'});
-    acts.push({text:'增加晚市时段（17:00-19:00）促销力度，延长营业时间',pri:'high'});
-  }else if(tgt&&rate<80){
-    acts.push({text:'针对下滑品类设置周末促销活动',pri:'mid'});
-    acts.push({text:'推出"每日一特价"活动，轮流推广各品类',pri:'mid'});
-  }
-
-  /* 基于品类 */
-  var lm=new Date(cm.y,cm.m-1,1),pd=getMonthData(lm.getFullYear(),lm.getMonth());
-  if(pd.days>0){
-    Object.keys(cd.cats).forEach(function(c){
-      var cv=cd.cats[c]||0,pv=pd.cats[c]||0;
-      if(pv>0&&((cv-pv)/pv)<-0.15){
-        acts.push({text:CAT_ADVICE[c]?CAT_ADVICE[c].down:'检查'+c+'品类经营状况',pri:'mid'});
+    if(pd.days>0){
+      r+='<div style="margin-top:8px">';
+      var downCats=[],upCats=[];
+      allCats.forEach(function(c){
+        var cv=cd.cats[c]||0,pv=pd.cats[c]||0;
+        if(pv>0){
+          var ch=(cv-pv)/pv*100;
+          if(ch<-5)downCats.push({n:c,ch:ch});
+          else if(ch>5)upCats.push({n:c,ch:ch});
+        }
+      });
+      if(downCats.length>0){
+        downCats.sort(function(a,b){return a.ch-b.ch});
+        r+='<p class="rpt-p"><strong class="warn">⚠ 下滑品类：</strong>'+downCats.map(function(c){return c.n+'（'+c.ch.toFixed(1)+'%）'}).join('、')+'</p>';
+        downCats.forEach(function(c){
+          var cfg=gc(c),adv=CAT_REPORT[c.n];
+          r+='<div class="rpt-cat-item"><div class="rpt-cat-icon" style="background:'+cfg.bg+'">'+cfg.ic+'</div><div class="rpt-cat-body"><div class="rpt-cat-name">'+c.n+' ↓ '+c.ch.toFixed(1)+'%</div>';
+          if(adv)r+='<div class="rpt-cat-text">'+adv.down+'</div>';
+          r+='</div></div>';
+        });
       }
-    });
+      if(upCats.length>0){
+        upCats.sort(function(a,b){return b.ch-a.ch});
+        r+='<p class="rpt-p" style="margin-top:10px"><strong style="color:var(--accent-dark)">✅ 增长品类：</strong>'+upCats.map(function(c){return c.n+'（+'+c.ch.toFixed(1)+'%）'}).join('、')+'</p>';
+        upCats.forEach(function(c){
+          var cfg=gc(c),adv=CAT_REPORT[c.n];
+          r+='<div class="rpt-cat-item"><div class="rpt-cat-icon" style="background:'+cfg.bg+'">'+cfg.ic+'</div><div class="rpt-cat-body"><div class="rpt-cat-name">'+c.n+' ↑ +'+c.ch.toFixed(1)+'%</div>';
+          if(adv)r+='<div class="rpt-cat-text">'+adv.up+'</div>';
+          r+='</div></div>';
+        });
+      }
+      if(!downCats.length&&!upCats.length)r+='<p class="rpt-p">各品类表现基本平稳，环比无显著变化。</p>';
+      r+='</div>';
+    }
+  }else{
+    r+='<p class="rpt-p">暂无品类数据。</p>';
   }
+  r+='</div>';
 
-  /* 基于节日 */
-  if(upHols.length){
-    var next=upHols[0];
-    var days=Math.ceil((new Date(next.d)-new Date())/864e5);
-    if(days<=15&&next.imp>=70){
-      acts.push({text:'🧨 '+next.n+'备货：提前协调'+next.cats.slice(0,3).join('、')+'供应商确保库存充足',pri:'high'});
-      acts.push({text:'🧨 '+next.n+'营销：设计节日促销海报，张贴于市场入口',pri:'mid'});
-      acts.push({text:'🧨 '+next.n+'氛围：布置节日装饰，营造消费氛围',pri:'low'});
-    }else if(days<=30&&next.imp>=50){
-      acts.push({text:'🏮 '+next.n+'（'+days+'天后）：提前规划'+next.cats.slice(0,2).join('、')+'备货方案',pri:'mid'});
+  /* 三、节日影响评估 */
+  r+='<div class="rpt-section"><div class="rpt-section-title"><span class="st-num">3</span>节日影响评估</div>';
+  var allH=getHolidaysInRange(dts[0]||mk+'-01',dts[dts.length-1]||mk+'-31');
+  if(allH.length>0){
+    allH.forEach(function(h){
+      var inR=dts.indexOf(h.d)!==-1;
+      r+='<div class="rpt-hol-item"><div class="rpt-hol-name">'+h.ic+' '+h.n+'（'+h.d.slice(5)+'）'+(inR?' ✅ 已在数据周期内':' → 影响窗口内')+'</div>';
+      r+='<div class="rpt-hol-text">'+h.desc+'。受影响品类：'+h.cats.join('、')+'。预计消费影响系数：+'+Math.round(h.imp*0.3)+'%。</div></div>';
+    });
+  }else{
+    r+='<p class="rpt-p">当前数据周期内无重大节日影响，经营数据反映的是常规消费水平。</p>';
+  }
+  if(upHols.length>0){
+    r+='<p class="rpt-p" style="margin-top:10px"><strong>近期节日预告：</strong>';
+    r+=upHols.map(function(h){var d=Math.ceil((new Date(h.d)-new Date())/864e5);return h.ic+h.n+'（'+d+'天后）'}).join('、');
+    r+='。请提前做好备货和营销准备。</p>';
+  }
+  r+='</div>';
+
+  /* 四、营销策略建议 */
+  r+='<div class="rpt-section"><div class="rpt-section-title"><span class="st-num">4</span>营销策略建议</div>';
+
+  var strategies=[];
+
+  /* 基于目标差距的策略 */
+  if(tgt){
+    var rate=cd.rev>0?(cd.rev/tgt.revenue*100):0;
+    if(rate<50){
+      strategies.push({type:'danger',text:'当前达成率不足50%，建议立即采取以下紧急措施：① 开展全场满减促销（满50减5、满100减12），降低消费门槛；② 设置每日特价摊位（每天2-3个品类轮换），提升客流和转化率；③ 联合周边社区开展团购活动，扩大客源覆盖范围。'});
+      strategies.push({type:'danger',text:'同时建议增加营业时段促销力度：早市（6:00-8:00）设置早餐套餐特价，午市（11:00-13:00）推出便当食材套餐，晚市（17:00-19:00）设置生鲜清仓折扣。'});
+    }else if(rate<80){
+      strategies.push({type:'highlight',text:'达成率尚有差距，建议：① 针对下滑品类设置周末促销活动，搭配赠品或满减刺激消费；② 推出"每日一特价"活动，轮流推广各品类，保持市场活跃度；③ 加强社群运营（微信群/朋友圈），定期推送特价信息和食谱推荐。'});
+    }else{
+      strategies.push({type:'success',text:'目标达成进度良好。建议保持当前经营节奏，同时可适度优化：① 优化品类结构，适当增加高毛利品类占比；② 推出会员积分制度或储值优惠，提升顾客粘性和复购率；③ 定期收集顾客反馈，持续改善购物体验。'});
     }
   }
 
-  /* 常规优化 */
-  acts.push({text:'优化早市时段（6:00-9:00）供货品种，增加引流品类',pri:'low'});
-  acts.push({text:'每周统计各品类坪效数据，优化摊位布局',pri:'low'});
+  /* 基于下滑品类的策略 */
+  var downCats2=[];
+  if(pd.days>0){
+    allCats.forEach(function(c){
+      var cv=cd.cats[c]||0,pv=pd.cats[c]||0;
+      if(pv>0&&(cv-pv)/pv<-0.15)downCats2.push(c);
+    });
+  }
+  if(downCats2.length>0){
+    var names=downCats2.slice(0,3).join('、');
+    strategies.push({type:'highlight',text:'重点品类（'+names+'）环比下滑超过15%，建议专项制定品类提升计划：① 分析下滑原因（价格、品质、品种、竞争？）；② 与商户沟通制定针对性促销方案；③ 设置品类专区，提升品类曝光度和购物便利性。'});
+  }
+
+  /* 基于节日的策略 */
+  if(upHols.length){
+    var nextH=upHols[0];
+    var daysH=Math.ceil((new Date(nextH.d)-new Date())/864e5);
+    if(daysH<=30&&nextH.imp>=70){
+      strategies.push({type:'highlight',text:'<strong>'+nextH.ic+' '+nextH.n+'（'+daysH+'天后）营销方案：</strong>① 提前'+Math.min(nextH.bf,15)+'天开始加大'+nextH.cats.slice(0,3).join('、')+'等核心品类的备货量，确保库存充足；② 设计节日促销海报，提前一周张贴于市场入口及周边社区；③ 推出节日专属套餐组合（如'+nextH.cats[0]+'+'+nextH.cats[1]+'搭配优惠）；④ 布置节日装饰，营造消费氛围，延长营业时间。'});
+    }else if(daysH<=60&&nextH.imp>=50){
+      strategies.push({type:'info',text:'<strong>'+nextH.ic+' '+nextH.n+'（'+daysH+'天后）</strong>预计消费增幅+'+Math.round(nextH.imp*0.3)+'%。建议提前规划'+nextH.cats.slice(0,2).join('、')+'备货方案，与供应商确认供货能力。'});
+    }
+  }
+
+  /* 常规优化策略 */
+  strategies.push({type:'info',text:'常态化运营建议：① 每周统计各品类坪效数据，优化摊位布局和品类组合；② 建立顾客微信群，定期推送特价信息和食谱推荐；③ 关注周边竞品动态，及时调整经营策略；④ 加强商户服务培训，提升顾客购物体验和满意度。'});
+
+  strategies.forEach(function(s){
+    r+='<div class="rpt-'+s.type+'">'+s.text+'</div>';
+  });
+  r+='</div>';
+
+  /* 五、下周行动计划 */
+  r+='<div class="rpt-section"><div class="rpt-section-title"><span class="st-num">5</span>下周行动计划</div>';
+  var actions=genReportActions(cd,tgt,cm);
+  actions.forEach(function(a,i){
+    r+='<div class="rpt-action"><div class="rpt-action-num">'+(i+1)+'</div><div class="rpt-action-text">'+a+'</div></div>';
+  });
+  r+='</div>';
+
+  /* 报告尾 */
+  r+='<div class="rpt-footer">本报告由妫汭市集营业看板自动生成<br>数据基于客如云POS系统 · '+now.toLocaleDateString('zh-CN')+'</div>';
+  r+='</div>';
+
+  document.getElementById('planReport').innerHTML=r;
+}
+
+function genReportActions(cd,tgt,cm){
+  var acts=[],mk=mKey(cm.y,cm.m);
+  var rate=tgt&&cd.rev>0?(cd.rev/tgt.revenue*100):0;
+  var dAct=cd.days>0?(cd.rev/cd.days):0;
+
+  /* 根据目标 */
+  if(!tgt){
+    acts.push('在「目标」页面设定本月营业额目标，以便系统生成精准的营销方案和进度追踪。');
+  }
+  if(tgt&&rate<50){
+    acts.push('立即开展全品类促销活动：设置每日2-3个特价品类，配合满50减5优惠，提升客流和客单价。');
+    acts.push('联合周边社区开展宣传推广：制作市场宣传单页，在周边小区发放；启动微信群运营，每日推送特价信息。');
+    acts.push('召开商户沟通会：通报本月经营数据，与各品类商户协商制定促销方案，明确责任和目标。');
+    acts.push('延长营业时段促销：增设晚市（17:00-19:00）生鲜清仓折扣，吸引下班客流。');
+  }else if(tgt&&rate<80){
+    acts.push('针对环比下滑品类制定专项促销方案：设置品类专区，配合试吃活动和组合优惠。');
+    acts.push('推出"每日一特价"活动：每天选择1-2个品类做特价，轮流推广，保持市场活跃度和顾客新鲜感。');
+    acts.push('启动社群运营：建立顾客微信群，每日推送特价信息和时令食谱推荐，提升顾客粘性和复购率。');
+  }else{
+    acts.push('巩固当前经营成果：保持品类品质和供应稳定，持续关注各品类坪效数据，优化布局。');
+    acts.push('探索增值服务：推出会员积分、储值优惠等制度，提升顾客粘性和复购率。');
+  }
+
+  /* 节日相关 */
+  var upH=getUpcomingHolidays(2);
+  if(upH.length){
+    var nx=upH[0],daysNx=Math.ceil((new Date(nx.d)-new Date())/864e5);
+    if(daysNx<=15&&nx.imp>=50){
+      acts.push('['+nx.n+'备货] 提前协调'+nx.cats.slice(0,3).join('、')+'供应商确认供货量和价格，确保节前库存充足。');
+      acts.push('['+nx.n+'宣传] 设计制作节日促销海报和宣传物料，提前张贴于市场入口及周边社区公告栏。');
+      acts.push('['+nx.n+'氛围] 布置节日装饰，营造消费氛围，考虑设置'+nx.cats[0]+'+'+nx.cats[1]+'节日专区。');
+    }else if(daysNx<=30){
+      acts.push('['+nx.n+'规划] 提前规划'+nx.cats.slice(0,2).join('、')+'备货方案，与供应商初步沟通供货能力。');
+    }
+  }
+
+  /* 常规 */
+  acts.push('每周一上午汇总上周经营数据，分析品类表现趋势，及时调整经营策略。');
+  acts.push('关注周边竞品动态（新建市场、社区团购等），及时了解市场变化并制定应对措施。');
 
   return acts;
 }</script>
